@@ -17,6 +17,35 @@ const DEFAULT_CURRENCY = "EUR";
 const currencyCookie = (getCookieValue("currency") || "").toUpperCase();
 const currency = SUPPORTED_CURRENCIES.includes(currencyCookie) ? currencyCookie : DEFAULT_CURRENCY;
 
+// Cookie notice (shown once)
+const COOKIE_NOTICE_KEY = "cookieNoticeAccepted_v1";
+const cookieBanner = document.getElementById("cookieBanner");
+const cookieAccept = document.getElementById("cookieAccept");
+
+const showCookieBannerIfNeeded = () => {
+    if (!cookieBanner) return;
+    try {
+        const accepted = window.localStorage.getItem(COOKIE_NOTICE_KEY) === "1";
+        if (accepted) return;
+    } catch {
+        // If storage is blocked, still show the banner; user can dismiss for the session.
+    }
+    cookieBanner.classList.remove("hidden");
+};
+
+if (cookieAccept && cookieBanner) {
+    cookieAccept.addEventListener("click", () => {
+        try {
+            window.localStorage.setItem(COOKIE_NOTICE_KEY, "1");
+        } catch {
+            // ignore
+        }
+        cookieBanner.classList.add("hidden");
+    });
+}
+
+showCookieBannerIfNeeded();
+
 // Fixed prices per currency (edit these exact numbers to match your billing)
 // Base (EUR) comes from pricingData below; overrides only apply when currency != EUR.
 const PRICE_OVERRIDES = {
@@ -112,6 +141,9 @@ const featuresDataEN = [
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M8 2h8l6 6v12a2 2 0 0 1-2 2H8a6 6 0 0 1-6-6V8a6 6 0 0 1 6-6Z'/><path d='M15 2v6h6'/></svg>`,
         title: "Branded booking pages",
         description: "Share a beautiful booking link with your brand, services, prices, and live availability.",
+        image: "assets/branded-booking-page.webp",
+        imageAlt: "Branded booking page",
+        typingDemoSlugs: ["barber-john", "emilys-salon", "nails-by-emma", "designer-james", "coach-david"],
     },
     {
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M3 3h7v7H3z'/><path d='M14 3h7v7h-7z'/><path d='M14 14h7v7h-7z'/><path d='M3 14h7v7H3z'/></svg>`,
@@ -140,6 +172,9 @@ const featuresDataLV = [
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M8 2h8l6 6v12a2 2 0 0 1-2 2H8a6 6 0 0 1-6-6V8a6 6 0 0 1 6-6Z'/><path d='M15 2v6h6'/></svg>`,
         title: "Zīmola rezervāciju lapas",
         description: "Kopīgo skaistu rezervācijas saiti ar zīmolu, pakalpojumiem, cenām un tiešsaistes pieejamību.",
+        image: "assets/branded-booking-page.webp",
+        imageAlt: "Zīmola rezervāciju lapa",
+        typingDemoSlugs: ["barber-john", "emilys-salon", "nails-by-emma", "designer-james", "coach-david"],
     },
     {
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M3 3h7v7H3z'/><path d='M14 3h7v7h-7z'/><path d='M14 14h7v7h-7z'/><path d='M3 14h7v7H3z'/></svg>`,
@@ -168,13 +203,140 @@ const featuresData = isLV ? featuresDataLV : featuresDataEN;
 const features = document.getElementById("features");
 if (features) {
     features.innerHTML = featuresData.map((f) => `
-        <div class='p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30 space-y-3'>
+        <div class='js-fade-in p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30 space-y-3'>
             ${f.icon}
             <h3 class='text-lg font-semibold'>${f.title}</h3>
             <p class='text-sm text-slate-600 dark:text-slate-300'>${f.description}</p>
+            ${Array.isArray(f.typingDemoSlugs) && f.typingDemoSlugs.length
+                ? `<p class='text-xs text-slate-500 dark:text-slate-400'>
+                        <span>app.bookable.live/book/</span><span class='font-semibold' data-typing-slugs='${JSON.stringify(f.typingDemoSlugs).replace(/'/g, "&#39;")}'></span>
+                   </p>`
+                : ""}
+            ${f.image
+                ? `<div class='pt-1 flex items-center justify-center'>
+                        <img src='${ASSET_ROOT}/${f.image}' alt='${f.imageAlt || ""}' loading='lazy' decoding='async' class='w-full max-w-xs h-auto object-contain' />
+                   </div>`
+                : ""}
         </div>
     `).join("");
 }
+
+// Slight fade-in for cards (Features, Who, Pricing, FAQ)
+let fadeInIO;
+
+const initFadeInOnScroll = (root = document) => {
+    const reducedMotion =
+        typeof window !== "undefined" &&
+        typeof window.matchMedia === "function" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const scope = root instanceof Element ? root : document;
+    const targets = Array.from(scope.querySelectorAll(".js-fade-in")).filter(
+        (el) => el && el.dataset && el.dataset.fadeInit !== "1"
+    );
+
+    if (root instanceof Element && root.classList.contains("js-fade-in") && root.dataset.fadeInit !== "1") {
+        targets.unshift(root);
+    }
+
+    if (!targets.length) return;
+
+    const init = (el) => {
+        el.dataset.fadeInit = "1";
+        el.style.opacity = "0";
+        el.style.transform = "translateY(4px)";
+        el.style.transition = "opacity 600ms ease-out, transform 600ms ease-out";
+        el.style.willChange = "opacity, transform";
+    };
+
+    const reveal = (el) => {
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0px)";
+        el.style.willChange = "auto";
+    };
+
+    if (reducedMotion || !("IntersectionObserver" in window)) {
+        targets.forEach((el) => {
+            el.dataset.fadeInit = "1";
+            reveal(el);
+        });
+        return;
+    }
+
+    if (!fadeInIO) {
+        fadeInIO = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    reveal(entry.target);
+                    observer.unobserve(entry.target);
+                });
+            },
+            { root: null, threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+        );
+    }
+
+    targets.forEach((el) => {
+        init(el);
+        fadeInIO.observe(el);
+    });
+};
+
+initFadeInOnScroll();
+
+const startTypingDemo = () => {
+    const nodes = document.querySelectorAll("[data-typing-slugs]");
+    if (!nodes.length) return;
+
+    const prefersReducedMotion =
+        typeof window !== "undefined" &&
+        typeof window.matchMedia === "function" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    nodes.forEach((node) => {
+        const raw = node.getAttribute("data-typing-slugs") || "[]";
+        let slugs;
+        try {
+            slugs = JSON.parse(raw);
+        } catch {
+            slugs = [];
+        }
+        if (!Array.isArray(slugs) || slugs.length === 0) return;
+
+        if (prefersReducedMotion) {
+            node.textContent = slugs[0];
+            return;
+        }
+
+        let index = 0;
+        let text = "";
+        let deleting = false;
+
+        const tick = () => {
+            const full = String(slugs[index] ?? "");
+            if (!full) return;
+
+            text = deleting ? full.slice(0, Math.max(0, text.length - 1)) : full.slice(0, text.length + 1);
+            node.textContent = text;
+
+            let delay = deleting ? 45 : 65;
+            if (!deleting && text === full) {
+                delay = 1100;
+                deleting = true;
+            } else if (deleting && text === "") {
+                deleting = false;
+                index = (index + 1) % slugs.length;
+                delay = 250;
+            }
+
+            window.setTimeout(tick, delay);
+        };
+
+        tick();
+    });
+};
+
+startTypingDemo();
 
 
 const pricingDataEN = [
@@ -331,7 +493,7 @@ const renderPricing = (cadence = "monthly") => {
             const priceLabel = formatMoney(price);
 
                 return `
-            <div class="p-6 rounded-2xl w-full shadow-[0px_4px_26px] shadow-black/6 flex flex-col h-full 
+            <div class="js-fade-in p-6 rounded-2xl w-full shadow-[0px_4px_26px] shadow-black/6 flex flex-col h-full 
                 ${plan.mostPopular
                                 ? "relative bg-gradient-to-b from-indigo-600 to-violet-600 text-white"
                                 : "bg-white/50 dark:bg-gray-800/50 border border-slate-200 dark:border-slate-800"}">
@@ -372,6 +534,8 @@ const renderPricing = (cadence = "monthly") => {
             </div>
         `;
         }).join("");
+
+        initFadeInOnScroll(pricingContainer);
 };
 
 if (pricingContainer) {
@@ -460,7 +624,7 @@ const faqContainer = document.getElementById("faq-container");
 
 if (faqContainer) {
 faqContainer.innerHTML = faqsData.map((faq, index) => `
-      <div class="border-b border-slate-300 dark:border-purple-900 py-4 cursor-pointer w-full" data-index="${index}">
+    <div class="js-fade-in border-b border-slate-300 dark:border-purple-900 py-4 cursor-pointer w-full" data-index="${index}">
         <div class="flex items-center justify-between">
           <h3 class="text-base font-medium">${faq.question}</h3>
           <!-- ChevronDown icon placeholder -->
@@ -471,6 +635,8 @@ faqContainer.innerHTML = faqsData.map((faq, index) => `
         </p>
       </div>
     `).join("");
+
+        initFadeInOnScroll(faqContainer);
 }
 
 // Accordion Logic

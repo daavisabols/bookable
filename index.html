@@ -253,12 +253,16 @@
         </p>
     </div>
     <div id="features"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-6 md:px-16 lg:px-24 xl:px-32">
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 px-6 md:px-16 lg:px-24 xl:px-32">
         <div
             class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
             <h3 class="text-lg font-semibold">Branded booking pages</h3>
             <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Share a beautiful booking link with your brand,
                 services, prices, and availability. Mobile‑friendly and SEO‑optimized.</p>
+            <div class="mt-4 flex items-center justify-center">
+                <img src="./assets/branded-booking-page.webp" alt="Branded booking page" loading="lazy" decoding="async"
+                    class="w-full max-w-xs h-auto object-contain" />
+            </div>
         </div>
         <div
             class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
@@ -301,10 +305,10 @@
             schedules and automate client communication.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
             <!-- Barbers -->
             <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
+                class="js-fade-in p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
                 <img src="./assets/barber.webp" alt="Barber"
                     class="absolute -top-10 -right-6 w-24 h-24 rounded-2xl border-4 border-white dark:border-slate-900 shadow-lg z-2 object-cover" />
                 <h3 class="text-lg font-semibold">Barbers & Salons</h3>
@@ -316,7 +320,7 @@
 
             <!-- Coaches -->
             <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
+                class="js-fade-in p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
                 <img src="./assets/therapist.webp" alt="Therapist"
                     class="absolute -top-10 -right-6 w-24 h-24 rounded-2xl border-4 border-white dark:border-slate-900 shadow-lg z-2 object-cover" />
                 <h3 class="text-lg font-semibold">Coaches & Consultants</h3>
@@ -328,7 +332,7 @@
 
             <!-- Fitness -->
             <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
+                class="js-fade-in p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
                 <img src="./assets/fitness_coach.webp" alt="Fitness Coach"
                     class="absolute -top-10 -right-6 w-24 h-24 rounded-2xl border-4 border-white dark:border-slate-900 shadow-lg z-2 object-cover" />
                 <h3 class="text-lg font-semibold">Gyms & Trainers</h3>
@@ -340,7 +344,7 @@
 
             <!-- Medical & Wellness -->
             <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
+                class="js-fade-in p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
                 <img src="./assets/doctor.webp" alt="Doctor"
                     class="absolute -top-10 -right-6 w-24 h-24 rounded-2xl border-4 border-white dark:border-slate-900 shadow-lg z-2 object-cover" />
                 <h3 class="text-lg font-semibold">Therapists & Wellness</h3>
@@ -352,7 +356,7 @@
 
             <!-- Home Services -->
             <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
+                class="js-fade-in p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
                 <img src="./assets/electrician.webp" alt="Electrician"
                     class="absolute -top-10 -right-6 w-24 h-24 rounded-2xl border-4 border-white dark:border-slate-900 shadow-lg z-2 object-cover" />
                 <h3 class="text-lg font-semibold">Home & Field Services</h3>
@@ -364,7 +368,7 @@
 
             <!-- Creators & Freelancers -->
             <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
+                class="js-fade-in p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
                 <img src="./assets/freelancer.webp" alt="Freelancer"
                     class="absolute -top-10 -right-6 w-24 h-24 rounded-2xl border-4 border-white dark:border-slate-900 shadow-lg z-2 object-cover" />
                 <h3 class="text-lg font-semibold">Freelancers & Creatives</h3>
@@ -520,13 +524,13 @@
                             <a href="#top" class="hover:text-purple-600 transition">Home</a>
                         </li>
                         <li>
-                            <a href="#features" class="hover:text-purple-600 transition">Features</a>
+                            <a href="#feature-section" class="hover:text-purple-600 transition">Features</a>
                         </li>
                         <li>
                             <a href="#who-section" class="hover:text-purple-600 transition">Who is it for?</a>
                         </li>
                         <li>
-                            <a href="#pricing" class="hover:text-purple-600 transition">Pricing</a>
+                            <a href="#pricing-section" class="hover:text-purple-600 transition">Pricing</a>
                         </li>
                         <li>
                             <a href="./privacy.html" class="hover:text-purple-600 transition">Privacy Policy</a>
@@ -583,6 +587,25 @@
       ]
     }
     </script>
+
+    <!-- Cookie notice -->
+    <div id="cookieBanner" class="fixed inset-x-0 bottom-0 z-[60] hidden">
+        <div class="mx-auto max-w-5xl px-4 pb-4">
+            <div
+                class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur p-4">
+                <p class="text-sm text-slate-700 dark:text-slate-200">
+                    We use essential cookies to remember your settings (including currency based on your region).
+                    <a href="./privacy.html" class="underline hover:text-purple-600 transition">Learn more</a>.
+                </p>
+                <div class="flex items-center gap-2">
+                    <button id="cookieAccept"
+                        class="px-4 py-2 rounded-full bg-purple-600 hover:bg-purple-700 transition text-white font-medium text-sm leading-none">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 
