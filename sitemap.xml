@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- English Home Page -->
+  <url>
+    <loc>https://bookable.live/</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/lv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/"/>
+  </url>
+  
+  <!-- Latvian Home Page -->
+  <url>
+    <loc>https://bookable.live/lv/</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/lv/"/>
+  </url>
+  
+  <!-- English Privacy Policy -->
+  <url>
+    <loc>https://bookable.live/privacy.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/privacy-lv.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/privacy.html"/>
+  </url>
+  
+  <!-- Latvian Privacy Policy -->
+  <url>
+    <loc>https://bookable.live/privacy-lv.html</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/privacy-lv.html"/>
+  </url>
+
+</urlset>

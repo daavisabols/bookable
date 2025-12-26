@@ -1,0 +1,13 @@
+{
+  "name": "bookable-landing",
+  "private": true,
+  "scripts": {
+    "dev": "tailwindcss -i ./input.css -o ./output.css --watch",
+    "build": "tailwindcss -i ./input.css -o ./output.css --minify",
+    "serve": "npx serve -l 5173 ."
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
+  }
+}
