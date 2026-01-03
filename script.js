@@ -535,7 +535,7 @@ const renderPricing = (cadence = "monthly") => {
                 </div>
 
                 <div class="mt-auto pt-12">
-                    <a href="https://app.bookable.live/" class="transition w-full py-3 rounded-full font-medium block w-full text-center
+                    <a href="https://app.bookable.live/signup" class="transition w-full py-3 rounded-full font-medium block w-full text-center
                         ${plan.mostPopular
                                 ? "bg-white hover:bg-slate-100 text-slate-800"
                                 : "bg-purple-600 hover:bg-purple-700 text-white"}">
