@@ -151,7 +151,7 @@ const featuresDataEN = [
     {
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M8 2h8l6 6v12a2 2 0 0 1-2 2H8a6 6 0 0 1-6-6V8a6 6 0 0 1 6-6Z'/><path d='M15 2v6h6'/></svg>`,
         title: "Branded booking pages",
-        description: "Share a beautiful booking link with your brand, services, prices, and live availability.",
+        description: "Share a beautiful booking link with your brand, services, prices, and live availability. Our booking pages are highly customizable to match your brand identity.",
         image: "assets/branded-booking-page.webp",
         imageAlt: "Branded booking page",
         typingDemoSlugs: ["barber-john", "emilys-salon", "nails-by-emma", "designer-james", "coach-david"],
@@ -182,7 +182,7 @@ const featuresDataLV = [
     {
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M8 2h8l6 6v12a2 2 0 0 1-2 2H8a6 6 0 0 1-6-6V8a6 6 0 0 1 6-6Z'/><path d='M15 2v6h6'/></svg>`,
         title: "Zīmola rezervāciju lapas",
-        description: "Kopīgo skaistu rezervācijas saiti ar zīmolu, pakalpojumiem, cenām un tiešsaistes pieejamību.",
+        description: "Kopīgo skaistu rezervācijas saiti ar zīmolu, pakalpojumiem, cenām un tiešsaistes pieejamību. Mūsu rezervāciju lapas ir ļoti pielāgojamas, lai atbilstu jūsu zīmola identitātei.",
         image: "assets/branded-booking-page.webp",
         imageAlt: "Zīmola rezervāciju lapa",
         typingDemoSlugs: ["barber-john", "emilys-salon", "nails-by-emma", "designer-james", "coach-david"],
@@ -213,23 +213,57 @@ const featuresData = isLV ? featuresDataLV : featuresDataEN;
 
 const features = document.getElementById("features");
 if (features) {
-    features.innerHTML = featuresData.map((f) => `
-        <div class='js-fade-in p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30 space-y-3'>
-            ${f.icon}
-            <h3 class='text-lg font-semibold'>${f.title}</h3>
+    const [primaryFeature, ...secondaryFeatures] = featuresData;
+
+    const renderFeatureCard = (f, titleClass = "text-xl") => `
+        <div class='js-fade-in p-4 text-left bg-white/70 dark:bg-slate-900/30 space-y-3'>
+            ${f.icon || ""}
+            <h3 class='${titleClass} font-semibold'>${f.title}</h3>
             <p class='text-sm text-slate-600 dark:text-slate-300'>${f.description}</p>
             ${Array.isArray(f.typingDemoSlugs) && f.typingDemoSlugs.length
-                ? `<p class='text-xs text-slate-500 dark:text-slate-400'>
+                ? `<p class='text-md md:text-lg text-slate-500 dark:text-slate-400 mt-6'>
                         <span>app.bookable.live/book/</span><span class='font-semibold' data-typing-slugs='${JSON.stringify(f.typingDemoSlugs).replace(/'/g, "&#39;")}'></span>
                    </p>`
                 : ""}
-            ${f.image
-                ? `<div class='pt-1 flex items-center justify-center'>
-                        <img src='${ASSET_ROOT}/${f.image}' alt='${f.imageAlt || ""}' loading='lazy' decoding='async' class='w-full max-w-xs h-auto object-contain' />
-                   </div>`
+            ${Array.isArray(f.typingDemoSlugs) && f.typingDemoSlugs.length
+                ? `<a href='https://app.bookable.live/signup'
+                        class='cta-button inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-6 h-11 font-semibold leading-none w-max mt-2'>
+                        ${isLV ? "Iegūsti savu tagad" : "Get yours now"}
+                   </a>`
                 : ""}
         </div>
-    `).join("");
+    `;
+
+    const renderPrimary = (f) => {
+        if (!f) return "";
+
+        const left = renderFeatureCard(f, "text-2xl");
+        const right = f.image
+            ? `
+                <div class='js-fade-in bg-white/70 dark:bg-slate-900/30 overflow-hidden'>
+                    <img src='${ASSET_ROOT}/${f.image}' alt='${f.imageAlt || ""}' loading='lazy' decoding='async' class='w-full h-auto object-contain' />
+                </div>
+              `
+            : "";
+
+        return `
+            <div class='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                ${left}
+                ${right}
+            </div>
+        `;
+    };
+
+    const renderSecondary = (items) => {
+        if (!Array.isArray(items) || !items.length) return "";
+        return `
+            <div class='grid grid-cols-1 md:grid-cols-4 gap-2 mt-6'>
+                ${items.map((f) => renderFeatureCard(f, "text-xl")).join("")}
+            </div>
+        `;
+    };
+
+    features.innerHTML = `${renderPrimary(primaryFeature)}${renderSecondary(secondaryFeatures)}`;
 }
 
 // Slight fade-in for cards (Features, Who, Pricing, FAQ)
