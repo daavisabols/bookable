@@ -1,6 +1,7 @@
 // Path & locale helpers
 const isLV = (document.documentElement.getAttribute("lang") || "").toLowerCase() === "lv" || window.location.pathname.includes("/lv/");
-const ASSET_ROOT = window.location.pathname.includes("/lv/") ? ".." : ".";
+// Use root-relative assets so pages under nested routes (e.g. /features/...) load correctly.
+const ASSET_ROOT = "";
 
 // Currency (set by Netlify Edge Function via `currency` cookie)
 const getCookieValue = (name) => {
