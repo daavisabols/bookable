@@ -28,7 +28,8 @@
   <link rel="canonical" href="https://bookable.live/industries/" />
 
   <link rel="stylesheet" href="/output.css" />
-  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
   <style>
     .cta-button {
@@ -42,17 +43,16 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 0;
-      height: 0;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.2);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.6s;
     }
 
     .cta-button:hover::before {
-      width: 300px;
-      height: 300px;
+      transform: translate(-50%, -50%) scale(60);
     }
 
     .cta-button:hover {

@@ -42,7 +42,8 @@
         content="Accept bookings 24/7, sync calendars, manage staff, and automate reminders.">
     <meta name="twitter:image" content="./assets/logo_bright.png">
     <link rel="stylesheet" href="./output.css">
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <style>
         .cta-button {
             position: relative;
@@ -55,17 +56,16 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 0;
-            height: 0;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.6s;
         }
 
         .cta-button:hover::before {
-            width: 300px;
-            height: 300px;
+            transform: translate(-50%, -50%) scale(60);
         }
 
         .cta-button:hover {
@@ -162,8 +162,8 @@
 
         <div class="hidden items-center md:gap-8 lg:gap-12 md:flex">
             <a href="#top" class="hover:text-slate-600 dark:hover:text-slate-300">Home</a>
-            <a href="#feature-section" class="hover:text-slate-600 dark:hover:text-slate-300">Features</a>
-            <a href="#who-section" class="hover:text-slate-600 dark:hover:text-slate-300">Who is it for?</a>
+            <a href="#feature-section" class="hover:text-slate-600 dark:hover:text-slate-300">Benefits</a>
+            <a href="#who-section" class="hover:text-slate-600 dark:hover:text-slate-300">Do I need it?</a>
             <a href="#pricing-section" class="hover:text-slate-600 dark:hover:text-slate-300">Pricing</a>
             <a href="#faq" class="hover:text-slate-600 dark:hover:text-slate-300">FAQ</a>
         </div>
@@ -171,8 +171,8 @@
         <div id="mobileMenu"
             class="fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/60 dark:bg-black/40 backdrop-blur-md md:hidden transition duration-300 -translate-x-full">
             <a href="#top">Home</a>
-            <a href="#feature-section">Features</a>
-            <a href="#who-section">Who is it for?</a>
+            <a href="#feature-section">Benefits</a>
+            <a href="#who-section">Do I need it?</a>
             <a href="#pricing-section">Pricing</a>
             <a href="#faq">FAQ</a>
             <a href="https://bookable.live/signup" class="bg-purple-600 p-3 px-6 text-white rounded-full">Sign up for
@@ -222,17 +222,16 @@
     <!-- Hero Section -->
     <div id="top"
         class="flex flex-col items-center justify-center text-center px-4 bg-[url('./assets/light-hero-gradient.svg')] dark:bg-[url('./assets/dark-hero-gradient.svg')] bg-no-repeat bg-[length:100%_100%] bg-center pt-12 pb-12">
-        <h1 class="mt-8 pt-12 text-5xl/15 md:text-[56px]/16 font-semibold max-w-4xl">
-            Online booking and appointment scheduling for modern businesses
+        <h1 class="mt-8 pt-12 text-3xl/12 md:text-[56px]/16 font-semibold max-w-4xl">
+            Reduce no-shows and<br/><span class="font-bold text-5xl/14 md:text-[64px]/16">save 3-8 hours a week</span><br/>with online booking
         </h1>
         <p class="text-base dark:text-slate-300 max-w-2xl mt-4">
-            Let clients book 24/7, sync with Google and Microsoft calendars, assign staff and venues and cut no‑shows
-            with automated email and WhatsApp reminders.
+            Ideal for solo and multi-location service businesses who struggle with cancelations and manual scheduling
         </p>
         <div class="flex flex-col items-center gap-2 mt-8">
             <a href="https://app.bookable.live/signup"
-                class="cta-button inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-10 h-14 md:h-12 font-semibold tracking-tight leading-none text-lg">
-                Sign up for free
+                class="cta-button inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-4 md:px-10 h-14 md:h-12 font-semibold tracking-tight leading-none text-lg">
+                Create your booking page in 3 minutes
             </a>
             <small class="block mx-auto text-slate-400">*no credit card required</small>
             <!-- <a href="#demo" class="inline-flex items-center justify-center gap-2 border border-purple-900 transition text-slate-600 dark:text-white rounded-full px-8 h-12 leading-none">
@@ -271,7 +270,7 @@
     <div id="feature-section" class="text-center pt-4">
         <p
             class="text-center font-medium text-indigo-600 dark:text-indigo-400 mt-28 px-10 py-2 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 w-max mx-auto">
-            Features</p>
+            Benefits</p>
         <h2 class="text-3xl font-semibold text-center mx-auto mt-4 px-2">Everything you need to take bookings online
         </h2>
         <p class="mt-2 mb-4 text-slate-500 dark:text-slate-300 max-w-2xl mx-auto px-2">
@@ -298,8 +297,8 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
             <div
                 class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-                <h3 class="text-lg font-semibold">Calendar sync</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Two‑way sync with Google Calendar and Microsoft
+                <h3 class="text-lg font-semibold">Never double-book again</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">All calendars update automatically - two‑way sync with Google Calendar and Microsoft
                     Outlook to prevent double‑bookings and keep your team up to date.</p>
             </div>
             <div
@@ -310,8 +309,8 @@
             </div>
             <div
                 class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-                <h3 class="text-lg font-semibold">Automated reminders</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Cut no‑shows with scheduled email and WhatsApp
+                <h3 class="text-lg font-semibold">Cut no-shows and save hours in follow-ups</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Scheduled email, SMS and WhatsApp
                     reminders. Smart timing and templates included.</p>
             </div>
             <div
@@ -327,18 +326,20 @@
     <div id="who-section" class="text-center pt-4 mt-20 px-6 md:px-16 lg:px-24 xl:px-32">
         <p
             class="text-center font-medium text-indigo-600 dark:text-indigo-400 px-10 py-2 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 w-max mx-auto mt-28">
-            Who is it for?
+            Do I need it?
         </p>
 
         <h2 class="text-3xl font-semibold text-center mx-auto mt-4 px-2">
-            Built for all service-based businesses
+            If booking costs you time and money, this is for you
         </h2>
-        <p class="mt-2 mb-4 text-slate-500 dark:text-slate-300 max-w-2xl mx-auto px-2">
-            Whether you're a solo professional or a growing team, Bookable.live helps you take bookings, manage
-            schedules and automate client communication.
+        <p class="mt-2 mb-4 text-slate-500 dark:text-slate-300 max-w-4xl mx-auto px-2">
+            Bookable is designed for professionals where no-shows, reschedules, and admin are real problems
+            <br /><br />          
+            Whether you're a solo practitioner or growing a team, Bookable.live will handle your bookings, manage
+            schedules, and automate client communication — so you can focus on what matters most: your work and growth.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-24">
             <!-- Barbers -->
             <div
                 class="js-fade-in p-6 rounded-2xl bg-white/70 dark:bg-slate-900/30 text-left relative">
@@ -347,7 +348,7 @@
                 <h3 class="text-lg font-semibold">Barbers & Salons</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
                     Allow clients to book haircuts, colouring, barber services or treatments online. Reduce no-shows
-                    with automated reminders.
+                    with automated reminders and manage staff schedules with ease.
                 </p>
             </div>
 
@@ -358,8 +359,8 @@
                     class="absolute -top-10 left-6 md:left-auto md:-right-6 w-24 h-24 rounded-2xl border-4 border-white dark:border-slate-900 shadow-lg z-2 object-cover" />
                 <h3 class="text-lg font-semibold">Coaches & Consultants</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                    Let clients book sessions, discovery calls or coaching packages. Automatically sync sessions with
-                    your calendar.
+                    Perfect for life coaches, business consultants, tutors, and mentors. Let clients book sessions
+                    online and send automated reminders. Make your brand stand out with a highly customizable booking page.
                 </p>
             </div>
 
@@ -371,7 +372,7 @@
                 <h3 class="text-lg font-semibold">Gyms & Trainers</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
                     Take class bookings, schedule personal training, manage venues, and keep sessions full with
-                    reminders.
+                    reminders in SMS and WhatsApp - where your clients will actually see them.
                 </p>
             </div>
 
@@ -383,7 +384,7 @@
                 <h3 class="text-lg font-semibold">Therapists & Wellness</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
                     Support bookings for massage, physiotherapy, therapy, beauty, and wellness treatments — with intake
-                    notes and reminders.
+                    notes and pricing. Reduce questions with clear information on the booking page.
                 </p>
             </div>
 
@@ -395,7 +396,7 @@
                 <h3 class="text-lg font-semibold">Home & Field Services</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
                     Perfect for cleaners, electricians, plumbers or mobile professionals. Let customers pick time slots
-                    for visits.
+                    for visits. Get feedback after the job with automated follow-up messages.
                 </p>
             </div>
 
@@ -407,7 +408,7 @@
                 <h3 class="text-lg font-semibold">Freelancers & Creatives</h3>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
                     Accept bookings for sessions, shoots, meetings or workshops — all with an easy, branded booking
-                    page.
+                    page. Choose how to speak to clients with custom email, SMS and WhatsApp reminders.
                 </p>
             </div>
         </div>
@@ -557,10 +558,10 @@
                             <a href="#top" class="hover:text-purple-600 transition">Home</a>
                         </li>
                         <li>
-                            <a href="#feature-section" class="hover:text-purple-600 transition">Features</a>
+                            <a href="#feature-section" class="hover:text-purple-600 transition">Benefits</a>
                         </li>
                         <li>
-                            <a href="#who-section" class="hover:text-purple-600 transition">Who is it for?</a>
+                            <a href="#who-section" class="hover:text-purple-600 transition">Do I need it?</a>
                         </li>
                         <li>
                             <a href="#pricing-section" class="hover:text-purple-600 transition">Pricing</a>

@@ -40,7 +40,8 @@
   <meta name="twitter:image" content="/assets/logo_bright.png" />
 
   <link rel="stylesheet" href="/output.css" />
-  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
   <style>
     .cta-button {
@@ -89,7 +90,8 @@
     class="flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur">
     <a href="/">
       <img id="logo" src="/assets/logo.png" alt="Bookable.live logo" class="h-12 w-auto shrink-0">
-    </a>
+      .cta-button::before { width: 16px; height: 16px; transform: translate(-50%, -50%) scale(0); transition: transform 0.6s; }
+      .cta-button:hover::before { transform: translate(-50%, -50%) scale(60); }
 
     <div class="hidden items-center md:gap-8 lg:gap-12 md:flex">
       <a href="/" class="hover:text-slate-600 dark:hover:text-slate-300">Home</a>
