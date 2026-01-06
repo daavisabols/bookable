@@ -76,6 +76,58 @@
         .cta-button:active {
             transform: translateY(0) scale(0.98);
         }
+
+        .how-it-works-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .how-it-works-step {
+            display: grid;
+            grid-template-columns: 24px 1fr;
+            gap: 1rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .how-it-works-dot {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .how-it-works-line {
+            position: absolute;
+            top: 6px;
+            bottom: 6px;
+            left: 12px;
+            width: 1px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @media (min-width: 768px) {
+            .how-it-works-steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .how-it-works-step {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .how-it-works-line {
+                top: 6px;
+                bottom: auto;
+                left: 0;
+                right: 0;
+                width: auto;
+                height: 1px;
+            }
+        }
     </style>
 
     <!-- Structured Data (Schema.org JSON-LD) -->
@@ -266,6 +318,52 @@
         </div>
     </div>
 
+    <!-- How It Works Section -->
+    <div id="how-it-works" class="text-center pt-4 mt-20 px-6 md:px-16 lg:px-24 xl:px-32">
+        <p
+            class="text-center font-medium text-indigo-600 dark:text-indigo-400 px-10 py-2 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 w-max mx-auto">
+            How it works</p>
+        <h2 class="text-3xl font-semibold text-center mx-auto mt-4 px-2">Go live in three simple steps</h2>
+        <p class="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl mx-auto px-2">
+            Set up your booking page, share your link, and let Bookable.live handle scheduling, reminders, and calendar
+            sync.
+        </p>
+
+        <!-- Timeline + cards -->
+        <div class="how-it-works-steps mt-12 max-w-5xl mx-auto">
+            <div class="how-it-works-line bg-slate-200 dark:bg-slate-700"></div>
+
+            <div class="how-it-works-step">
+                <div class="how-it-works-dot relative z-10 w-3 h-3 rounded-full bg-purple-600 ring-4 ring-white dark:ring-black"></div>
+                <div class="mt-0 md:mt-6 p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30 w-full">
+                    <p class="text-sm font-semibold text-slate-500 dark:text-slate-300">Step 1</p>
+                    <h3 class="text-lg font-semibold mt-1">Create your booking page</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Add your services, prices, staff, and availability. Make it match your brand.</p>
+                </div>
+            </div>
+
+            <div class="how-it-works-step">
+                <div class="how-it-works-dot relative z-10 w-3 h-3 rounded-full bg-purple-600 ring-4 ring-white dark:ring-black"></div>
+                <div class="mt-0 md:mt-6 p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30 w-full">
+                    <p class="text-sm font-semibold text-slate-500 dark:text-slate-300">Step 2</p>
+                    <h3 class="text-lg font-semibold mt-1">Share your link</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Put it on your website, Google Business Profile, Instagram bio, or send it to clients.</p>
+                    <img src="./assets/scan-to-book-me.webp" alt="Scan to book" loading="lazy" decoding="async"
+                        class="mt-4 w-full max-w-xs mx-auto h-auto rounded-2xl" />
+                </div>
+            </div>
+
+            <div class="how-it-works-step">
+                <div class="how-it-works-dot relative z-10 w-3 h-3 rounded-full bg-purple-600 ring-4 ring-white dark:ring-black"></div>
+                <div class="mt-0 md:mt-6 p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30 w-full">
+                    <p class="text-sm font-semibold text-slate-500 dark:text-slate-300">Step 3</p>
+                    <h3 class="text-lg font-semibold mt-1">Stay in sync & reduce no‑shows</h3>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Two‑way calendar sync prevents double‑bookings, and automated reminders keep clients on time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Features Section -->
     <div id="feature-section" class="text-center pt-4">
         <p
@@ -414,7 +512,6 @@
         </div>
     </div>
 
-    <!-- Pricing Section -->
     <div id="pricing-section" class="relative pt-4">
         <img id="colorSplash" class="absolute -mt-20 md:-mt-100 md:left-20 pointer-events-none"
             src="./assets/color-splash-light.svg" alt="color-splash" width="1000" height="1000">
@@ -602,7 +699,7 @@
             </div>
         </div>
         <p class="pt-4 text-center pb-5">
-            Copyright 2026 © <a href="https://bookable.live">Bookable.live</a>. All Rights Reserved.
+            Copyright 2026 © <a href="https://bookable.live">Bookable.live</a>. All Rights Reserved. SIA ClearTech.
         </p>
     </footer>
 
