@@ -23,6 +23,60 @@ const COOKIE_NOTICE_KEY = "cookieNoticeAccepted_v1";
 const cookieBanner = document.getElementById("cookieBanner");
 const cookieAccept = document.getElementById("cookieAccept");
 
+// Meta Pixel (consent-gated via the existing cookie banner)
+const getMetaPixelId = () => {
+    try {
+        const meta = document.querySelector('meta[name="meta-pixel-id"]');
+        const id = (meta && meta.getAttribute("content")) ? String(meta.getAttribute("content")).trim() : "";
+        return id || null;
+    } catch {
+        return null;
+    }
+};
+
+const META_PIXEL_ID = getMetaPixelId();
+let metaPixelLoaded = false;
+
+const loadMetaPixel = () => {
+    if (metaPixelLoaded) return;
+    if (!META_PIXEL_ID) return;
+
+    metaPixelLoaded = true;
+
+    // Meta Pixel base code (injected only after consent)
+    !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = true;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+
+    try {
+        window.fbq("init", META_PIXEL_ID);
+        window.fbq("track", "PageView");
+    } catch {
+        // ignore
+    }
+};
+
+const hasCookieConsent = () => {
+    try {
+        return window.localStorage.getItem(COOKIE_NOTICE_KEY) === "1";
+    } catch {
+        return false;
+    }
+};
+
 const showCookieBannerIfNeeded = () => {
     if (!cookieBanner) return;
     try {
@@ -42,10 +96,39 @@ if (cookieAccept && cookieBanner) {
             // ignore
         }
         cookieBanner.classList.add("hidden");
+
+        // User consented to cookies; enable Meta Pixel if configured.
+        loadMetaPixel();
     });
 }
 
 showCookieBannerIfNeeded();
+
+// If consent already granted from a previous visit, load Meta Pixel immediately (when configured).
+if (hasCookieConsent()) {
+    loadMetaPixel();
+}
+
+// Track signup CTA clicks as a Lead (only fires if Meta Pixel is loaded)
+document.addEventListener("click", (e) => {
+    const link = e.target && e.target.closest ? e.target.closest("a") : null;
+    if (!link) return;
+
+    const href = String(link.getAttribute("href") || "");
+    if (!href) return;
+
+    // Track only signup clicks that leave the landing page.
+    if (!/(^|\/)signup(\b|\?|#)/i.test(href)) return;
+    if (!/bookable\.live/i.test(href)) return;
+
+    if (typeof window.fbq === "function") {
+        try {
+            window.fbq("track", "Lead");
+        } catch {
+            // ignore
+        }
+    }
+});
 
 // Fixed prices per currency (edit these exact numbers to match your billing)
 // Base (EUR) comes from pricingData below; overrides only apply when currency != EUR.
