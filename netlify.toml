@@ -5,3 +5,15 @@
 [[edge_functions]]
   function = "geo-currency"
   path = "/*"
+
+[[redirects]]
+  from = "/signup"
+  to = "https://app.bookable.live/signup"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lv/signup"
+  to = "https://app.bookable.live/signup"
+  status = 301
+  force = true
