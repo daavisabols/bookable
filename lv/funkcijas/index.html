@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDLKN6TRJ2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-HDLKN6TRJ2');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({ 'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WXRTPXCM');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>Funkcijas — Bookable.live</title>
+  <meta name="description" content="Iepazīsti Bookable.live funkcijas: tiešsaistes rezervācijas, automātiski atgādinājumi, kalendāru sinhronizācija, personāla pārvaldība un vēl vairāk." />
+  <link rel="canonical" href="https://bookable.live/lv/funkcijas/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Funkcijas — Bookable.live" />
+  <meta property="og:description" content="Tiešsaistes rezervācijas, atgādinājumi, kalendāru sinhronizācija un komandas rīki." />
+  <meta property="og:url" content="https://bookable.live/lv/funkcijas/" />
+  <meta property="og:image" content="/assets/logo_bright.png" />
+
+  <link rel="stylesheet" href="/output.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+  <style>
+    .cta-button {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.6s;
+    }
+
+    .cta-button:hover::before {
+      transform: translate(-50%, -50%) scale(60);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4), 0 8px 10px -6px rgba(139, 92, 246, 0.3);
+    }
+
+    .cta-button:active {
+      transform: translateY(0) scale(0.98);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXRTPXCM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav id="navbar"
+    class="flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur">
+    <a href="/lv/">
+      <img id="logo" src="/assets/logo.png" alt="Bookable.live logo" class="h-12 w-auto shrink-0">
+    </a>
+
+    <div class="hidden items-center md:gap-8 lg:gap-12 md:flex">
+      <a href="/lv/" class="hover:text-slate-600 dark:hover:text-slate-300">Sākums</a>
+      <a href="/lv/funkcijas/" class="hover:text-slate-600 dark:hover:text-slate-300">Funkcijas</a>
+      <a href="/integrations/" class="hover:text-slate-600 dark:hover:text-slate-300">Integrācijas</a>
+      <a href="/lv/nozares/" class="hover:text-slate-600 dark:hover:text-slate-300">Nozares</a>
+      <a href="/lv/cenas/" class="hover:text-slate-600 dark:hover:text-slate-300">Cenas</a>
+    </div>
+
+    <div id="mobileMenu"
+      class="fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/60 dark:bg-black/40 backdrop-blur-md md:hidden transition duration-300 -translate-x-full">
+      <a href="/lv/">Sākums</a>
+      <a href="/lv/funkcijas/">Funkcijas</a>
+      <a href="/integrations/">Integrācijas</a>
+      <a href="/lv/nozares/">Nozares</a>
+      <a href="/lv/cenas/">Cenas</a>
+      <a href="https://app.bookable.live/signup" class="bg-purple-600 p-3 px-6 text-white rounded-full">Reģistrēties bez maksas</a>
+      <button id="closeMenu"
+        class="aspect-square size-10 p-1 items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-x-icon lucide-x">
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-4 md:gap-6">
+      <a href="/features/"
+        class="flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out text-sm font-medium">
+        EN
+      </a>
+      <button id="themeToggle"
+        class="flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-sun-icon lucide-sun">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+        </svg>
+      </button>
+
+      <a href="https://app.bookable.live/signup"
+        class="cta-button hidden md:inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-6 h-11 font-semibold leading-none">Sākt bez maksas</a>
+      <button id="openMenu" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-menu-icon lucide-menu">
+          <path d="M4 12h16" />
+          <path d="M4 18h16" />
+          <path d="M4 6h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="pt-24">
+    <div class="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 xl:px-32">
+      <h1 class="text-3xl md:text-5xl font-semibold tracking-tight mt-10">Funkcijas</h1>
+      <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl">Viss, kas nepieciešams, lai pieņemtu rezervācijas 24/7, sinhronizētu kalendāru un samazinātu neierašanos ar automatizētiem atgādinājumiem.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+        <a href="/features/online-booking/"
+          class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 transition hover:text-purple-600">
+          <h2 class="text-xl font-semibold">Tiešsaistes rezervācijas</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Ļauj klientiem rezervēt jebkurā laikā ar vienkāršu, zīmola rezervāciju lapu.</p>
+        </a>
+        <a href="/features/automatic-reminders/"
+          class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 transition hover:text-purple-600">
+          <h2 class="text-xl font-semibold">Automātiski atgādinājumi</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Sūti atgādinājumus pa e-pastu un WhatsApp, lai samazinātu neierašanos.</p>
+        </a>
+        <a href="/features/calendar-sync/"
+          class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 transition hover:text-purple-600">
+          <h2 class="text-xl font-semibold">Kalendāru sinhronizācija</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Divvirzienu sinhronizācija ar Google Calendar un Microsoft Outlook.</p>
+        </a>
+        <a href="/features/staff-management/"
+          class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 transition hover:text-purple-600">
+          <h2 class="text-xl font-semibold">Personāla pārvaldība</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Iestati grafikus katram darbiniekam un ļauj klientiem izvēlēties, pie kā rezervēt.</p>
+        </a>
+      </div>
+
+      <div class="flex flex-col items-center text-center justify-center mt-16">
+        <h2 class="text-3xl font-semibold">Izmēģini Bookable.live</h2>
+        <p class="text-slate-600 dark:text-slate-200 max-w-xl mx-auto mt-2">Izveido savu rezervāciju lapu un sāc pieņemt rezervācijas dažu minūšu laikā.</p>
+        <div class="flex items-center gap-4 mt-8">
+          <a href="https://app.bookable.live/signup"
+            class="cta-button inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-10 h-14 md:h-12 font-semibold tracking-tight leading-none">Sākt bez maksas</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="relative px-6 md:px-16 lg:px-24 xl:px-32 mt-24 w-full dark:text-slate-50">
+    <img id="landing-text"
+      class="absolute max-w-4xl w-full h-auto -mt-30 max-md:px-4 right-0 md:right-16 lg:right-24 xl:right-32 top-0 pointer-events-none"
+      src="/assets/bookable-text-light.svg" alt="Bookable.live" width="930" height="340" fetchPriority="high" />
+    <div class="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-200 dark:border-slate-700 pb-6">
+      <div class="md:max-w-114">
+        <img id="logo-footer" class="h-9 md:h-9.5 w-auto shrink-0 -ml-4" src="/assets/logo.png" alt="Bookable.live logo"
+          width="140" height="40" fetchPriority="high" />
+        <p class="mt-6">Bookable.live palīdz pakalpojumu uzņēmumiem pieņemt rezervācijas 24/7, sinhronizēt kalendārus un sūtīt automatizētus atgādinājumus.</p>
+      </div>
+      <div class="flex-1 flex items-start md:justify-end gap-20">
+        <div>
+          <h2 class="font-semibold mb-5">Uzņēmums</h2>
+          <ul class="space-y-2">
+            <li><a href="/lv/" class="hover:text-purple-600 transition">Sākums</a></li>
+            <li><a href="/lv/funkcijas/" class="hover:text-purple-600 transition">Funkcijas</a></li>
+            <li><a href="/integrations/" class="hover:text-purple-600 transition">Integrācijas</a></li>
+            <li><a href="/lv/nozares/" class="hover:text-purple-600 transition">Nozares</a></li>
+            <li><a href="/lv/cenas/" class="hover:text-purple-600 transition">Cenas</a></li>
+            <li><a href="/privacy-lv.html" class="hover:text-purple-600 transition">Privātuma politika</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-semibold mb-5">Sazināties</h2>
+          <div class="space-y-2">
+            <p><a href="mailto:info@bookable.live" class="hover:text-purple-600 transition">info@bookable.live</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="pt-4 text-center pb-5">Autortiesības 2026 © <a href="https://bookable.live">Bookable.live</a>. Visas tiesības aizsargātas. SIA ClearTech.</p>
+  </footer>
+
+  <div id="cookieBanner" class="fixed inset-x-0 bottom-0 z-[60] hidden">
+    <div class="mx-auto max-w-5xl px-4 pb-4">
+      <div
+        class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur p-4">
+        <p class="text-sm text-slate-700 dark:text-slate-200">Mēs izmantojam būtiskus sīkfailus, lai atcerētos jūsu iestatījumus.
+          <a href="/privacy-lv.html" class="underline hover:text-purple-600 transition">Uzzināt vairāk</a>.
+        </p>
+        <div class="flex items-center gap-2">
+          <button id="cookieAccept"
+            class="px-4 py-2 rounded-full bg-purple-600 hover:bg-purple-700 transition text-white font-medium text-sm leading-none">Labi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
