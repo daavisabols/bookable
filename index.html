@@ -186,7 +186,10 @@
 
 <body>
     <script>
-        fbq('track', 'Lead');
+        // Meta Pixel is consent-gated and may not be loaded yet.
+        if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Lead');
+        }
     </script>
 
     <!-- Google Tag Manager (noscript) -->
