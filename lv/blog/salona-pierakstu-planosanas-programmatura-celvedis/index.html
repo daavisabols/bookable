@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDLKN6TRJ2"></script>
+  <script src="/analytics.js"></script>
+
+  <title>Salona pierakstu plānošanas programmatūra: ko meklēt (un no kā izvairīties) — Bookable.live</title>
+  <meta name="description"
+    content="Pircēja ceļvedis salona pierakstu plānošanas programmatūrai: tiešsaistes rezervācijas, darbinieku grafiki, kalendāru sinhronizācija, atgādinājumi un no kā izvairīties pirms migrācijas." />
+  <link rel="canonical" href="https://bookable.live/lv/blog/salona-pierakstu-planosanas-programmatura-celvedis/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Salona pierakstu plānošanas programmatūra: ko meklēt (un no kā izvairīties)" />
+  <meta property="og:description" content="Praktisks kontrolsaraksts, lai salīdzinātu pierakstu plānošanas rīkus saloniem." />
+  <meta property="og:url" content="https://bookable.live/lv/blog/salona-pierakstu-planosanas-programmatura-celvedis/" />
+  <meta property="og:image" content="/assets/logo_bright.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Salona pierakstu plānošanas programmatūra: ko meklēt" />
+  <meta name="twitter:description" content="Funkciju kontrolsaraksts, lai salīdzinātu rīkus un izvairītos no sāpīgas migrācijas." />
+  <meta name="twitter:image" content="/assets/logo_bright.png" />
+
+  <link rel="stylesheet" href="/output.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Salona pierakstu plānošanas programmatūra: ko meklēt (un no kā izvairīties)",
+      "description": "Pircēja ceļvedis salona pierakstu plānošanas programmatūrai: rezervācijas, darbinieki, kalendāri un atgādinājumi.",
+      "datePublished": "2026-01-16",
+      "dateModified": "2026-01-16",
+      "inLanguage": "lv",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://bookable.live/lv/blog/salona-pierakstu-planosanas-programmatura-celvedis/" },
+      "author": { "@type": "Organization", "name": "Bookable.live" },
+      "publisher": { "@type": "Organization", "name": "Bookable.live", "url": "https://bookable.live/" }
+    }
+  </script>
+
+  <style>
+    .cta-button { position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .cta-button::before { content: ''; position: absolute; top: 50%; left: 50%; width: 16px; height: 16px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); transform: translate(-50%, -50%) scale(0); transition: transform 0.6s; }
+    .cta-button:hover::before { transform: translate(-50%, -50%) scale(60); }
+    .cta-button:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4), 0 8px 10px -6px rgba(139, 92, 246, 0.3); }
+    .cta-button:active { transform: translateY(0) scale(0.98); }
+  </style>
+</head>
+
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXRTPXCM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
+  <nav id="navbar"
+    class="flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur">
+    <a href="/lv/"><img id="logo" src="/assets/logo.png" alt="Bookable.live logo" class="h-12 w-auto shrink-0"></a>
+
+    <div class="hidden items-center md:gap-8 lg:gap-12 md:flex">
+      <a href="/lv/" class="hover:text-slate-600 dark:hover:text-slate-300">Sākums</a>
+      <a href="/lv/funkcijas/" class="hover:text-slate-600 dark:hover:text-slate-300">Funkcijas</a>
+      <a href="/integrations/" class="hover:text-slate-600 dark:hover:text-slate-300">Integrācijas</a>
+      <a href="/lv/nozares/" class="hover:text-slate-600 dark:hover:text-slate-300">Nozares</a>
+      <a href="/lv/cenas/" class="hover:text-slate-600 dark:hover:text-slate-300">Cenas</a>
+      <a href="/lv/blog/" class="hover:text-slate-600 dark:hover:text-slate-300">Emuārs</a>
+    </div>
+
+    <div id="mobileMenu"
+      class="fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/60 dark:bg-black/40 backdrop-blur-md md:hidden transition duration-300 -translate-x-full">
+      <a href="/lv/">Sākums</a>
+      <a href="/lv/funkcijas/">Funkcijas</a>
+      <a href="/integrations/">Integrācijas</a>
+      <a href="/lv/nozares/">Nozares</a>
+      <a href="/lv/cenas/">Cenas</a>
+      <a href="/lv/blog/">Emuārs</a>
+      <a href="https://app.bookable.live/signup" class="bg-purple-600 p-3 px-6 text-white rounded-full">Reģistrēties bez maksas</a>
+      <button id="closeMenu"
+        class="aspect-square size-10 p-1 items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-x-icon lucide-x">
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-4 md:gap-6">
+      <a href="/blog/salon-scheduling-software-guide/"
+        class="flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out text-sm font-medium">EN</a>
+      <button id="themeToggle"
+        class="flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-sun-icon lucide-sun">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+        </svg>
+      </button>
+
+      <a href="https://app.bookable.live/signup"
+        class="cta-button hidden md:inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-6 h-11 font-semibold leading-none">Sākt bez maksas</a>
+      <button id="openMenu" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-menu-icon lucide-menu">
+          <path d="M4 12h16" />
+          <path d="M4 18h16" />
+          <path d="M4 6h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="relative pt-28 px-6 md:px-16 lg:px-24 xl:px-32">
+    <article class="max-w-3xl mx-auto">
+      <div class="text-sm text-slate-500 dark:text-slate-400">
+        <a class="hover:text-purple-600 transition" href="/lv/blog/">Emuārs</a>
+        <span class="mx-2">/</span>
+        <span>2026. gada 16. janv. · 9 min lasīšana</span>
+      </div>
+
+      <h1 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">Salona pierakstu plānošanas programmatūra: ko meklēt (un no kā izvairīties)</h1>
+      <p class="mt-4 text-lg text-slate-600 dark:text-slate-200">Pierakstu sistēmas izvēle ir liels lēmums — un migrācija vēlāk ir sāpīga. Izmanto šo kontrolsarakstu, lai izvēlētos rīku, kas atbilst tam, kā saloni patiesībā strādā: darbinieki, pakalpojumi, kalendāri un atgādinājumi.</p>
+
+      <div class="mt-8 space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
+        <h2 class="text-2xl font-semibold">Obligātās funkcijas saloniem</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Tiešsaistes rezervācijas</strong> ar skaidru, mobilajām ierīcēm draudzīgu plūsmu</li>
+          <li><strong>Darbinieku grafiki</strong> (pieejamība katram komandas dalībniekam)</li>
+          <li><strong>Pakalpojumu ilgumi</strong>, kas atbilst realitātei</li>
+          <li><strong>Automātiski atgādinājumi</strong>, lai samazinātu neierašanos</li>
+          <li><strong>Kalendāru sinhronizācija</strong>, lai novērstu dubultos pierakstus</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold">Ko meklēt rezervācijas plūsmā</h2>
+        <p>Rezervācijai jābūt ātrai: izvēlēties pakalpojumu → izvēlēties darbinieku (pēc izvēles) → izvēlēties laiku → apstiprināt. Katrs liekais solis samazina konversiju. Pārliecinies, ka rīks atbalsta tūlītējus apstiprinājumus un vienkāršu pārplānošanu.</p>
+
+        <h2 class="text-2xl font-semibold">Komanda un pieejamības sarežģītība</h2>
+        <p>Saloniem reti ir “viens grafiks”. Parasti vajag atšķirīgu darba laiku katram darbiniekam, brīvdienas un buferus uzkopšanai. Izvēlies programmatūru, kas to visu sakārto bez manuāliem apkārtceļiem.</p>
+
+        <h2 class="text-2xl font-semibold">Izvairies no šiem “sarkanajiem karogiem”</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Nav kalendāru sinhronizācijas (vai tā ir tikai vienvirziena)</li>
+          <li>Atgādinājumi ir manuāli vai nestrādā konsekventi</li>
+          <li>Grūti eksportēt klientus/pierakstus (vendor lock‑in)</li>
+          <li>Rezervācijas lapa ir lēna vai nav ērta mobilajā</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold">Vienkāršs vērtēšanas “scorecard”</h2>
+        <p>Salīdzinot rīkus, novērtē katru kategoriju no 1 līdz 5:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Konversija (ātrums + skaidrība)</li>
+          <li>Grafiku elastība (darbinieki, pakalpojumi, buferi)</li>
+          <li>Atgādinājumi + apstiprinājumi</li>
+          <li>Kalendāru sinhronizācijas uzticamība</li>
+          <li>Atskaites un klientu pārvaldība</li>
+        </ul>
+
+        <div class="mt-10 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 p-6">
+          <h3 class="text-xl font-semibold">Saistītās funkcijas</h3>
+          <p class="mt-2">Lai izveidotu tīru salona darba plūsmu, sāc ar šīm funkcijām:</p>
+          <div class="mt-4 flex flex-col gap-2">
+            <a class="hover:text-purple-600 transition" href="/features/online-booking/">Tiešsaistes rezervācijas</a>
+            <a class="hover:text-purple-600 transition" href="/features/staff-management/">Darbinieku pārvaldība</a>
+            <a class="hover:text-purple-600 transition" href="/features/automatic-reminders/">Automātiski atgādinājumi</a>
+            <a class="hover:text-purple-600 transition" href="/features/calendar-sync/">Kalendāru sinhronizācija</a>
+          </div>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="https://app.bookable.live/signup"
+              class="cta-button inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-8 h-12 font-semibold leading-none">Sākt bez maksas</a>
+            <a href="/lv/cenas/"
+              class="inline-flex items-center justify-center rounded-full px-8 h-12 font-semibold leading-none border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 hover:text-purple-600 transition">Skatīt cenas</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="relative px-6 md:px-16 lg:px-24 xl:px-32 mt-24 w-full dark:text-slate-50">
+    <img id="landing-text"
+      class="absolute max-w-4xl w-full h-auto -mt-30 max-md:px-4 right-0 md:right-16 lg:right-24 xl:right-32 top-0 pointer-events-none"
+      src="/assets/bookable-text-light.svg" alt="Bookable.live" width="930" height="340" fetchPriority="high" />
+    <div class="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-200 dark:border-slate-700 pb-6">
+      <div class="md:max-w-114">
+        <img id="logo-footer" class="h-9 md:h-9.5 w-auto shrink-0 -ml-4" src="/assets/logo.png" alt="Bookable.live logo"
+          width="140" height="40" fetchPriority="high" />
+        <p class="mt-6">Bookable.live palīdz pakalpojumu uzņēmumiem pieņemt rezervācijas 24/7, sinhronizēt kalendārus un sūtīt automatizētus atgādinājumus.</p>
+      </div>
+      <div class="flex-1 flex items-start md:justify-end gap-20">
+        <div>
+          <h2 class="font-semibold mb-5">Uzņēmums</h2>
+          <ul class="space-y-2">
+            <li><a href="/lv/" class="hover:text-purple-600 transition">Sākums</a></li>
+            <li><a href="/lv/funkcijas/" class="hover:text-purple-600 transition">Funkcijas</a></li>
+            <li><a href="/integrations/" class="hover:text-purple-600 transition">Integrācijas</a></li>
+            <li><a href="/lv/nozares/" class="hover:text-purple-600 transition">Nozares</a></li>
+            <li><a href="/lv/cenas/" class="hover:text-purple-600 transition">Cenas</a></li>
+            <li><a href="/lv/blog/" class="hover:text-purple-600 transition">Emuārs</a></li>
+            <li><a href="/privacy-lv.html" class="hover:text-purple-600 transition">Privātuma politika</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-semibold mb-5">Sazināties</h2>
+          <div class="space-y-2">
+            <p><a href="mailto:info@bookable.live" class="hover:text-purple-600 transition">info@bookable.live</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="pt-4 text-center pb-5">Autortiesības 2026 © <a href="https://bookable.live">Bookable.live</a>. Visas tiesības aizsargātas. SIA ClearTech.</p>
+  </footer>
+
+  <div id="cookieBanner" class="fixed inset-x-0 bottom-0 z-[60] hidden">
+    <div class="mx-auto max-w-5xl px-4 pb-4">
+      <div
+        class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur p-4">
+        <p class="text-sm text-slate-700 dark:text-slate-200">Mēs izmantojam būtiskus sīkfailus, lai atcerētos jūsu iestatījumus.
+          <a href="/privacy-lv.html" class="underline hover:text-purple-600 transition">Uzzināt vairāk</a>.
+        </p>
+        <div class="flex items-center gap-2">
+          <button id="cookieAccept"
+            class="px-4 py-2 rounded-full bg-purple-600 hover:bg-purple-700 transition text-white font-medium text-sm leading-none">Labi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
