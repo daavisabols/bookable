@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="lv">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,8 @@
 
 <body>
   <!-- Navigācija (tāda pati kā galvenajā lapā) -->
-  <nav id="navbar" class="flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur">
+  <nav id="navbar"
+    class="flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur">
     <a href="./index.html#top">
       <img id="logo" src="./assets/logo.png" alt="Logo" class="h-12 w-auto shrink-0">
     </a>
@@ -32,14 +34,19 @@
       <a href="./index.html#faq" class="hover:text-slate-600 dark:hover:text-slate-300">BUJ</a>
     </div>
 
-    <div id="mobileMenu" class="fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/60 dark:bg-black/40 backdrop-blur-md md:hidden transition duration-300 -translate-x-full">
+    <div id="mobileMenu"
+      class="fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/60 dark:bg-black/40 backdrop-blur-md md:hidden transition duration-300 -translate-x-full">
       <a href="./index.html#top">Sākums</a>
       <a href="./index.html#feature-section">Iespējas</a>
       <a href="./index.html#pricing-section">Cenas</a>
       <a href="./index.html#faq">BUJ</a>
-      <a href="https://bookable.live/signup" class="bg-purple-600 p-3 px-6 text-white rounded-full">Reģistrēties bez maksas</a>
-      <button id="closeMenu" class="aspect-square size-10 p-1 items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full flex">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x">
+      <a href="https://bookable.live/signup" class="bg-purple-600 p-3 px-6 text-white rounded-full">Reģistrēties bez
+        maksas</a>
+      <button id="closeMenu"
+        class="aspect-square size-10 p-1 items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-x-icon lucide-x">
           <path d="M18 6 6 18" />
           <path d="m6 6 12 12" />
         </svg>
@@ -47,16 +54,24 @@
     </div>
 
     <div class="flex items-center gap-4 md:gap-6">
-      <button id="themeToggle" class="flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun">
+      <button id="themeToggle"
+        class="flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-sun-icon lucide-sun">
           <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          <path
+            d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
         </svg>
       </button>
 
-      <a href="https://app.bookable.live/" class="hidden md:inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-6 h-11 font-medium leading-none">Sākt bez maksas</a>
+      <a href="https://app.bookable.live/"
+        class="hidden md:inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-6 h-11 font-medium leading-none">Sākt
+        bez maksas</a>
       <button id="openMenu" class="md:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-menu-icon lucide-menu">
           <path d="M4 12h16" />
           <path d="M4 18h16" />
           <path d="M4 6h16" />
@@ -66,16 +81,21 @@
   </nav>
 
   <!-- Lapas virsraksts ar gradienta fonu -->
-  <div id="top" class="flex flex-col items-center justify-center text-center px-4 bg-[url('./assets/light-hero-gradient.svg')] dark:bg-[url('./assets/dark-hero-gradient.svg')] bg-no-repeat bg-cover pt-24 pb-12">
+  <div id="top"
+    class="flex flex-col items-center justify-center text-center px-4 bg-[url('./assets/light-hero-gradient.svg')] dark:bg-[url('./assets/dark-hero-gradient.svg')] bg-no-repeat bg-cover pt-24 pb-12">
     <h1 class="mt-6 text-4xl md:text-5xl font-semibold">Privātuma politika</h1>
     <p class="text-base text-slate-500 dark:text-slate-300 mt-2">Pēdējo reizi atjaunināta: 2026.gada 3. janvārī</p>
   </div>
 
   <!-- Saturs -->
   <main class="px-6 md:px-16 lg:px-24 xl:px-32 mt-6">
-    <div class="max-w-3xl mx-auto p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 space-y-5 text-left">
+    <div
+      class="max-w-3xl mx-auto p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 space-y-5 text-left">
       <p>
-        Šajā Privātuma politikā skaidrots, kā mēs vācam, izmantojam, izpaužam un aizsargājam jūsu informāciju, izmantojot Bookable.live tīmekļa vietni un pakalpojumus (turpmāk – "Pakalpojums"). Mēs apstrādājam personas datus saskaņā ar piemērojamiem tiesību aktiem, tostarp Eiropas Savienības Vispārīgo datu aizsardzības regulu (VDAR) un, ja piemērojams, Apvienotās Karalistes VDAR.
+        Šajā Privātuma politikā skaidrots, kā mēs vācam, izmantojam, izpaužam un aizsargājam jūsu informāciju,
+        izmantojot Bookable.live tīmekļa vietni un pakalpojumus (turpmāk – "Pakalpojums"). Mēs apstrādājam personas
+        datus saskaņā ar piemērojamiem tiesību aktiem, tostarp Eiropas Savienības Vispārīgo datu aizsardzības regulu
+        (VDAR) un, ja piemērojams, Apvienotās Karalistes VDAR.
       </p>
 
       <h2 class="text-xl font-semibold mt-4">1. Kas mēs esam (datu pārzinis)</h2>
@@ -87,85 +107,135 @@
 
       <h2 class="text-xl font-semibold">2. Kādus datus mēs apstrādājam</h2>
       <ul class="list-disc pl-5 space-y-1">
-        <li><strong>Konta un autentifikācijas dati:</strong> vārds, e‑pasts, pieteikšanās identifikatori un drošības iezīmes.</li>
-        <li><strong>Uzņēmuma profila dati:</strong> uzņēmuma nosaukums, logotips, tālruņi, adrese, laika josla, pakalpojumu konfigurācija, rezervāciju iestatījumi, pieejamība.</li>
-        <li><strong>Klientu un rezervāciju dati:</strong> klientu kontaktinformācija, rezervāciju metadati (laiks, pakalpojumi, vieta), pārcelšanas izvēles, atgādinājumi, saistītā saziņa.</li>
-        <li><strong>Kalendāra un integrāciju dati:</strong> savienojuma statuss un iestatījumi Google Calendar, Microsoft Outlook/Office 365, ICS; kalendāru identifikatori un sinhronizācijas žurnāli.</li>
-        <li><strong>Saziņas dati:</strong> e‑pasti, WhatsApp ziņas, veidnes un piegādes diagnostika, ko izmantojat Pakalpojumā.</li>
-        <li><strong>Maksājumu un abonementu dati (ja iespējots):</strong> abonementa statuss/plāns, maksājumu identifikatori (kartes datus glabā maksājumu pakalpojumu sniedzējs).</li>
-        <li><strong>Ierīces un lietošanas dati:</strong> IP adrese, pārlūka informācija, ierīču identifikatori un darbību notikumi (tostarp izmantojot Google Analytics mūsu mārketinga vietnē) drošības, diagnostikas un vietnes lietojuma izpratnes nolūkos.</li>
+        <li><strong>Konta un autentifikācijas dati:</strong> vārds, e‑pasts, pieteikšanās identifikatori un drošības
+          iezīmes.</li>
+        <li><strong>Uzņēmuma profila dati:</strong> uzņēmuma nosaukums, logotips, tālruņi, adrese, laika josla,
+          pakalpojumu konfigurācija, rezervāciju iestatījumi, pieejamība.</li>
+        <li><strong>Klientu un rezervāciju dati:</strong> klientu kontaktinformācija, rezervāciju metadati (laiks,
+          pakalpojumi, vieta), pārcelšanas izvēles, atgādinājumi, saistītā saziņa.</li>
+        <li><strong>Kalendāra un integrāciju dati:</strong> savienojuma statuss un iestatījumi Google Calendar,
+          Microsoft Outlook/Office 365, ICS; kalendāru identifikatori un sinhronizācijas žurnāli.</li>
+        <li><strong>Saziņas dati:</strong> e‑pasti, WhatsApp ziņas, veidnes un piegādes diagnostika, ko izmantojat
+          Pakalpojumā.</li>
+        <li><strong>Maksājumu un abonementu dati (ja iespējots):</strong> abonementa statuss/plāns, maksājumu
+          identifikatori (kartes datus glabā maksājumu pakalpojumu sniedzējs).</li>
+        <li><strong>Ierīces un lietošanas dati:</strong> IP adrese, pārlūka informācija, ierīču identifikatori un
+          darbību notikumi (tostarp izmantojot Google Analytics mūsu mārketinga vietnē) drošības, diagnostikas un
+          vietnes lietojuma izpratnes nolūkos.</li>
       </ul>
 
       <h2 class="text-xl font-semibold">3. Kā mēs iegūstam datus</h2>
       <ul class="list-disc pl-5 space-y-1">
         <li>Tieši no jums, izveidojot kontu, konfigurējot uzņēmumu vai izmantojot funkcijas.</li>
         <li>No pieslēgtajiem pakalpojumiem (piem., Google, Microsoft), kad atļaujat integrācijas.</li>
-        <li>No jūsu klientiem, kad viņi veic rezervācijas vai atbild uz saziņu, kas iniciēta, izmantojot Pakalpojumu.</li>
-        <li>Automātiski, izmantojot sīkdatnes vai līdzīgas tehnoloģijas drošības un pamata analītikas vajadzībām (skat. Sīkdatnes).</li>
+        <li>No jūsu klientiem, kad viņi veic rezervācijas vai atbild uz saziņu, kas iniciēta, izmantojot Pakalpojumu.
+        </li>
+        <li>Automātiski, izmantojot sīkdatnes vai līdzīgas tehnoloģijas drošības un pamata analītikas vajadzībām (skat.
+          Sīkdatnes).</li>
       </ul>
 
       <h2 class="text-xl font-semibold">4. Apstrādes nolūki un tiesiskais pamats</h2>
       <ul class="list-disc pl-5 space-y-1">
-        <li><strong>Pakalpojuma nodrošināšana un uzturēšana</strong> — VDAR 6(1)(b) (līgums) un 6(1)(f) (leģitīmās intereses).</li>
-        <li><strong>Pakalpojuma drošība un ļaunprātīgas izmantošanas novēršana</strong> — VDAR 6(1)(f) (leģitīmās intereses).</li>
+        <li><strong>Pakalpojuma nodrošināšana un uzturēšana</strong> — VDAR 6(1)(b) (līgums) un 6(1)(f) (leģitīmās
+          intereses).</li>
+        <li><strong>Pakalpojuma drošība un ļaunprātīgas izmantošanas novēršana</strong> — VDAR 6(1)(f) (leģitīmās
+          intereses).</li>
         <li><strong>Saziņa ar jums</strong> par atjauninājumiem/traucējumiem/atbalstu — VDAR 6(1)(b)/(f).</li>
         <li><strong>Juridisku pienākumu izpilde</strong> — VDAR 6(1)(c).</li>
-        <li><strong>Mārketinga saziņa</strong> (ja piemērojama) — VDAR 6(1)(a) (piekrišana) vai 6(1)(f) (leģitīmās intereses).</li>
+        <li><strong>Mārketinga saziņa</strong> (ja piemērojama) — VDAR 6(1)(a) (piekrišana) vai 6(1)(f) (leģitīmās
+          intereses).</li>
       </ul>
 
       <p>
-        Ja piesakāt vizīti pie uzņēmuma, izmantojot mūsu Pakalpojumu, pēdējā solī var tikt parādīta izvēles rūtiņa mārketinga piekrišanai.
-        Atzīmējot šo izvēles rūtiņu, mēs reģistrēsim jūsu piekrišanu, lai uzņēmums varētu jums sūtīt mārketinga ziņojumus.
-        Piekrišanu varat atsaukt jebkurā laikā, izmantojot atteikšanās iespēju ziņojumos (ja pieejams) vai sazinoties ar uzņēmumu.
+        Ja piesakāt vizīti pie uzņēmuma, izmantojot mūsu Pakalpojumu, pēdējā solī var tikt parādīta izvēles rūtiņa
+        mārketinga piekrišanai.
+        Atzīmējot šo izvēles rūtiņu, mēs reģistrēsim jūsu piekrišanu, lai uzņēmums varētu jums sūtīt mārketinga
+        ziņojumus.
+        Piekrišanu varat atsaukt jebkurā laikā, izmantojot atteikšanās iespēju ziņojumos (ja pieejams) vai sazinoties ar
+        uzņēmumu.
       </p>
 
       <h2 class="text-xl font-semibold">5. Glabāšanas termiņi</h2>
-      <p>Datus glabājam tik ilgi, cik nepieciešams iepriekš minētajiem nolūkiem un tiesiskajām/grāmatvedības vajadzībām. Dzēšot kontu, personas datus saprātīgā termiņā dzēšam vai anonimizējam, ja vien likums neprasa ilgāku glabāšanu vai tas nav nepieciešams, lai celtu, īstenotu vai aizstāvētu tiesiskās prasības.</p>
+      <p>Datus glabājam tik ilgi, cik nepieciešams iepriekš minētajiem nolūkiem un tiesiskajām/grāmatvedības vajadzībām.
+        Dzēšot kontu, personas datus saprātīgā termiņā dzēšam vai anonimizējam, ja vien likums neprasa ilgāku glabāšanu
+        vai tas nav nepieciešams, lai celtu, īstenotu vai aizstāvētu tiesiskās prasības.</p>
 
       <h2 class="text-xl font-semibold">6. Datu koplietošana un apstrādātāji</h2>
-      <p>Mēs izmantojam uzticamus pakalpojumu sniedzējus (apstrādātājus) ar atbilstošiem līgumiem. Tie apstrādā datus tikai saskaņā ar mūsu norādījumiem:</p>
+      <p>Mēs izmantojam uzticamus pakalpojumu sniedzējus (apstrādātājus) ar atbilstošiem līgumiem. Tie apstrādā datus
+        tikai saskaņā ar mūsu norādījumiem:</p>
       <ul class="list-disc pl-5 space-y-1">
-        <li><strong>Supabase</strong> (mitināšana, autentifikācija, DB, krātuve, serverless) — <a class="text-purple-600 hover:underline" href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Privātums</a></li>
-        <li><strong>Google</strong> (OAuth, Google Calendar) — <a class="text-purple-600 hover:underline" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privātums</a></li>
-        <li><strong>Google Analytics</strong> (vietnes analītika bookable.live mārketinga lapām) — <a class="text-purple-600 hover:underline" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privātums</a></li>
-        <li><strong>Microsoft</strong> (OAuth, Outlook/Office 365 caur Graph) — <a class="text-purple-600 hover:underline" href="https://privacy.microsoft.com/" target="_blank" rel="noopener noreferrer">Privātums</a></li>
-        <li><strong>Cloudflare Turnstile</strong> (anti‑bot) — <a class="text-purple-600 hover:underline" href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Privātums</a></li>
-        <li><strong>Stripe</strong> (maksājumi/abonementi, ja iespējots) — <a class="text-purple-600 hover:underline" href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Privātums</a></li>
-        <li><strong>WhatsApp Business Platform (Meta)</strong> (ja iespējots) — <a class="text-purple-600 hover:underline" href="https://www.whatsapp.com/legal/business-data-processing-terms" target="_blank" rel="noopener noreferrer">Noteikumi</a></li>
+        <li><strong>Supabase</strong> (mitināšana, autentifikācija, DB, krātuve, serverless) — <a
+            class="text-purple-600 hover:underline" href="https://supabase.com/privacy" target="_blank"
+            rel="noopener noreferrer">Privātums</a></li>
+        <li><strong>Google</strong> (OAuth, Google Calendar) — <a class="text-purple-600 hover:underline"
+            href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privātums</a></li>
+        <li><strong>Google Analytics</strong> (vietnes analītika bookable.live mārketinga lapām) — <a
+            class="text-purple-600 hover:underline" href="https://policies.google.com/privacy" target="_blank"
+            rel="noopener noreferrer">Privātums</a></li>
+        <li><strong>Microsoft</strong> (OAuth, Outlook/Office 365 caur Graph) — <a
+            class="text-purple-600 hover:underline" href="https://privacy.microsoft.com/" target="_blank"
+            rel="noopener noreferrer">Privātums</a></li>
+        <li><strong>Cloudflare Turnstile</strong> (anti‑bot) — <a class="text-purple-600 hover:underline"
+            href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Privātums</a>
+        </li>
+        <li><strong>Stripe</strong> (maksājumi/abonementi, ja iespējots) — <a class="text-purple-600 hover:underline"
+            href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Privātums</a></li>
+        <li><strong>WhatsApp Business Platform (Meta)</strong> (ja iespējots) — <a
+            class="text-purple-600 hover:underline" href="https://www.whatsapp.com/legal/business-data-processing-terms"
+            target="_blank" rel="noopener noreferrer">Noteikumi</a></li>
       </ul>
-      <p>Datus varam izpaust, ja to prasa likums vai lai aizsargātu mūsu tiesības, lietotājus vai sabiedrības intereses. Mēs nepārdodam personas datus.</p>
+      <p>Datus varam izpaust, ja to prasa likums vai lai aizsargātu mūsu tiesības, lietotājus vai sabiedrības intereses.
+        Mēs nepārdodam personas datus.</p>
 
       <h2 class="text-xl font-semibold">7. Pārsūtīšana uz trešajām valstīm</h2>
-      <p>Jūsu dati var tikt apstrādāti ārpus jūsu mītnes valsts, tostarp ārpus EEZ/Apvienotās Karalistes. Šādos gadījumos mēs paļaujamies uz atbilstošiem aizsardzības pasākumiem (piem., pietiekamības lēmumi, standarta līguma klauzulas).</p>
+      <p>Jūsu dati var tikt apstrādāti ārpus jūsu mītnes valsts, tostarp ārpus EEZ/Apvienotās Karalistes. Šādos
+        gadījumos mēs paļaujamies uz atbilstošiem aizsardzības pasākumiem (piem., pietiekamības lēmumi, standarta līguma
+        klauzulas).</p>
 
       <h2 class="text-xl font-semibold">8. Jūsu tiesības (EEZ/AK)</h2>
       <ul class="list-disc pl-5 space-y-1">
-        <li>Piekļuve, labošana, dzēšana, apstrādes ierobežošana, iebildumi (tostarp pret tiešo mārketingu), pārsūtāmība.</li>
+        <li>Piekļuve, labošana, dzēšana, apstrādes ierobežošana, iebildumi (tostarp pret tiešo mārketingu), pārsūtāmība.
+        </li>
         <li>Piekrišanas atsaukšana, ja apstrāde balstīta uz piekrišanu (neietekmējot iepriekšējo apstrādi).</li>
       </ul>
-      <p>Sazinieties ar mums pa <em>info@bookable.live</em>, lai īstenotu savas tiesības. Varat iesniegt sūdzību arī savai uzraudzības iestādei (EEZ: edpb.europa.eu; AK: ico.org.uk).</p>
+      <p>Sazinieties ar mums pa <em>info@bookable.live</em>, lai īstenotu savas tiesības. Varat iesniegt sūdzību arī
+        savai uzraudzības iestādei (EEZ: edpb.europa.eu; AK: ico.org.uk).</p>
 
       <h2 class="text-xl font-semibold">9. Sīkdatnes un līdzīgas tehnoloģijas</h2>
-      <p>Mēs izmantojam nepieciešamās sīkdatnes un anti‑bot tehnoloģijas (piem., Cloudflare Turnstile) drošībai. Mēs arī izmantojam Google Analytics mūsu mārketinga vietnes lapās, lai saprastu, kā apmeklētāji izmanto vietni (piem., apskatītās lapas, aptuvenā atrašanās vieta, kas tiek noteikta no IP adreses, un ierīces/pārlūka informācija). Google Analytics var iestatīt sīkdatnes vai izmantot līdzīgas tehnoloģijas. Ja to prasa tiesību akti, mēs pirms analītikas sīkdatņu iestatīšanas lūgsim jūsu piekrišanu.</p>
-      <p>Jūs varat ierobežot sīkdatnes arī pārlūka iestatījumos. Google piedāvā pārlūka papildinājumu, lai atteiktos no Google Analytics: <a class="text-purple-600 hover:underline" href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">https://tools.google.com/dlpage/gaoptout</a>.</p>
+      <p>Mēs izmantojam nepieciešamās sīkdatnes un anti‑bot tehnoloģijas (piem., Cloudflare Turnstile) drošībai. Mēs arī
+        izmantojam Google Analytics mūsu mārketinga vietnes lapās, lai saprastu, kā apmeklētāji izmanto vietni (piem.,
+        apskatītās lapas, aptuvenā atrašanās vieta, kas tiek noteikta no IP adreses, un ierīces/pārlūka informācija).
+        Google Analytics var iestatīt sīkdatnes vai izmantot līdzīgas tehnoloģijas. Ja to prasa tiesību akti, mēs pirms
+        analītikas sīkdatņu iestatīšanas lūgsim jūsu piekrišanu.</p>
+      <p>Jūs varat ierobežot sīkdatnes arī pārlūka iestatījumos. Google piedāvā pārlūka papildinājumu, lai atteiktos no
+        Google Analytics: <a class="text-purple-600 hover:underline" href="https://tools.google.com/dlpage/gaoptout"
+          target="_blank" rel="noopener noreferrer">https://tools.google.com/dlpage/gaoptout</a>.</p>
 
       <h2 class="text-xl font-semibold">10. Bērnu datu aizsardzība</h2>
-      <p>Mūsu pakalpojums nav paredzēts bērniem, kas jaunāki par 16 gadiem. Ja uzskatāt, ka bērns ir sniedzis personas datus, lūdzu, sazinieties, lai tos dzēstu.</p>
+      <p>Mūsu pakalpojums nav paredzēts bērniem, kas jaunāki par 16 gadiem. Ja uzskatāt, ka bērns ir sniedzis personas
+        datus, lūdzu, sazinieties, lai tos dzēstu.</p>
 
-      <h2 class="text-xl font-semibold" id="data-deletion">11. Datu dzēšanas instrukcijas (Facebook/Meta lietotājiem)</h2>
+      <h2 class="text-xl font-semibold" id="data-deletion">11. Datu dzēšanas instrukcijas (Facebook/Meta lietotājiem)
+      </h2>
       <p>
-        Ja esat izmantojis Facebook pieteikšanos, lai piekļūtu Bookable.live, un vēlaties dzēst savus datus no mūsu sistēmas, varat to izdarīt šādi:
+        Ja esat izmantojis Facebook pieteikšanos, lai piekļūtu Bookable.live, un vēlaties dzēst savus datus no mūsu
+        sistēmas, varat to izdarīt šādi:
       </p>
       <ul class="list-disc pl-5 space-y-1">
-        <li><strong>Automātiska dzēšana:</strong> Piesakieties savā Bookable.live kontā un dodieties uz Iestatījumi → Konts → Dzēst kontu. Tas noņems visus jūsu personas datus no mūsu sistēmas.</li>
-        <li><strong>Manuāls pieprasījums:</strong> Ja nevarat piekļūt savam kontam, nosūtiet e-pastu uz <a class="text-purple-600 hover:underline" href="mailto:info@bookable.live">info@bookable.live</a> ar tematu "Data Deletion Request" un norādiet savu e-pasta adresi, kas saistīta ar kontu.</li>
+        <li><strong>Automātiska dzēšana:</strong> Piesakieties savā Bookable.live kontā un dodieties uz Iestatījumi →
+          Konts → Dzēst kontu. Tas noņems visus jūsu personas datus no mūsu sistēmas.</li>
+        <li><strong>Manuāls pieprasījums:</strong> Ja nevarat piekļūt savam kontam, nosūtiet e-pastu uz <a
+            class="text-purple-600 hover:underline" href="mailto:info@bookable.live">info@bookable.live</a> ar tematu
+          "Data Deletion Request" un norādiet savu e-pasta adresi, kas saistīta ar kontu.</li>
       </ul>
       <p>
-        Mēs apstrādāsim jūsu dzēšanas pieprasījumu 30 dienu laikā. Lūdzu, ņemiet vērā, ka dažu datu glabāšana var būt nepieciešama juridisko vai grāmatvedības vajadzību dēļ saskaņā ar VDAR 6(1)(c).
+        Mēs apstrādāsim jūsu dzēšanas pieprasījumu 30 dienu laikā. Lūdzu, ņemiet vērā, ka dažu datu glabāšana var būt
+        nepieciešama juridisko vai grāmatvedības vajadzību dēļ saskaņā ar VDAR 6(1)(c).
       </p>
 
       <h2 class="text-xl font-semibold">12. Izmaiņas politikā</h2>
-      <p>Laiku pa laikam šo politiku varam atjaunināt. Atjauninājumus publicēsim šajā lapā un, ja tie ir būtiski, sniegsim papildu paziņojumu.</p>
+      <p>Laiku pa laikam šo politiku varam atjaunināt. Atjauninājumus publicēsim šajā lapā un, ja tie ir būtiski,
+        sniegsim papildu paziņojumu.</p>
 
       <h2 class="text-xl font-semibold">13. Kontakti</h2>
       <p>
@@ -178,12 +248,17 @@
 
   <!-- Kājene (tāda pati kā galvenajā lapā) -->
   <footer class="relative px-6 md:px-16 lg:px-24 xl:px-32 mt-16 w-full dark:text-slate-50">
-    <img id="landing-text" class="absolute max-w-4xl w-full h-auto -mt-30 max-md:px-4 right-0 md:right-16 lg:right-24 xl:right-32 top-0 pointer-events-none" src="./assets/bookable-text-light.svg" alt="landing" width="930" height="340" />
-    <div class="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-200 dark:border-slate-700 pb-6">
+    <img id="landing-text"
+      class="absolute max-w-4xl w-full h-auto -mt-30 max-md:px-4 right-0 md:right-16 lg:right-24 xl:right-32 top-0 pointer-events-none"
+      src="./assets/bookable-text-light.svg" alt="landing" width="930" height="340" />
+    <div
+      class="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-200 dark:border-slate-700 pb-6">
       <div class="md:max-w-114">
-        <img id="logo-footer" class="h-9 md:h-9.5 w-auto shrink-0 -ml-4" src="./assets/logo.png" alt="Bookable.live logo" width="140" height="40" />
+        <img id="logo-footer" class="h-9 md:h-9.5 w-auto shrink-0 -ml-4" src="./assets/logo.png"
+          alt="Bookable.live logo" width="140" height="40" />
         <p class="mt-6">
-          Bookable.live ir tiešsaistes rezervāciju un pierakstu platforma, kas palīdz pakalpojumu uzņēmumiem pieņemt rezervācijas 24/7, sinhronizēt kalendārus un sūtīt automatizētus atgādinājumus.
+          Bookable.live ir tiešsaistes rezervāciju un pierakstu platforma, kas palīdz pakalpojumu uzņēmumiem pieņemt
+          rezervācijas 24/7, sinhronizēt kalendārus un sūtīt automatizētus atgādinājumus.
         </p>
       </div>
       <div class="flex-1 flex items-start md:justify-end gap-20">
@@ -207,10 +282,13 @@
       </div>
     </div>
     <p class="pt-4 text-center pb-5">
-      Autortiesības 2026 © <a class="hover:text-purple-600 transition" href="https://bookable.live">Bookable.live</a>. Visas tiesības aizsargātas.
+      Autortiesības 2026 © <a class="hover:text-purple-600 transition"
+        href="https://bookable.live">Bookable.live</a>.&nbsp;&nbsp;Visas tiesības aizsargātas.&nbsp;&nbsp;SIA
+      ClearTech.&nbsp;&nbsp;Izstrādāts Latvijā 🇱🇻
     </p>
   </footer>
 
   <script src="./script.js"></script>
 </body>
+
 </html>

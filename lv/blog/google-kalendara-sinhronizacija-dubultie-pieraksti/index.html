@@ -15,13 +15,15 @@
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Google Kalendāra sinhronizācija: apturi dubultos pierakstus 10 minūtēs" />
-  <meta property="og:description" content="Praktisks iestatīšanas kontrolsaraksts divvirzienu sinhronizācijai un precīzai pieejamībai." />
+  <meta property="og:description"
+    content="Praktisks iestatīšanas kontrolsaraksts divvirzienu sinhronizācijai un precīzai pieejamībai." />
   <meta property="og:url" content="https://bookable.live/lv/blog/google-kalendara-sinhronizacija-dubultie-pieraksti/" />
   <meta property="og:image" content="/assets/logo_bright.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Google Kalendāra sinhronizācija: apturi dubultos pierakstus 10 minūtēs" />
-  <meta name="twitter:description" content="Iestatīšanas kontrolsaraksts + pārbaudes soļi uzticamai kalendāra sinhronizācijai." />
+  <meta name="twitter:description"
+    content="Iestatīšanas kontrolsaraksts + pārbaudes soļi uzticamai kalendāra sinhronizācijai." />
   <meta name="twitter:image" content="/assets/logo_bright.png" />
 
   <link rel="stylesheet" href="/output.css" />
@@ -43,11 +45,37 @@
   </script>
 
   <style>
-    .cta-button { position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    .cta-button::before { content: ''; position: absolute; top: 50%; left: 50%; width: 16px; height: 16px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); transform: translate(-50%, -50%) scale(0); transition: transform 0.6s; }
-    .cta-button:hover::before { transform: translate(-50%, -50%) scale(60); }
-    .cta-button:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4), 0 8px 10px -6px rgba(139, 92, 246, 0.3); }
-    .cta-button:active { transform: translateY(0) scale(0.98); }
+    .cta-button {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.6s;
+    }
+
+    .cta-button:hover::before {
+      transform: translate(-50%, -50%) scale(60);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4), 0 8px 10px -6px rgba(139, 92, 246, 0.3);
+    }
+
+    .cta-button:active {
+      transform: translateY(0) scale(0.98);
+    }
   </style>
 </head>
 
@@ -76,7 +104,8 @@
       <a href="/lv/nozares/">Nozares</a>
       <a href="/lv/cenas/">Cenas</a>
       <a href="/lv/blog/">Emuārs</a>
-      <a href="https://app.bookable.live/signup" class="bg-purple-600 p-3 px-6 text-white rounded-full">Reģistrēties bez maksas</a>
+      <a href="https://app.bookable.live/signup" class="bg-purple-600 p-3 px-6 text-white rounded-full">Reģistrēties bez
+        maksas</a>
       <button id="closeMenu"
         class="aspect-square size-10 p-1 items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full flex">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -103,7 +132,8 @@
       </button>
 
       <a href="https://app.bookable.live/signup"
-        class="cta-button hidden md:inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-6 h-11 font-semibold leading-none">Sākt bez maksas</a>
+        class="cta-button hidden md:inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-6 h-11 font-semibold leading-none">Sākt
+        bez maksas</a>
       <button id="openMenu" class="md:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -124,39 +154,51 @@
         <span>2026. gada 16. janv. · 6 min lasīšana</span>
       </div>
 
-      <h1 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">Google Kalendāra sinhronizācija: apturi dubultos pierakstus 10 minūtēs</h1>
-      <p class="mt-4 text-lg text-slate-600 dark:text-slate-200">Divvirzienu kalendāra sinhronizācija ir ātrākais veids, kā novērst dubultos pierakstus. Ja tā ir uzstādīta pareizi, rezervācijas lapa rāda tikai patiešām brīvu laiku — un katrs jauns pieraksts uzreiz parādās kalendārā.</p>
+      <h1 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">Google Kalendāra sinhronizācija: apturi
+        dubultos pierakstus 10 minūtēs</h1>
+      <p class="mt-4 text-lg text-slate-600 dark:text-slate-200">Divvirzienu kalendāra sinhronizācija ir ātrākais veids,
+        kā novērst dubultos pierakstus. Ja tā ir uzstādīta pareizi, rezervācijas lapa rāda tikai patiešām brīvu laiku —
+        un katrs jauns pieraksts uzreiz parādās kalendārā.</p>
 
       <div class="mt-8 space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
         <h2 class="text-2xl font-semibold">Ko patiesībā nozīmē “divvirzienu sinhronizācija”</h2>
         <ul class="list-disc pl-6 space-y-2">
-          <li><strong>Kalendārs → rezervācijas lapa:</strong> aizņemtie notikumi bloķē pieejamību, lai klienti nevarētu rezervēt virs tiem.</li>
-          <li><strong>Rezervācijas lapa → kalendārs:</strong> jauni pieraksti izveido kalendāra notikumus, lai grafiks paliktu vienuviet.</li>
+          <li><strong>Kalendārs → rezervācijas lapa:</strong> aizņemtie notikumi bloķē pieejamību, lai klienti nevarētu
+            rezervēt virs tiem.</li>
+          <li><strong>Rezervācijas lapa → kalendārs:</strong> jauni pieraksti izveido kalendāra notikumus, lai grafiks
+            paliktu vienuviet.</li>
         </ul>
-        <p>Ja strādā tikai otrā daļa, tu joprojām riskē ar dubultiem pierakstiem personīgo notikumu dēļ. Ja strādā tikai pirmā daļa, tu vari palaist garām pierakstus, jo tie nekad nenonāk kalendārā.</p>
+        <p>Ja strādā tikai otrā daļa, tu joprojām riskē ar dubultiem pierakstiem personīgo notikumu dēļ. Ja strādā tikai
+          pirmā daļa, tu vari palaist garām pierakstus, jo tie nekad nenonāk kalendārā.</p>
 
         <h2 class="text-2xl font-semibold">Iestatīšanas kontrolsaraksts (dari šos soļus pēc kārtas)</h2>
         <ol class="list-decimal pl-6 space-y-2">
           <li><strong>Izvēlies pareizo kalendāru:</strong> to, kuru tiešām ikdienā pārvaldi.</li>
-          <li><strong>Bloķē laiku godīgi:</strong> ieliec pārtraukumus, pusdienas, pārvietošanos un personīgo laiku kā aizņemtus notikumus.</li>
-          <li><strong>Atsevišķi kalendāri komandai:</strong> ja ir komanda, visvienkāršāk ir viens kalendārs katram darbiniekam.</li>
+          <li><strong>Bloķē laiku godīgi:</strong> ieliec pārtraukumus, pusdienas, pārvietošanos un personīgo laiku kā
+            aizņemtus notikumus.</li>
+          <li><strong>Atsevišķi kalendāri komandai:</strong> ja ir komanda, visvienkāršāk ir viens kalendārs katram
+            darbiniekam.</li>
           <li><strong>Pārbaudi laika joslu:</strong> nesakritība laika joslās ir #1 iemesls “nepareizam laikam”.</li>
-          <li><strong>Notestē ar izmēģinājuma pierakstu:</strong> rezervē laiku un pārliecinies, ka notikums parādās kalendārā uzreiz.</li>
+          <li><strong>Notestē ar izmēģinājuma pierakstu:</strong> rezervē laiku un pārliecinies, ka notikums parādās
+            kalendārā uzreiz.</li>
         </ol>
 
         <h2 class="text-2xl font-semibold">Biežākās kļūdas (un ātri labojumi)</h2>
         <div class="grid gap-4">
           <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 p-4">
             <p class="font-semibold">Kļūda: sinhronizē nepareizo kalendāru</p>
-            <p class="mt-2 text-sm">Labojums: izvēlies kalendāru, kurā patiešām pievieno personīgos notikumus un darba blokējumus.</p>
+            <p class="mt-2 text-sm">Labojums: izvēlies kalendāru, kurā patiešām pievieno personīgos notikumus un darba
+              blokējumus.</p>
           </div>
           <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 p-4">
             <p class="font-semibold">Kļūda: notikumi atzīmēti kā “Brīvs”</p>
-            <p class="mt-2 text-sm">Labojums: atzīmē aizņemtos blokus kā “Aizņemts”, lai tie bloķētu rezervācijas laikus.</p>
+            <p class="mt-2 text-sm">Labojums: atzīmē aizņemtos blokus kā “Aizņemts”, lai tie bloķētu rezervācijas
+              laikus.</p>
           </div>
           <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 p-4">
             <p class="font-semibold">Kļūda: netiek atstāts buferlaiks</p>
-            <p class="mt-2 text-sm">Labojums: pievieno buferi starp pierakstiem (5–15 min), ja vajag uzkopšanu vai pārvietošanos.</p>
+            <p class="mt-2 text-sm">Labojums: pievieno buferi starp pierakstiem (5–15 min), ja vajag uzkopšanu vai
+              pārvietošanos.</p>
           </div>
         </div>
 
@@ -167,14 +209,18 @@
           <li>Izveido testa pierakstu: jaunam notikumam jāparādās kalendārā nekavējoties.</li>
         </ol>
 
-        <div class="mt-10 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 p-6">
+        <div
+          class="mt-10 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 p-6">
           <h3 class="text-xl font-semibold">Nākamais solis</h3>
-          <p class="mt-2">Apvieno kalendāra sinhronizāciju ar automatizētiem atgādinājumiem, un tu vienlaikus samazināsi gan neierašanos, gan dubultos pierakstus.</p>
+          <p class="mt-2">Apvieno kalendāra sinhronizāciju ar automatizētiem atgādinājumiem, un tu vienlaikus samazināsi
+            gan neierašanos, gan dubultos pierakstus.</p>
           <div class="mt-5 flex flex-col sm:flex-row gap-3">
             <a href="/features/calendar-sync/"
-              class="inline-flex items-center justify-center rounded-full px-8 h-12 font-semibold leading-none border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 hover:text-purple-600 transition">Kalendāra sinhronizācijas funkcija</a>
+              class="inline-flex items-center justify-center rounded-full px-8 h-12 font-semibold leading-none border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 hover:text-purple-600 transition">Kalendāra
+              sinhronizācijas funkcija</a>
             <a href="https://app.bookable.live/signup"
-              class="cta-button inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-8 h-12 font-semibold leading-none">Sākt bez maksas</a>
+              class="cta-button inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-8 h-12 font-semibold leading-none">Sākt
+              bez maksas</a>
           </div>
         </div>
       </div>
@@ -185,11 +231,13 @@
     <img id="landing-text"
       class="absolute max-w-4xl w-full h-auto -mt-30 max-md:px-4 right-0 md:right-16 lg:right-24 xl:right-32 top-0 pointer-events-none"
       src="/assets/bookable-text-light.svg" alt="Bookable.live" width="930" height="340" fetchPriority="high" />
-    <div class="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-200 dark:border-slate-700 pb-6">
+    <div
+      class="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-200 dark:border-slate-700 pb-6">
       <div class="md:max-w-114">
         <img id="logo-footer" class="h-9 md:h-9.5 w-auto shrink-0 -ml-4" src="/assets/logo.png" alt="Bookable.live logo"
           width="140" height="40" fetchPriority="high" />
-        <p class="mt-6">Bookable.live palīdz pakalpojumu uzņēmumiem pieņemt rezervācijas 24/7, sinhronizēt kalendārus un sūtīt automatizētus atgādinājumus.</p>
+        <p class="mt-6">Bookable.live palīdz pakalpojumu uzņēmumiem pieņemt rezervācijas 24/7, sinhronizēt kalendārus un
+          sūtīt automatizētus atgādinājumus.</p>
       </div>
       <div class="flex-1 flex items-start md:justify-end gap-20">
         <div>
@@ -212,7 +260,9 @@
         </div>
       </div>
     </div>
-    <p class="pt-4 text-center pb-5">Autortiesības 2026 © <a href="https://bookable.live">Bookable.live</a>. Visas tiesības aizsargātas. SIA ClearTech.</p>
+    <p class="pt-4 text-center pb-5">Autortiesības 2026 © <a
+        href="https://bookable.live">Bookable.live</a>.&nbsp;&nbsp;Visas tiesības aizsargātas.&nbsp;&nbsp;SIA
+      ClearTech.&nbsp;&nbsp;Izstrādāts Latvijā 🇱🇻</p>
   </footer>
 
   <div id="cookieBanner" class="fixed inset-x-0 bottom-0 z-[60] hidden">

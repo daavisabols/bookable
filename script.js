@@ -217,14 +217,14 @@ if (themeToggle) {
     });
 }
 
-const logos = ["google", "microsoft", "whatsapp", "apple"];
+const logos = ["google", "microsoft", "whatsapp", "apple", "shopify"];
 const track = document.getElementById("logo-track");
 
 if (track) {
     track.innerHTML = [...logos, ...logos]
         .map((name) => {
-            const size = name === 'whatsapp' || name === 'apple' ? 50 : 100;
-            return `<img class="mx-11" src="${ASSET_ROOT}/assets/companies-logo/${name}.svg" onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/${name}';" alt="${name.charAt(0).toUpperCase() + name.slice(1)} logo" width="${size}" height="${size}" loading="lazy" decoding="async" draggable="false"/>`;
+            const size = (name === 'whatsapp' || name === 'apple' || name === 'shopify') ? 50 : 100;
+            return `<img class="mx-11" src="${ASSET_ROOT}/assets/companies-logo/${name}.svg" onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/${name}/90A1B9';" alt="${name.charAt(0).toUpperCase() + name.slice(1)} logo" width="${size}" height="${size}" loading="lazy" decoding="async" draggable="false"/>`;
         })
         .join("");
 }
@@ -254,6 +254,11 @@ const featuresDataEN = [
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M2 12h4l3 9 6-18 3 9h4'/></svg>`,
         title: "Automated reminders",
         description: "Reduce no‑shows with email, SMS, and WhatsApp reminders sent at smart intervals.",
+    },
+    {
+        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='m21 16-4 4-4-4'/><path d='M17 20V4'/><path d='M3 3v18h18'/></svg>`,
+        title: "Widget embed",
+        description: "Embed the booking experience directly into your website. Pre-select services or staff to simplify the flow.",
     },
     {
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M3 3h18v4H3z'/><path d='M8 11h13v4H8z'/><path d='M13 19h8v4h-8z'/><path d='M3 7v14h5'/></svg>`,
@@ -287,6 +292,11 @@ const featuresDataLV = [
         description: "Samazini neierašanos ar e‑pastu un WhatsApp atgādinājumiem gudros intervālos.",
     },
     {
+        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='m21 16-4 4-4-4'/><path d='M17 20V4'/><path d='M3 3v18h18'/></svg>`,
+        title: "Logrīka integrācija",
+        description: "Integrējiet rezervācijas pieredzi tieši savā mājaslapā. Iepriekš atlasiet pakalpojumus vai darbiniekus, lai vienkāršotu procesu.",
+    },
+    {
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M3 3h18v4H3z'/><path d='M8 11h13v4H8z'/><path d='M13 19h8v4h-8z'/><path d='M3 7v14h5'/></svg>`,
         title: "Analītika un eksporti",
         description: "Seko rezervācijām, atcelšanām, ieņēmumiem un eksportē klientus & pierakstus uz CSV.",
@@ -305,16 +315,16 @@ if (features) {
             <h3 class='${titleClass} font-semibold'>${f.title}</h3>
             <p class='text-sm text-slate-600 dark:text-slate-300'>${f.description}</p>
             ${Array.isArray(f.typingDemoSlugs) && f.typingDemoSlugs.length
-                ? `<p class='text-md md:text-lg text-slate-500 dark:text-slate-400 mt-6'>
+            ? `<p class='text-md md:text-lg text-slate-500 dark:text-slate-400 mt-6'>
                         <span>app.bookable.live/book/</span><span class='font-semibold' data-typing-slugs='${JSON.stringify(f.typingDemoSlugs).replace(/'/g, "&#39;")}'></span>
                    </p>`
-                : ""}
+            : ""}
             ${Array.isArray(f.typingDemoSlugs) && f.typingDemoSlugs.length
-                ? `<a href='https://app.bookable.live/signup'
+            ? `<a href='https://app.bookable.live/signup'
                         class='cta-button inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-6 h-11 font-semibold leading-none w-max mt-2'>
                         ${isLV ? "Iegūsti savu tagad" : "Get yours now"}
                    </a>`
-                : ""}
+            : ""}
         </div>
     `;
 
@@ -341,7 +351,7 @@ if (features) {
     const renderSecondary = (items) => {
         if (!Array.isArray(items) || !items.length) return "";
         return `
-            <div class='grid grid-cols-1 md:grid-cols-4 gap-2 mt-6'>
+            <div class='grid grid-cols-1 md:grid-cols-3 gap-6 mt-6'>
                 ${items.map((f) => renderFeatureCard(f, "text-xl")).join("")}
             </div>
         `;
@@ -496,6 +506,7 @@ const pricingDataEN = [
             "Custom branding",
             "WhatsApp & SMS reminders",
             "Multiple Staff Members & Venues",
+            "Widget embed & pre-selection",
             "Smart Rescheduling"
         ],
         buttonText: "Upgrade Now",
@@ -530,6 +541,7 @@ const pricingDataLV = [
             "Pielāgota zīmola identitāte",
             "WhatsApp un SMS atgādinājumi",
             "Vairāki darbinieku konti un lokācijas",
+            "Logrīka integrācija un priekšatlase",
             "Gudra pārcelšana"
         ],
         buttonText: "Sākt Pro izmēģinājumu",
@@ -573,66 +585,66 @@ const computeSavingsPercent = (monthly, yearly) => {
 };
 
 const getPeriodLabel = (cadence) => {
-        if (cadence === "yearly") return isLV ? "/gadā" : "/yr";
-        return isLV ? "/mēn" : "/mo";
+    if (cadence === "yearly") return isLV ? "/gadā" : "/yr";
+    return isLV ? "/mēn" : "/mo";
 };
 
 const setBillingToggleUI = (cadence) => {
-        if (!billingMonthlyBtn || !billingYearlyBtn) return;
+    if (!billingMonthlyBtn || !billingYearlyBtn) return;
 
-        const isMonthly = cadence !== "yearly";
+    const isMonthly = cadence !== "yearly";
 
-        billingMonthlyBtn.setAttribute("aria-pressed", String(isMonthly));
-        billingYearlyBtn.setAttribute("aria-pressed", String(!isMonthly));
+    billingMonthlyBtn.setAttribute("aria-pressed", String(isMonthly));
+    billingYearlyBtn.setAttribute("aria-pressed", String(!isMonthly));
 
-        if (isMonthly) {
-                billingMonthlyBtn.className = "px-4 py-2 rounded-full bg-purple-600 hover:bg-purple-700 transition text-white font-medium text-sm leading-none";
-                billingYearlyBtn.className = "px-4 py-2 rounded-full transition text-slate-600 dark:text-slate-300 font-medium text-sm leading-none";
-        } else {
-                billingMonthlyBtn.className = "px-4 py-2 rounded-full transition text-slate-600 dark:text-slate-300 font-medium text-sm leading-none";
-                billingYearlyBtn.className = "px-4 py-2 rounded-full bg-purple-600 hover:bg-purple-700 transition text-white font-medium text-sm leading-none";
-        }
+    if (isMonthly) {
+        billingMonthlyBtn.className = "px-4 py-2 rounded-full bg-purple-600 hover:bg-purple-700 transition text-white font-medium text-sm leading-none";
+        billingYearlyBtn.className = "px-4 py-2 rounded-full transition text-slate-600 dark:text-slate-300 font-medium text-sm leading-none";
+    } else {
+        billingMonthlyBtn.className = "px-4 py-2 rounded-full transition text-slate-600 dark:text-slate-300 font-medium text-sm leading-none";
+        billingYearlyBtn.className = "px-4 py-2 rounded-full bg-purple-600 hover:bg-purple-700 transition text-white font-medium text-sm leading-none";
+    }
 };
 
-    const setBillingSavingsUI = (cadence) => {
-        if (!billingSavingsText) return;
+const setBillingSavingsUI = (cadence) => {
+    if (!billingSavingsText) return;
 
-        if (cadence !== "yearly") {
-            billingSavingsText.classList.add("hidden");
-            return;
-        }
+    if (cadence !== "yearly") {
+        billingSavingsText.classList.add("hidden");
+        return;
+    }
 
-        const proPlan = pricingData.find((p) => p && (p.id === "pro")) || pricingData[1];
-        if (!proPlan) return;
+    const proPlan = pricingData.find((p) => p && (p.id === "pro")) || pricingData[1];
+    if (!proPlan) return;
 
-        const pct = computeSavingsPercent(getPlanPrice(proPlan, "monthly"), getPlanPrice(proPlan, "yearly"));
-        if (!pct) return;
+    const pct = computeSavingsPercent(getPlanPrice(proPlan, "monthly"), getPlanPrice(proPlan, "yearly"));
+    if (!pct) return;
 
-        billingSavingsText.textContent = isLV ? `Ietaupi ${pct}%` : `Save ${pct}%`;
-        billingSavingsText.classList.remove("hidden");
-    };
+    billingSavingsText.textContent = isLV ? `Ietaupi ${pct}%` : `Save ${pct}%`;
+    billingSavingsText.classList.remove("hidden");
+};
 
 const renderPricing = (cadence = "monthly") => {
-        if (!pricingContainer) return;
+    if (!pricingContainer) return;
 
-        const periodLabel = getPeriodLabel(cadence);
+    const periodLabel = getPeriodLabel(cadence);
 
-        pricingContainer.innerHTML = pricingData.map(plan => {
-            const price = getPlanPrice(plan, cadence);
-            const priceLabel = formatMoney(price);
+    pricingContainer.innerHTML = pricingData.map(plan => {
+        const price = getPlanPrice(plan, cadence);
+        const priceLabel = formatMoney(price);
 
-                return `
+        return `
             <div class="js-fade-in p-6 rounded-2xl w-full shadow-[0px_4px_26px] shadow-black/6 flex flex-col h-full 
                 ${plan.mostPopular
-                                ? "relative bg-gradient-to-b from-indigo-600 to-violet-600 text-white"
-                                : "bg-white/50 dark:bg-gray-800/50 border border-slate-200 dark:border-slate-800"}">
+                ? "relative bg-gradient-to-b from-indigo-600 to-violet-600 text-white"
+                : "bg-white/50 dark:bg-gray-800/50 border border-slate-200 dark:border-slate-800"}">
 
                 ${plan.mostPopular
-                                ? `<div class="flex items-center text-xs gap-1 py-1.5 px-2 text-purple-600 absolute top-4 right-4 rounded-full bg-white font-medium">
+                ? `<div class="flex items-center text-xs gap-1 py-1.5 px-2 text-purple-600 absolute top-4 right-4 rounded-full bg-white font-medium">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
                             <p>${isLV ? 'Populārs' : 'Popular'}</p>
                         </div>`
-                                : ""}
+                : ""}
 
                 <div class="flex-1">
                     <p class="font-medium ${plan.mostPopular ? "text-white" : ""}">${plan.title}</p>
@@ -655,96 +667,106 @@ const renderPricing = (cadence = "monthly") => {
                 <div class="mt-auto pt-12">
                     <a href="https://app.bookable.live/signup" class="transition w-full py-3 rounded-full font-medium block w-full text-center
                         ${plan.mostPopular
-                                ? "bg-white hover:bg-slate-100 text-slate-800"
-                                : "bg-purple-600 hover:bg-purple-700 text-white"}">
+                ? "bg-white hover:bg-slate-100 text-slate-800"
+                : "bg-purple-600 hover:bg-purple-700 text-white"}">
                         ${plan.buttonText}
                     </a>
                 </div>
             </div>
         `;
-        }).join("");
+    }).join("");
 
-        initFadeInOnScroll(pricingContainer);
+    initFadeInOnScroll(pricingContainer);
 };
 
 if (pricingContainer) {
-        let currentCadence = "monthly";
-        setBillingToggleUI(currentCadence);
+    let currentCadence = "monthly";
+    setBillingToggleUI(currentCadence);
     setBillingSavingsUI(currentCadence);
-        renderPricing(currentCadence);
+    renderPricing(currentCadence);
 
-        if (billingMonthlyBtn && billingYearlyBtn) {
-                billingMonthlyBtn.addEventListener("click", () => {
-                        currentCadence = "monthly";
-                        setBillingToggleUI(currentCadence);
-                    setBillingSavingsUI(currentCadence);
-                        renderPricing(currentCadence);
-                });
+    if (billingMonthlyBtn && billingYearlyBtn) {
+        billingMonthlyBtn.addEventListener("click", () => {
+            currentCadence = "monthly";
+            setBillingToggleUI(currentCadence);
+            setBillingSavingsUI(currentCadence);
+            renderPricing(currentCadence);
+        });
 
-                billingYearlyBtn.addEventListener("click", () => {
-                        currentCadence = "yearly";
-                        setBillingToggleUI(currentCadence);
-                    setBillingSavingsUI(currentCadence);
-                        renderPricing(currentCadence);
-                });
-        }
+        billingYearlyBtn.addEventListener("click", () => {
+            currentCadence = "yearly";
+            setBillingToggleUI(currentCadence);
+            setBillingSavingsUI(currentCadence);
+            renderPricing(currentCadence);
+        });
+    }
 }
 
 // FAQ Data (localized)
 const faqsDataEN = [
-  {
-    question: "Can I sync with Google Calendar or Outlook?",
-    answer:
-      "Yes. Bookable.live offers real-time, two-way calendar sync with both Google Calendar and Microsoft Outlook. Whenever a client books through your online booking system, the appointment instantly appears on your personal calendar and updates automatically if anything changes. This prevents double-bookings, keeps your schedule organized, and ensures your availability is always accurate across all devices.",
-  },
-  {
-    question: "Do you support multiple team members and locations?",
-    answer:
-      "Absolutely. Our online booking software is designed for businesses of any size. You can add multiple staff members, assign individual working hours, and manage several locations under one account. Customers can choose their preferred team member, service, or venue directly from your booking page, making the scheduling process smooth and professional.",
-  },
-  {
-    question: "How do reminders work?",
-    answer:
-      "Bookable.live includes built-in automated reminders to reduce no-shows and keep your schedule running smoothly. You can set smart reminders via email, SMS, or WhatsApp, delivered at the ideal time before an appointment. The system sends notifications automatically, so your clients always remember their bookings and your business saves valuable time.",
-  },
-  {
-    question: "Is there a free plan?",
-    answer:
-      "Yes. Our Starter plan is completely free and gives you access to the core features of our online booking system, including unlimited appointments, a customizable booking page, calendar sync, and email reminders. It’s perfect for freelancers, small businesses, or anyone wanting to try out a powerful scheduling tool without upfront costs.",
-  },
-  {
-    question: "Can I export my data?",
-    answer:
-      "Definitely. You can export your clients, appointment history, and messages to CSV at any time. Bookable.live believes in full data portability, so you always maintain ownership and control over your information. Data exports make it easy to migrate, back up records, or integrate your booking system with other tools you use.",
-  },
+    {
+        question: "Can I sync with Google Calendar or Outlook?",
+        answer:
+            "Yes. Bookable.live offers real-time, two-way calendar sync with both Google Calendar and Microsoft Outlook. Whenever a client books through your online booking system, the appointment instantly appears on your personal calendar and updates automatically if anything changes. This prevents double-bookings, keeps your schedule organized, and ensures your availability is always accurate across all devices.",
+    },
+    {
+        question: "Do you support multiple team members and locations?",
+        answer:
+            "Absolutely. Our online booking software is designed for businesses of any size. You can add multiple staff members, assign individual working hours, and manage several locations under one account. Customers can choose their preferred team member, service, or venue directly from your booking page, making the scheduling process smooth and professional.",
+    },
+    {
+        question: "How do reminders work?",
+        answer:
+            "Bookable.live includes built-in automated reminders to reduce no-shows and keep your schedule running smoothly. You can set smart reminders via email, SMS, or WhatsApp, delivered at the ideal time before an appointment. The system sends notifications automatically, so your clients always remember their bookings and your business saves valuable time.",
+    },
+    {
+        question: "Is there a free plan?",
+        answer:
+            "Yes. Our Starter plan is completely free and gives you access to the core features of our online booking system, including unlimited appointments, a customizable booking page, calendar sync, and email reminders. It’s perfect for freelancers, small businesses, or anyone wanting to try out a powerful scheduling tool without upfront costs.",
+    },
+    {
+        question: "Can I export my data?",
+        answer:
+            "Definitely. You can export your clients, appointment history, and messages to CSV at any time. Bookable.live believes in full data portability, so you always maintain ownership and control over your information. Data exports make it easy to migrate, back up records, or integrate your booking system with other tools you use.",
+    },
+    {
+        question: "Can I pre-select services for the embed widget?",
+        answer:
+            "Yes. In your settings, you can choose a specific service, staff, or venue to pre-select. The embed code will automatically update with the correct URL parameters, making it easier for your customers to find what they need.",
+    },
 ];
 
 const faqsDataLV = [
-  {
-    question: "Vai varu sinhronizēt ar Google Calendar vai Outlook?",
-    answer:
-      "Jā. Bookable.live piedāvā reāllaika divvirzienu sinhronizāciju ar Google Calendar un Microsoft Outlook. Kad klients veic pierakstu caur jūsu tiešsaistes rezervāciju sistēmu, tas uzreiz parādās jūsu personīgajā kalendārā un automātiski atjaunojas, ja rezervācija tiek mainīta. Tas palīdz izvairīties no dubultām rezervācijām un nodrošina, ka jūsu grafiks vienmēr ir precīzs.",
-  },
-  {
-    question: "Vai atbalstāt vairākus darbiniekus un lokācijas?",
-    answer:
-      "Protams. Mūsu tiešsaistes pierakstu programmatūra ir piemērota gan individuāliem speciālistiem, gan uzņēmumiem ar vairākām lokācijām. Vari pievienot vairākus darbiniekus, iestatīt katram savu darba laiku, pārvaldīt dažādas adreses un ļaut klientiem izvēlēties speciālistu un vietu tieši rezervācijas lapā. Tas padara visu rezervēšanas procesu skaidru un ērtu.",
-  },
-  {
-    question: "Kā darbojas atgādinājumi?",
-    answer:
-      "Bookable.live nodrošina automatizētus atgādinājumus, kas palīdz samazināt neierašanās risku. Varat nosūtīt klientiem e-pastu, SMS vai WhatsApp atgādinājumus iepriekš norādītā laikā. Atgādinājumi darbojas automātiski un palīdz uzturēt sakārtotu grafiku, lai visi pieraksti notiktu bez liekiem pārpratumiem.",
-  },
-  {
-    question: "Vai ir bezmaksas plāns?",
-    answer:
-      "Jā. Starter plāns ir pilnībā bez maksas un ietver svarīgākās tiešsaistes rezervāciju sistēmas funkcijas — neierobežotus pierakstus, pielāgojamu rezervāciju lapu, kalendāra sinhronizāciju un e-pastu atgādinājumus. Tas ir ideāls risinājums mazajiem uzņēmumiem un speciālistiem, kas vēlas sākt izmantot ērtu pierakstu rīku bez sākotnējām izmaksām.",
-  },
-  {
-    question: "Vai varu eksportēt savus datus?",
-    answer:
-      "Jā. Jebkurā brīdī vari eksportēt savus klientus, pierakstu vēsturi un sarakstes CSV formātā. Bookable.live nodrošina pilnīgu datu pārnesamību, lai tu vienmēr saglabātu kontroli pār savu informāciju un varētu to izmantot citās sistēmās, veidot rezerves kopijas vai analizēt savu biznesu.",
-  },
+    {
+        question: "Vai varu sinhronizēt ar Google Calendar vai Outlook?",
+        answer:
+            "Jā. Bookable.live piedāvā reāllaika divvirzienu sinhronizāciju ar Google Calendar un Microsoft Outlook. Kad klients veic pierakstu caur jūsu tiešsaistes rezervāciju sistēmu, tas uzreiz parādās jūsu personīgajā kalendārā un automātiski atjaunojas, ja rezervācija tiek mainīta. Tas palīdz izvairīties no dubultām rezervācijām un nodrošina, ka jūsu grafiks vienmēr ir precīzs.",
+    },
+    {
+        question: "Vai atbalstāt vairākus darbiniekus un lokācijas?",
+        answer:
+            "Protams. Mūsu tiešsaistes pierakstu programmatūra ir piemērota gan individuāliem speciālistiem, gan uzņēmumiem ar vairākām lokācijām. Vari pievienot vairākus darbiniekus, iestatīt katram savu darba laiku, pārvaldīt dažādas adreses un ļaut klientiem izvēlēties speciālistu un vietu tieši rezervācijas lapā. Tas padara visu rezervēšanas procesu skaidru un ērtu.",
+    },
+    {
+        question: "Kā darbojas atgādinājumi?",
+        answer:
+            "Bookable.live nodrošina automatizētus atgādinājumus, kas palīdz samazināt neierašanās risku. Varat nosūtīt klientiem e-pastu, SMS vai WhatsApp atgādinājumus iepriekš norādītā laikā. Atgādinājumi darbojas automātiski un palīdz uzturēt sakārtotu grafiku, lai visi pieraksti notiktu bez liekiem pārpratumiem.",
+    },
+    {
+        question: "Vai ir bezmaksas plāns?",
+        answer:
+            "Jā. Starter plāns ir pilnībā bez maksas un ietver svarīgākās tiešsaistes rezervāciju sistēmas funkcijas — neierobežotus pierakstus, pielāgojamu rezervāciju lapu, kalendāra sinhronizāciju un e-pastu atgādinājumus. Tas ir ideāls risinājums mazajiem uzņēmumiem un speciālistiem, kas vēlas sākt izmantot ērtu pierakstu rīku bez sākotnējām izmaksām.",
+    },
+    {
+        question: "Vai varu eksportēt savus datus?",
+        answer:
+            "Jā. Jebkurā brīdī vari eksportēt savus klientus, pierakstu vēsturi un sarakstes CSV formātā. Bookable.live nodrošina pilnīgu datu pārnesamību, lai tu vienmēr saglabātu kontroli pār savu informāciju un varētu to izmantot citās sistēmās, veidot rezerves kopijas vai analizēt savu biznesu.",
+    },
+    {
+        question: "Vai varu iepriekš izvēlēties pakalpojumus iegultajam logrīkam?",
+        answer:
+            "Jā. Iestatījumos varat izvēlēties konkrētu pakalpojumu, darbinieku vai vietu, ko iepriekš atlasīt. Integrācijas kods automātiski atjaunināsies ar pareizajiem parametriem.",
+    },
 ];
 
 const faqsData = isLV ? faqsDataLV : faqsDataEN;
@@ -752,7 +774,7 @@ const faqsData = isLV ? faqsDataLV : faqsDataEN;
 const faqContainer = document.getElementById("faq-container");
 
 if (faqContainer) {
-faqContainer.innerHTML = faqsData.map((faq, index) => `
+    faqContainer.innerHTML = faqsData.map((faq, index) => `
     <div class="js-fade-in border-b border-slate-300 dark:border-purple-900 py-4 cursor-pointer w-full" data-index="${index}">
         <div class="flex items-center justify-between">
           <h3 class="text-base font-medium">${faq.question}</h3>
@@ -765,7 +787,7 @@ faqContainer.innerHTML = faqsData.map((faq, index) => `
       </div>
     `).join("");
 
-        initFadeInOnScroll(faqContainer);
+    initFadeInOnScroll(faqContainer);
 }
 
 // Accordion Logic
