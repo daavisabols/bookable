@@ -146,7 +146,7 @@ const formatMoney = (amount) => {
             style: "currency",
             currency,
             minimumFractionDigits: 0,
-            maximumFractionDigits: 0,
+            maximumFractionDigits: 2,
         }).format(n);
     } catch {
         // Fallback if Intl/currency is unsupported for any reason
@@ -253,7 +253,7 @@ const featuresDataEN = [
     {
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M2 12h4l3 9 6-18 3 9h4'/></svg>`,
         title: "Automated reminders",
-        description: "Reduce no‑shows with email, SMS, and WhatsApp reminders sent at smart intervals.",
+        description: "Reduce no‑shows with email, SMS, and WhatsApp (coming soon) reminders sent at smart intervals.",
     },
     {
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='m21 16-4 4-4-4'/><path d='M17 20V4'/><path d='M3 3v18h18'/></svg>`,
@@ -289,7 +289,7 @@ const featuresDataLV = [
     {
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M2 12h4l3 9 6-18 3 9h4'/></svg>`,
         title: "Automatizēti atgādinājumi",
-        description: "Samazini neierašanos ar e‑pastu un WhatsApp atgādinājumiem gudros intervālos.",
+        description: "Samazini neierašanos ar e‑pastu un WhatsApp (drīzumā) atgādinājumiem gudros intervālos.",
     },
     {
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='m21 16-4 4-4-4'/><path d='M17 20V4'/><path d='M3 3v18h18'/></svg>`,
@@ -504,7 +504,7 @@ const pricingDataEN = [
             "Multiple Calendar integrations",
             "Custom messaging & reminder templates",
             "Custom branding",
-            "WhatsApp & SMS reminders",
+            "SMS reminders",
             "Multiple Staff Members & Venues",
             "Widget embed & pre-selection",
             "Smart Rescheduling"
@@ -539,7 +539,7 @@ const pricingDataLV = [
             "Vairāku kalendāru integrācijas",
             "Pielāgojami ziņojumi un atgādinājumu veidnes",
             "Pielāgota zīmola identitāte",
-            "WhatsApp un SMS atgādinājumi",
+            "SMS atgādinājumi",
             "Vairāki darbinieku konti un lokācijas",
             "Logrīka integrācija un priekšatlase",
             "Gudra pārcelšana"
@@ -585,7 +585,7 @@ const computeSavingsPercent = (monthly, yearly) => {
 };
 
 const getPeriodLabel = (cadence) => {
-    if (cadence === "yearly") return isLV ? "/gadā" : "/yr";
+    if (cadence === "yearly") return isLV ? "/mēn" : "/mo";
     return isLV ? "/mēn" : "/mo";
 };
 
@@ -631,7 +631,11 @@ const renderPricing = (cadence = "monthly") => {
 
     pricingContainer.innerHTML = pricingData.map(plan => {
         const price = getPlanPrice(plan, cadence);
-        const priceLabel = formatMoney(price);
+        const displayPrice = cadence === "yearly" && price > 0 ? (price / 12) : price;
+        const priceLabel = formatMoney(displayPrice);
+        const billedYearlyNote = cadence === "yearly" && price > 0
+            ? `<p class="text-xs mt-1 ${plan.mostPopular ? 'text-white/70' : 'text-slate-400 dark:text-slate-500'}">${isLV ? `*Rēķins reizi gadā (${formatMoney(price)})` : `*Billed yearly (${formatMoney(price)})`}</p>`
+            : '';
 
         return `
             <div class="js-fade-in p-6 rounded-2xl w-full shadow-[0px_4px_26px] shadow-black/6 flex flex-col h-full 
@@ -651,6 +655,7 @@ const renderPricing = (cadence = "monthly") => {
                     <h4 class="text-3xl font-semibold mt-1 ${plan.mostPopular ? "text-white" : ""}">
                         ${priceLabel}<span class="font-normal text-sm ${plan.mostPopular ? "text-white" : "text-slate-500"}">${periodLabel}</span>
                     </h4>
+                    ${billedYearlyNote}
 
                     <hr class="my-8 ${plan.mostPopular ? "border-gray-300" : "border-slate-300 dark:border-slate-700"}" />
 
@@ -717,7 +722,7 @@ const faqsDataEN = [
     {
         question: "How do reminders work?",
         answer:
-            "Bookable.live includes built-in automated reminders to reduce no-shows and keep your schedule running smoothly. You can set smart reminders via email, SMS, or WhatsApp, delivered at the ideal time before an appointment. The system sends notifications automatically, so your clients always remember their bookings and your business saves valuable time.",
+            "Bookable.live includes built-in automated reminders to reduce no-shows and keep your schedule running smoothly. You can set smart reminders via email, SMS, or WhatsApp (coming soon), delivered at the ideal time before an appointment. The system sends notifications automatically, so your clients always remember their bookings and your business saves valuable time.",
     },
     {
         question: "Is there a free plan?",
@@ -750,7 +755,7 @@ const faqsDataLV = [
     {
         question: "Kā darbojas atgādinājumi?",
         answer:
-            "Bookable.live nodrošina automatizētus atgādinājumus, kas palīdz samazināt neierašanās risku. Varat nosūtīt klientiem e-pastu, SMS vai WhatsApp atgādinājumus iepriekš norādītā laikā. Atgādinājumi darbojas automātiski un palīdz uzturēt sakārtotu grafiku, lai visi pieraksti notiktu bez liekiem pārpratumiem.",
+            "Bookable.live nodrošina automatizētus atgādinājumus, kas palīdz samazināt neierašanās risku. Varat nosūtīt klientiem e-pastu, SMS vai WhatsApp (drīzumā) atgādinājumus iepriekš norādītā laikā. Atgādinājumi darbojas automātiski un palīdz uzturēt sakārtotu grafiku, lai visi pieraksti notiktu bez liekiem pārpratumiem.",
     },
     {
         question: "Vai ir bezmaksas plāns?",
