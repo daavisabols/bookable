@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDLKN6TRJ2"></script>
+  <script src="/analytics.js"></script>
+
+  <title>How to Set Up Stripe for Taking Payments on Your Booking Page — Bookable.live</title>
+  <meta name="description"
+    content="Step‑by‑step guide to connecting Stripe to your Bookable.live booking page so clients can pay or leave a deposit when they book. Covers account setup, connecting, pricing, and tips." />
+  <link rel="canonical" href="https://bookable.live/blog/setup-stripe-payments-booking/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to Set Up Stripe for Taking Payments on Your Booking Page" />
+  <meta property="og:description"
+    content="Connect Stripe in minutes so clients can pay when they book. Full walkthrough with tips for service businesses." />
+  <meta property="og:url" content="https://bookable.live/blog/setup-stripe-payments-booking/" />
+  <meta property="og:image" content="/assets/logo_bright.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Set Up Stripe for Taking Payments on Your Booking Page" />
+  <meta name="twitter:description" content="Connect Stripe in minutes so clients can pay when they book." />
+  <meta name="twitter:image" content="/assets/logo_bright.png" />
+
+  <link rel="stylesheet" href="/output.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How to Set Up Stripe for Taking Payments on Your Booking Page",
+      "description": "Step‑by‑step guide to connecting Stripe to your Bookable.live booking page so clients can pay or leave a deposit when they book.",
+      "datePublished": "2026-02-22",
+      "dateModified": "2026-02-22",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bookable.live/blog/setup-stripe-payments-booking/"
+      },
+      "author": { "@type": "Organization", "name": "Bookable.live" },
+      "publisher": { "@type": "Organization", "name": "Bookable.live", "url": "https://bookable.live/" }
+    }
+  </script>
+
+  <style>
+    .cta-button {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.6s;
+    }
+
+    .cta-button:hover::before {
+      transform: translate(-50%, -50%) scale(60);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4), 0 8px 10px -6px rgba(139, 92, 246, 0.3);
+    }
+
+    .cta-button:active {
+      transform: translateY(0) scale(0.98);
+    }
+  </style>
+</head>
+
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXRTPXCM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
+  <nav id="navbar"
+    class="flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur">
+    <a href="/"><img id="logo" src="/assets/logo.png" alt="Bookable.live logo" class="h-12 w-auto shrink-0"></a>
+
+    <div class="hidden items-center md:gap-8 lg:gap-12 md:flex">
+      <a href="/" class="hover:text-slate-600 dark:hover:text-slate-300">Home</a>
+      <a href="/features/" class="hover:text-slate-600 dark:hover:text-slate-300">Features</a>
+      <a href="/integrations/" class="hover:text-slate-600 dark:hover:text-slate-300">Integrations</a>
+      <a href="/industries/" class="hover:text-slate-600 dark:hover:text-slate-300">Industries</a>
+      <a href="/pricing/" class="hover:text-slate-600 dark:hover:text-slate-300">Pricing</a>
+      <a href="/blog/" class="hover:text-slate-600 dark:hover:text-slate-300">Blog</a>
+    </div>
+
+    <div id="mobileMenu"
+      class="fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/60 dark:bg-black/40 backdrop-blur-md md:hidden transition duration-300 -translate-x-full">
+      <a href="/">Home</a>
+      <a href="/features/">Features</a>
+      <a href="/integrations/">Integrations</a>
+      <a href="/industries/">Industries</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://app.bookable.live/signup" class="bg-purple-600 p-3 px-6 text-white rounded-full">Sign up for
+        free</a>
+      <button id="closeMenu"
+        class="aspect-square size-10 p-1 items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-x-icon lucide-x">
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-4 md:gap-6">
+      <a href="/lv/blog/stripe-maksajumu-iestatisana-rezervacijam/"
+        class="flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out text-sm font-medium">LV</a>
+      <button id="themeToggle"
+        class="flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-sun-icon lucide-sun">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+        </svg>
+      </button>
+
+      <a href="https://app.bookable.live/signup"
+        class="cta-button hidden md:inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-6 h-11 font-semibold leading-none">Start
+        free</a>
+      <button id="openMenu" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-menu-icon lucide-menu">
+          <path d="M4 12h16" />
+          <path d="M4 18h16" />
+          <path d="M4 6h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="relative pt-28 px-6 md:px-16 lg:px-24 xl:px-32">
+    <article class="max-w-3xl mx-auto">
+      <div class="text-sm text-slate-500 dark:text-slate-400">
+        <a class="hover:text-purple-600 transition" href="/blog/">Blog</a>
+        <span class="mx-2">/</span>
+        <span>Feb 22, 2026 · 6 min read</span>
+      </div>
+
+      <h1 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">How to Set Up Stripe for Taking Payments on
+        Your Booking Page</h1>
+      <p class="mt-4 text-lg text-slate-600 dark:text-slate-200">Collecting payment (or a deposit) at the time of
+        booking dramatically reduces no‑shows and saves you chasing invoices. Here's how to connect Stripe to your
+        Bookable.live booking page in minutes.</p>
+
+      <div class="mt-8 space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
+        <h2 class="text-2xl font-semibold">Why take payments at booking time?</h2>
+        <p>When clients pay upfront — even a small deposit — they're far more likely to show up. You also:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Eliminate late cancellations</strong> — clients think twice when they have skin in the game.</li>
+          <li><strong>Cut admin work</strong> — no more manual invoices or awkward "can you pay now?" conversations.</li>
+          <li><strong>Get paid faster</strong> — funds land in your bank account automatically.</li>
+          <li><strong>Accept cards, Apple Pay, and Google Pay</strong> — clients can pay how they prefer.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold">What you need before you start</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>A <strong>Bookable.live</strong> account (free to create).</li>
+          <li>A <strong>Stripe</strong> account — if you don't have one, you'll create it during the connection flow. Stripe is available in 40+ countries.</li>
+          <li>At least one <strong>service with a price</strong> configured in your Bookable.live dashboard.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold">Step 1 — Create or log in to Stripe</h2>
+        <p>Go to <a href="https://stripe.com" target="_blank" rel="noopener noreferrer" class="text-purple-600 hover:underline">stripe.com</a> and create a free account if you don't have one. Stripe will ask for basic business details (name, address, bank account) to verify your identity. This usually takes a few minutes.</p>
+        <p>If you already have a Stripe account, make sure you're logged in to the correct one before connecting.</p>
+
+        <h2 class="text-2xl font-semibold">Step 2 — Connect Stripe in Bookable.live</h2>
+        <ol class="list-decimal pl-6 space-y-2">
+          <li>Log in to your <strong>Bookable.live dashboard</strong>.</li>
+          <li>Go to <strong>Settings → Payments</strong>.</li>
+          <li>Click <strong>"Connect with Stripe"</strong>.</li>
+          <li>You'll be redirected to Stripe to authorize the connection. Review the permissions and click <strong>Agree</strong>.</li>
+          <li>Once authorized, you're redirected back to Bookable.live. You should see a green <strong>"Connected"</strong> status.</li>
+        </ol>
+        <p>That's it for the connection. Bookable.live uses <strong>Stripe Connect</strong>, which means your clients' payments go directly to your Stripe account — we never hold your funds.</p>
+
+        <h2 class="text-2xl font-semibold">Step 3 — Set prices on your services</h2>
+        <p>In your dashboard, go to <strong>Services</strong> and edit each service you want to charge for. Enter the price in your local currency. When a client books that service, they'll see the price and a secure payment form before confirming.</p>
+        <p>Services without a price will continue to work as free bookings — no payment step shown.</p>
+
+        <h2 class="text-2xl font-semibold">Step 4 — Choose payment mode</h2>
+        <p>In <strong>Settings → Payments</strong> you can toggle between two modes:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Optional payments</strong> — the payment step appears but clients can still book without paying (useful for businesses that take payment on arrival for some services).</li>
+          <li><strong>Required payments</strong> — clients must complete payment to confirm the booking. Great for reducing no‑shows and securing revenue.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold">What your clients see</h2>
+        <p>When a client reaches the final step of your booking page, they see a clean Stripe payment form embedded directly in the page. They can pay with:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Credit or debit card (Visa, Mastercard, etc.)</li>
+          <li>Apple Pay (on supported devices)</li>
+          <li>Google Pay</li>
+        </ul>
+        <p>The payment is processed instantly and the booking is confirmed right away — no extra clicks needed.</p>
+
+        <h2 class="text-2xl font-semibold">Stripe fees</h2>
+        <p>Stripe charges standard processing fees (typically 1.5% + €0.25 for European cards, or 2.9% + $0.30 in the US). These fees are charged by Stripe directly — Bookable.live does not add any extra transaction fee on top.</p>
+        <p>You can review your fees and payouts anytime in the <a href="https://dashboard.stripe.com" target="_blank" rel="noopener noreferrer" class="text-purple-600 hover:underline">Stripe Dashboard</a>.</p>
+
+        <h2 class="text-2xl font-semibold">Tips for getting the most out of payments</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Start with "required" mode</strong> if no‑shows are a problem — it eliminates most of them instantly.</li>
+          <li><strong>Set realistic prices</strong> — even a small deposit (e.g., €5–€10) is enough to filter out non‑serious bookings.</li>
+          <li><strong>Combine with reminders</strong> — automated reminders plus upfront payment is the strongest no‑show prevention combo.</li>
+          <li><strong>Check your Stripe payouts schedule</strong> — by default Stripe pays out daily, but you can adjust this in your Stripe settings.</li>
+          <li><strong>Test it yourself</strong> — open your own booking page in a private browser and go through the full flow to see exactly what clients experience.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold">Troubleshooting</h2>
+        <div class="space-y-4">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 p-4">
+            <p class="font-semibold">"Connect with Stripe" button doesn't appear</p>
+            <p class="mt-1 text-sm">Make sure you're on a paid plan that includes the payments feature. Check <a href="/pricing/" class="text-purple-600 hover:underline">Pricing</a> for details.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 p-4">
+            <p class="font-semibold">Payment form doesn't show on booking page</p>
+            <p class="mt-1 text-sm">Verify that the service has a price set (greater than 0) and that payment mode is enabled in Settings → Payments.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 p-4">
+            <p class="font-semibold">Client's payment was declined</p>
+            <p class="mt-1 text-sm">This is handled by Stripe's fraud detection. The client should try a different card or contact their bank. You can see declined attempts in your Stripe Dashboard.</p>
+          </div>
+        </div>
+
+        <div
+          class="mt-10 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 p-6">
+          <h3 class="text-xl font-semibold">Ready to get paid at booking time?</h3>
+          <p class="mt-2">Create your free account, connect Stripe, and start collecting payments today. The whole setup takes less than 10 minutes.</p>
+          <div class="mt-5 flex flex-col sm:flex-row gap-3">
+            <a href="https://app.bookable.live/signup"
+              class="cta-button inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-full px-8 h-12 font-semibold leading-none">Start
+              free</a>
+            <a href="/features/payments/"
+              class="inline-flex items-center justify-center rounded-full px-8 h-12 font-semibold leading-none border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/30 hover:text-purple-600 transition">Payments
+              feature</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="relative px-6 md:px-16 lg:px-24 xl:px-32 mt-24 w-full dark:text-slate-50">
+    <img id="landing-text"
+      class="absolute max-w-4xl w-full h-auto -mt-30 max-md:px-4 right-0 md:right-16 lg:right-24 xl:right-32 top-0 pointer-events-none"
+      src="/assets/bookable-text-light.svg" alt="Bookable.live" width="930" height="340" fetchPriority="high" />
+    <div
+      class="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-200 dark:border-slate-700 pb-6">
+      <div class="md:max-w-114">
+        <img id="logo-footer" class="h-9 md:h-9.5 w-auto shrink-0 -ml-4" src="/assets/logo.png" alt="Bookable.live logo"
+          width="140" height="40" fetchPriority="high" />
+        <p class="mt-6">Bookable.live helps service businesses accept bookings 24/7, sync calendars and send automated
+          reminders.</p>
+      </div>
+      <div class="flex-1 flex items-start md:justify-end gap-20">
+        <div>
+          <h2 class="font-semibold mb-5">Company</h2>
+          <ul class="space-y-2">
+            <li><a href="/" class="hover:text-purple-600 transition">Home</a></li>
+            <li><a href="/features/" class="hover:text-purple-600 transition">Features</a></li>
+            <li><a href="/integrations/" class="hover:text-purple-600 transition">Integrations</a></li>
+            <li><a href="/industries/" class="hover:text-purple-600 transition">Industries</a></li>
+            <li><a href="/pricing/" class="hover:text-purple-600 transition">Pricing</a></li>
+            <li><a href="/blog/" class="hover:text-purple-600 transition">Blog</a></li>
+            <li><a href="/privacy.html" class="hover:text-purple-600 transition">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-semibold mb-5">Get in touch</h2>
+          <div class="space-y-2">
+            <p><a href="mailto:info@bookable.live" class="hover:text-purple-600 transition">info@bookable.live</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center justify-center gap-3 pt-4">
+      <img src="/assets/visa.svg" alt="Visa" class="h-6 w-auto opacity-60">
+      <img src="/assets/mastercard.svg" alt="Mastercard" class="h-6 w-auto opacity-60">
+      <img src="/assets/apple-pay.svg" alt="Apple Pay" class="h-6 w-auto opacity-60">
+      <img src="/assets/google-pay.svg" alt="Google Pay" class="h-6 w-auto opacity-60">
+    </div>
+    <p class="pt-2 text-center pb-5">Copyright 2026 © <a href="https://bookable.live">Bookable.live</a>.&nbsp;&nbsp;All
+      Rights Reserved.&nbsp;&nbsp;SIA ClearTech.&nbsp;&nbsp;Made in Latvia 🇱🇻</p>
+  </footer>
+
+  <div id="cookieBanner" class="fixed inset-x-0 bottom-0 z-[60] hidden">
+    <div class="mx-auto max-w-5xl px-4 pb-4">
+      <div
+        class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur p-4">
+        <p class="text-sm text-slate-700 dark:text-slate-200">We use essential cookies to remember your settings.
+          <a href="/privacy.html" class="underline hover:text-purple-600 transition">Learn more</a>.
+        </p>
+        <div class="flex items-center gap-2">
+          <button id="cookieAccept"
+            class="px-4 py-2 rounded-full bg-purple-600 hover:bg-purple-700 transition text-white font-medium text-sm leading-none">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>

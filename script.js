@@ -265,6 +265,11 @@ const featuresDataEN = [
         title: "Analytics & exports",
         description: "Track bookings, cancellations, revenue and export clients & appointments to CSV.",
     },
+    {
+        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><rect x='2' y='5' width='20' height='14' rx='2'/><path d='M2 10h20'/></svg>`,
+        title: "Payment collection",
+        description: "Accept payments for your services directly through your booking page. Clients can pay upfront or leave a deposit using Apple Pay, Google Pay, Visa, Mastercard, and more.",
+    },
 ];
 
 const featuresDataLV = [
@@ -300,6 +305,11 @@ const featuresDataLV = [
         icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M3 3h18v4H3z'/><path d='M8 11h13v4H8z'/><path d='M13 19h8v4h-8z'/><path d='M3 7v14h5'/></svg>`,
         title: "Analītika un eksporti",
         description: "Seko rezervācijām, atcelšanām, ieņēmumiem un eksportē klientus & pierakstus uz CSV.",
+    },
+    {
+        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><rect x='2' y='5' width='20' height='14' rx='2'/><path d='M2 10h20'/></svg>`,
+        title: "Maksājumu pieņemšana",
+        description: "Pieņem maksājumus par saviem pakalpojumiem tieši caur rezervāciju lapu. Klienti var samaksāt uzreiz vai atstāt depozītu, izmantojot Apple Pay, Google Pay, Visa, Mastercard un citus.",
     },
 ];
 
@@ -507,9 +517,10 @@ const pricingDataEN = [
             "SMS reminders",
             "Multiple Staff Members & Venues",
             "Widget embed & pre-selection",
-            "Smart Rescheduling"
+            "Smart Rescheduling",
+            "Online Payments via Stripe"
         ],
-        buttonText: "Upgrade Now",
+        buttonText: "Start Pro Trial",
     }
 ];
 
@@ -542,7 +553,8 @@ const pricingDataLV = [
             "SMS atgādinājumi",
             "Vairāki darbinieku konti un lokācijas",
             "Logrīka integrācija un priekšatlase",
-            "Gudra pārcelšana"
+            "Gudra pārcelšana",
+            "Tiešsaistes maksājumi ar Stripe"
         ],
         buttonText: "Sākt Pro izmēģinājumu",
     }
@@ -739,6 +751,16 @@ const faqsDataEN = [
         answer:
             "Yes. In your settings, you can choose a specific service, staff, or venue to pre-select. The embed code will automatically update with the correct URL parameters, making it easier for your customers to find what they need.",
     },
+    {
+        question: "What happens if I'm sick or have an emergency?",
+        answer:
+            "No problem — with a single tap, you can cancel all appointments for the day. Every affected client is automatically notified via email or SMS, so you don't have to contact anyone manually. It's designed for real-life situations where things come up unexpectedly.",
+    },
+    {
+        question: "Can I accept payments for my services?",
+        answer:
+            "Yes. Bookable.live lets you collect payments directly through your booking page. Clients can pay upfront or leave a deposit using Apple Pay, Google Pay, Visa, Mastercard, and other popular payment methods — making checkout fast and frictionless for both you and your clients.",
+    },
 ];
 
 const faqsDataLV = [
@@ -771,6 +793,16 @@ const faqsDataLV = [
         question: "Vai varu iepriekš izvēlēties pakalpojumus iegultajam logrīkam?",
         answer:
             "Jā. Iestatījumos varat izvēlēties konkrētu pakalpojumu, darbinieku vai vietu, ko iepriekš atlasīt. Integrācijas kods automātiski atjaunināsies ar pareizajiem parametriem.",
+    },
+    {
+        question: "Kas notiek, ja esmu slims vai man ir ārkārtas situācija?",
+        answer:
+            "Nav problēmu — ar vienu pieskārienu jūs varat atcelt visus pierakstus dienai. Visiem skartajiem klientiem automātiski tiek nosūtīti paziņojumi pa e-pastu vai SMS, tāpēc jums nav jāsaņem kontakti manuāli. Tas ir paredzēts reālām situācijām, kad rodas neparedzēti notikumi.",
+    },
+    {
+        question: "Vai varu pieņemt maksājumus par saviem pakalpojumiem?",
+        answer:
+            "Jā. Bookable.live ļauj iekasēt maksājumus tieši caur jūsu rezervāciju lapu. Klienti var samaksāt uzreiz vai atstāt depozītu, izmantojot Apple Pay, Google Pay, Visa, Mastercard un citas populāras maksājumu metodes — padarot norēķinu procesu ātru un ērtu gan jums, gan jūsu klientiem.",
     },
 ];
 

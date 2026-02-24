@@ -205,8 +205,8 @@
     </a>
 
     <div class="hidden items-center md:gap-8 lg:gap-12 md:flex">
-      <a href="#top" class="hover:text-slate-600 dark:hover:text-slate-300">Sākums</a>
       <a href="#feature-section" class="hover:text-slate-600 dark:hover:text-slate-300">Ieguvumi</a>
+      <a href="#how-it-works" class="hover:text-slate-600 dark:hover:text-slate-300">Kā tas darbojas</a>
       <a href="#who-section" class="hover:text-slate-600 dark:hover:text-slate-300">Vai man to vajag?</a>
       <a href="#pricing-section" class="hover:text-slate-600 dark:hover:text-slate-300">Cenas</a>
       <a href="#faq" class="hover:text-slate-600 dark:hover:text-slate-300">BUJ</a>
@@ -214,8 +214,8 @@
 
     <div id="mobileMenu"
       class="fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/60 dark:bg-black/40 backdrop-blur-md md:hidden transition duration-300 -translate-x-full">
-      <a href="#top">Sākums</a>
       <a href="#feature-section">Ieguvumi</a>
+      <a href="#how-it-works">Kā tas darbojas</a>
       <a href="#who-section">Vai man to vajag?</a>
       <a href="#pricing-section">Cenas</a>
       <a href="#faq">BUJ</a>
@@ -265,8 +265,13 @@
 
   <!-- Hero -->
   <div id="top"
-    class="flex flex-col items-center justify-center text-center px-4 bg-[url('../assets/light-hero-gradient.svg')] dark:bg-[url('../assets/dark-hero-gradient.svg')] bg-no-repeat bg-[length:100%_100%] bg-center pt-12 pb-12">
-    <h1 class="mt-8 pt-12 text-4xl/12 md:text-[56px]/16 font-semibold max-w-5xl">
+    class="relative overflow-hidden flex flex-col items-center justify-center text-center px-4 bg-[url('../assets/light-hero-gradient.svg')] dark:bg-[url('../assets/dark-hero-gradient.svg')] bg-no-repeat bg-[length:100%_100%] bg-center pt-12 pb-12">
+    <!-- Decorative phone mockups – desktop only -->
+    <img src="../assets/mobile-booking-page-left.webp" alt="Rezervācijas lapas priekšskatījums"
+        class="hidden lg:block pointer-events-none select-none absolute -left-112 xl:-left-40 top-2/4 -translate-y-1/4 w-72 xl:w-80 rotate-36 opacity-90" />
+    <img src="../assets/mobile-booking-page.webp" alt="Rezervācijas lapas priekšskatījums"
+        class="hidden lg:block pointer-events-none select-none absolute -right-112 xl:-right-40 top-2/4 -translate-y-1/4 w-72 xl:w-80 -rotate-36 opacity-90" />
+    <h1 class="mt-4 md:mt-8 pt-12 text-4xl/12 md:text-[56px]/16 font-semibold max-w-5xl">
       Samazini neierašanos un<br /><span class="text-6xl/14 md:text-[64px]/16 font-bold">ietaupi 3-8 stundas
         nedēļā</span><br>ar tiešsaistes rezervācijām
     </h1>
@@ -282,7 +287,13 @@
       </a>
       <small class="block mx-auto text-slate-400">*nav nepieciešama kredītkarte</small>
     </div>
-    <h3 class="text-base text-center text-slate-400 mt-24 pb-6 font-medium">Integrējas ar jūsu iecienītākajiem rīkiem
+    <!-- Mobile hero image – half-cut with gradient fade -->
+    <div class="lg:hidden relative mt-8 w-56 mx-auto max-h-64 overflow-hidden">
+        <img src="../assets/mobile-booking-page.webp" alt="Rezervācijas lapas priekšskatījums"
+            class="w-full select-none pointer-events-none" />
+        <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white dark:from-black to-transparent pointer-events-none"></div>
+    </div>
+    <h3 class="text-base text-center text-slate-400 mt-16 pb-6 font-medium">Integrējas ar jūsu iecienītākajiem rīkiem
     </h3>
     <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 dark:text-slate-300 pb-8">
       <span class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">Google Calendar</span>
@@ -291,14 +302,71 @@
       <span class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">Shopify</span>
     </div>
     <div class="overflow-hidden w-full relative max-w-5xl mx-auto select-none">
-      <div
-        class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent">
-      </div>
       <div class="marquee-inner will-change-transform max-w-5xl mx-auto">
         <div id="logo-track" class="flex items-center"></div>
       </div>
+    </div>
+  </div>
+
+  <!-- Iespējas -->
+  <div id="feature-section" class="text-center pt-4">
+    <p
+      class="text-center font-medium text-indigo-600 dark:text-indigo-400 mt-28 px-10 py-2 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 w-max mx-auto">
+      Ieguvumi</p>
+    <h2 class="text-3xl font-semibold text-center mx-auto mt-4 px-2">Viss, kas nepieciešams, lai pieņemtu rezervācijas
+      tiešsaistē</h2>
+    <p class="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl mx-auto px-2">
+      Bookable.live palīdz salonu, klīniku, studiju un citu pakalpojumu uzņēmumiem pieņemt rezervācijas, pārvaldīt
+      grafikus un samazināt neierašanos.
+    </p>
+  </div>
+
+    <div id="features" class="mt-10 px-6 md:px-16 lg:px-24 xl:px-32">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div
-        class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent">
+        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+        <h3 class="text-lg font-semibold">Zīmola rezervāciju lapas</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Kopīgo skaistu rezervācijas saiti ar tavu zīmolu,
+          pakalpojumiem, cenām un pieejamību. Piemērota mobilajām ierīcēm un SEO optimizēta.</p>
+      </div>
+      <div
+        class="border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 overflow-hidden">
+        <img src="../assets/branded-booking-page.webp" alt="Zīmola rezervāciju lapa" loading="lazy" decoding="async"
+          class="w-full h-auto object-contain" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+      <div
+        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+        <h3 class="text-lg font-semibold">Kalendāru sinhronizācija</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Divvirzienu sinhronizācija ar Google Calendar un
+          Microsoft Outlook, lai izvairītos no dubultām rezervācijām un vienmēr būtu lietas kursā.</p>
+      </div>
+      <div
+        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+        <h3 class="text-lg font-semibold">Personāls un vairākas lokācijas</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Piesaisti pakalpojumus konkrētiem darbiniekiem un
+          atrašanās vietām. Klienti var izvēlēties paši vai ļaut Bookable automātiski piešķirt.</p>
+      </div>
+      <div
+        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+        <h3 class="text-lg font-semibold">Automatizēti atgādinājumi</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Samazini neierašanās risku ar ieplānotiem e-pastiem,
+          SMS un WhatsApp (drīzumā)
+          atgādinājumiem. Iekļauti gudri laiki un veidnes.</p>
+      </div>
+      <div
+        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+        <h3 class="text-lg font-semibold">Logrīka integrācija</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Integrējiet rezervācijas pieredzi tieši savā
+          mājaslapā. Iepriekš atlasiet pakalpojumus vai darbiniekus, lai vienkāršotu procesu.</p>
+      </div>
+      <div
+        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+        <h3 class="text-lg font-semibold">Analītika un eksporti</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Seko rezervācijām, atcelšanām un ieņēmumiem. Eksportē
+          klientus un pierakstus uz CSV jebkurā brīdī.</p>
       </div>
     </div>
   </div>
@@ -372,68 +440,6 @@
       </svg>
       Apskatīt demo
     </button>
-  </div>
-
-  <!-- Iespējas -->
-  <div id="feature-section" class="text-center pt-4">
-    <p
-      class="text-center font-medium text-indigo-600 dark:text-indigo-400 mt-28 px-10 py-2 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 w-max mx-auto">
-      Ieguvumi</p>
-    <h2 class="text-3xl font-semibold text-center mx-auto mt-4 px-2">Viss, kas nepieciešams, lai pieņemtu rezervācijas
-      tiešsaistē</h2>
-    <p class="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl mx-auto px-2">
-      Bookable.live palīdz salonu, klīniku, studiju un citu pakalpojumu uzņēmumiem pieņemt rezervācijas, pārvaldīt
-      grafikus un samazināt neierašanos.
-    </p>
-  </div>
-  <div id="features" class="mt-10 px-6 md:px-16 lg:px-24 xl:px-32">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div
-        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-        <h3 class="text-lg font-semibold">Zīmola rezervāciju lapas</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Kopīgo skaistu rezervācijas saiti ar tavu zīmolu,
-          pakalpojumiem, cenām un pieejamību. Piemērota mobilajām ierīcēm un SEO optimizēta.</p>
-      </div>
-      <div
-        class="border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 overflow-hidden">
-        <img src="../assets/branded-booking-page.webp" alt="Zīmola rezervāciju lapa" loading="lazy" decoding="async"
-          class="w-full h-auto object-contain" />
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-      <div
-        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-        <h3 class="text-lg font-semibold">Kalendāru sinhronizācija</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Divvirzienu sinhronizācija ar Google Calendar un
-          Microsoft Outlook, lai izvairītos no dubultām rezervācijām un vienmēr būtu lietas kursā.</p>
-      </div>
-      <div
-        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-        <h3 class="text-lg font-semibold">Personāls un vairākas lokācijas</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Piesaisti pakalpojumus konkrētiem darbiniekiem un
-          atrašanās vietām. Klienti var izvēlēties paši vai ļaut Bookable automātiski piešķirt.</p>
-      </div>
-      <div
-        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-        <h3 class="text-lg font-semibold">Automatizēti atgādinājumi</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Samazini neierašanās risku ar ieplānotiem e-pastiem,
-          SMS un WhatsApp (drīzumā)
-          atgādinājumiem. Iekļauti gudri laiki un veidnes.</p>
-      </div>
-      <div
-        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-        <h3 class="text-lg font-semibold">Logrīka integrācija</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Integrējiet rezervācijas pieredzi tieši savā
-          mājaslapā. Iepriekš atlasiet pakalpojumus vai darbiniekus, lai vienkāršotu procesu.</p>
-      </div>
-      <div
-        class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-        <h3 class="text-lg font-semibold">Analītika un eksporti</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Seko rezervācijām, atcelšanām un ieņēmumiem. Eksportē
-          klientus un pierakstus uz CSV jebkurā brīdī.</p>
-      </div>
-    </div>
   </div>
 
   <!-- Who is it for Section (Latvian) -->
@@ -583,6 +589,7 @@
           <li>Vairāki darbinieku konti</li>
           <li>Vairākas lokācijas</li>
           <li>Gudra pārcelšana</li>
+          <li>Tiešsaistes maksājumi ar Stripe</li>
         </ul>
         <div class="mt-auto pt-10">
           <a href="https://app.bookable.live/signup"
@@ -699,7 +706,13 @@
         </div>
       </div>
     </div>
-    <p class="pt-4 text-center pb-5">
+    <div class="flex items-center justify-center gap-3 pt-4">
+      <img src="../assets/visa.svg" alt="Visa" class="h-6 w-auto opacity-60">
+      <img src="../assets/mastercard.svg" alt="Mastercard" class="h-6 w-auto opacity-60">
+      <img src="../assets/apple-pay.svg" alt="Apple Pay" class="h-6 w-auto opacity-60">
+      <img src="../assets/google-pay.svg" alt="Google Pay" class="h-6 w-auto opacity-60">
+    </div>
+    <p class="pt-2 text-center pb-5">
       Autortiesības 2026 © <a href="https://bookable.live">Bookable.live</a>.&nbsp;&nbsp;Visas tiesības
       aizsargātas.&nbsp;&nbsp;SIA ClearTech.&nbsp;&nbsp;Izstrādāts Latvijā 🇱🇻
     </p>

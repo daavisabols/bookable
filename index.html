@@ -139,7 +139,8 @@
         "Automated Email & WhatsApp (Coming Soon) Reminders",
         "Client Management",
         "Widget Embed & Pre-selection",
-        "Multi-language Support"
+        "Multi-language Support",
+        "Payment Collection (Apple Pay, Google Pay, Visa, Mastercard)"
       ],
             "audience": {
                 "@type": "BusinessAudience",
@@ -207,8 +208,8 @@
         </a>
 
         <div class="hidden items-center md:gap-8 lg:gap-12 md:flex">
-            <a href="#top" class="hover:text-slate-600 dark:hover:text-slate-300">Home</a>
             <a href="#feature-section" class="hover:text-slate-600 dark:hover:text-slate-300">Benefits</a>
+            <a href="#how-it-works" class="hover:text-slate-600 dark:hover:text-slate-300">How it works</a>
             <a href="#who-section" class="hover:text-slate-600 dark:hover:text-slate-300">Do I need it?</a>
             <a href="#pricing-section" class="hover:text-slate-600 dark:hover:text-slate-300">Pricing</a>
             <a href="#faq" class="hover:text-slate-600 dark:hover:text-slate-300">FAQ</a>
@@ -217,8 +218,8 @@
 
         <div id="mobileMenu"
             class="fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/60 dark:bg-black/40 backdrop-blur-md md:hidden transition duration-300 -translate-x-full">
-            <a href="#top">Home</a>
             <a href="#feature-section">Benefits</a>
+            <a href="#how-it-works">How it works</a>
             <a href="#who-section">Do I need it?</a>
             <a href="#pricing-section">Pricing</a>
             <a href="#faq">FAQ</a>
@@ -269,8 +270,13 @@
 
     <!-- Hero Section -->
     <div id="top"
-        class="flex flex-col items-center justify-center text-center px-4 bg-[url('./assets/light-hero-gradient.svg')] dark:bg-[url('./assets/dark-hero-gradient.svg')] bg-no-repeat bg-[length:100%_100%] bg-center pt-12 pb-12">
-        <h1 class="mt-8 pt-12 text-3xl/12 md:text-[56px]/16 font-semibold max-w-4xl">
+        class="relative overflow-hidden flex flex-col items-center justify-center text-center px-4 bg-[url('./assets/light-hero-gradient.svg')] dark:bg-[url('./assets/dark-hero-gradient.svg')] bg-no-repeat bg-[length:100%_100%] bg-center pt-12 pb-12">
+        <!-- Decorative phone mockups – desktop only -->
+        <img src="./assets/mobile-booking-page-left.webp" alt="Reservation page preview"
+            class="hidden lg:block pointer-events-none select-none absolute -left-112 xl:-left-40 top-2/4 -translate-y-1/4 w-72 xl:w-80 rotate-36 opacity-90" />
+        <img src="./assets/mobile-booking-page.webp" alt="Reservation page preview"
+            class="hidden lg:block pointer-events-none select-none absolute -right-112 xl:-right-40 top-2/4 -translate-y-1/4 w-72 xl:w-80 -rotate-36 opacity-90" />
+        <h1 class="mt-4 md:mt-8 pt-12 text-3xl/12 md:text-[56px]/16 font-semibold max-w-4xl">
             Reduce no-shows and<br /><span class="font-bold text-5xl/14 md:text-[64px]/16">save 3-8 hours a
                 week</span><br />with online booking
         </h1>
@@ -293,7 +299,13 @@
                                 <span>Watch demo</span>
                         </a> -->
         </div>
-        <h3 class="text-base text-center text-slate-400 mt-24 pb-6 font-medium">Integrates with your favourite tools
+        <!-- Mobile hero image – half-cut with gradient fade -->
+        <div class="lg:hidden relative mt-8 w-56 mx-auto max-h-64 overflow-hidden">
+            <img src="./assets/mobile-booking-page.webp" alt="Booking page preview"
+                class="w-full select-none pointer-events-none" />
+            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white dark:from-black to-transparent pointer-events-none"></div>
+        </div>
+        <h3 class="text-base text-center text-slate-400 mt-16 pb-6 font-medium">Integrates with your favourite tools
         </h3>
         <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 dark:text-slate-300 pb-8">
             <span class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">Google Calendar</span>
@@ -302,16 +314,79 @@
             <span class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">Shopify</span>
         </div>
         <div class="overflow-hidden w-full relative max-w-5xl mx-auto select-none">
-            <div
-                class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent">
-            </div>
-
             <div class="marquee-inner will-change-transform max-w-5xl mx-auto">
                 <div id="logo-track" class="flex items-center"></div>
             </div>
+        </div>
+    </div>
 
+        <!-- Features Section -->
+    <div id="feature-section" class="text-center pt-4">
+        <p
+            class="text-center font-medium text-indigo-600 dark:text-indigo-400 mt-28 px-10 py-2 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 w-max mx-auto">
+            Benefits</p>
+        <h2 class="text-3xl font-semibold text-center mx-auto mt-4 px-2">Everything you need to take bookings online
+        </h2>
+        <p class="mt-2 mb-4 text-slate-500 dark:text-slate-300 max-w-2xl mx-auto px-2">
+            Bookable.live helps salons, clinics, studios, and service businesses accept bookings, manage schedules, and
+            reduce no‑shows.
+        </p>
+    </div>
+    <div id="features" class="mt-10 px-6 md:px-16 lg:px-24 xl:px-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div
-                class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent">
+                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+                <h3 class="text-lg font-semibold">Branded booking pages</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Share a beautiful booking link with your
+                    brand,
+                    services, prices, and availability. Mobile‑friendly and SEO‑optimized.</p>
+            </div>
+            <div
+                class="border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 overflow-hidden">
+                <img src="./assets/branded-booking-page.webp" alt="Branded booking page" loading="lazy" decoding="async"
+                    class="w-full h-auto object-contain" />
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            <div
+                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+                <h3 class="text-lg font-semibold">Calendar sync</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">All calendars update automatically - two‑way
+                    sync with Google Calendar and Microsoft
+                    Outlook to prevent double‑bookings and keep your team up to date.</p>
+            </div>
+            <div
+                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+                <h3 class="text-lg font-semibold">Staff & multi‑venue</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Assign services to specific team members and
+                    locations. Customers pick who and where—or let Bookable auto‑assign.</p>
+            </div>
+            <div
+                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+                <h3 class="text-lg font-semibold">Automated reminders</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Reduce no-shows with scheduled email, SMS and
+                    WhatsApp (coming soon)
+                    reminders. Smart timing and templates included.</p>
+            </div>
+            <div
+                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+                <h3 class="text-lg font-semibold">Widget embed</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Embed the booking experience directly into
+                    your website. Pre-select services or staff to simplify the flow.</p>
+            </div>
+            <div
+                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+                <h3 class="text-lg font-semibold">Analytics & exports</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Track bookings, cancellations, and revenue.
+                    Export clients and appointments to CSV anytime.</p>
+            </div>
+            <div
+                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
+                <h3 class="text-lg font-semibold">Payment collection</h3>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Accept payments for your services directly
+                    through your booking page. Support for Apple Pay, Google Pay, Visa, Mastercard, and more — so
+                    clients can pay upfront or leave a deposit when they book.</p>
             </div>
         </div>
     </div>
@@ -386,70 +461,6 @@
             </svg>
             See demo
         </button>
-    </div>
-
-    <!-- Features Section -->
-    <div id="feature-section" class="text-center pt-4">
-        <p
-            class="text-center font-medium text-indigo-600 dark:text-indigo-400 mt-28 px-10 py-2 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 w-max mx-auto">
-            Benefits</p>
-        <h2 class="text-3xl font-semibold text-center mx-auto mt-4 px-2">Everything you need to take bookings online
-        </h2>
-        <p class="mt-2 mb-4 text-slate-500 dark:text-slate-300 max-w-2xl mx-auto px-2">
-            Bookable.live helps salons, clinics, studios, and service businesses accept bookings, manage schedules, and
-            reduce no‑shows.
-        </p>
-    </div>
-    <div id="features" class="mt-10 px-6 md:px-16 lg:px-24 xl:px-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-                <h3 class="text-lg font-semibold">Branded booking pages</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Share a beautiful booking link with your
-                    brand,
-                    services, prices, and availability. Mobile‑friendly and SEO‑optimized.</p>
-            </div>
-            <div
-                class="border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 overflow-hidden">
-                <img src="./assets/branded-booking-page.webp" alt="Branded booking page" loading="lazy" decoding="async"
-                    class="w-full h-auto object-contain" />
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-            <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-                <h3 class="text-lg font-semibold">Calendar sync</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">All calendars update automatically - two‑way
-                    sync with Google Calendar and Microsoft
-                    Outlook to prevent double‑bookings and keep your team up to date.</p>
-            </div>
-            <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-                <h3 class="text-lg font-semibold">Staff & multi‑venue</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Assign services to specific team members and
-                    locations. Customers pick who and where—or let Bookable auto‑assign.</p>
-            </div>
-            <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-                <h3 class="text-lg font-semibold">Automated reminders</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Reduce no-shows with scheduled email, SMS and
-                    WhatsApp (coming soon)
-                    reminders. Smart timing and templates included.</p>
-            </div>
-            <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-                <h3 class="text-lg font-semibold">Widget embed</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Embed the booking experience directly into
-                    your website. Pre-select services or staff to simplify the flow.</p>
-            </div>
-            <div
-                class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl text-left bg-white/70 dark:bg-slate-900/30">
-                <h3 class="text-lg font-semibold">Analytics & exports</h3>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Track bookings, cancellations, and revenue.
-                    Export clients and appointments to CSV anytime.</p>
-            </div>
-        </div>
     </div>
 
     <!-- Who is it for Section -->
@@ -600,6 +611,7 @@
                     <li>Multiple Staff Accounts</li>
                     <li>Multiple Venues</li>
                     <li>Smart Rescheduling</li>
+                    <li>Online Payments via Stripe</li>
                 </ul>
                 <div class="mt-auto pt-10">
                     <a href="https://app.bookable.live/signup"
@@ -636,7 +648,8 @@
             </details>
             <details class="p-4 border-b border-slate-200 dark:border-slate-700">
                 <summary class="font-medium">How do reminders work?</summary>
-                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Set automated reminders via email or WhatsApp (coming soon)
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Set automated reminders via email or WhatsApp
+                    (coming soon)
                     at the best time before an appointment to reduce no‑shows.</p>
             </details>
             <details class="p-4 border-b border-slate-200 dark:border-slate-700">
@@ -644,10 +657,16 @@
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">The Starter plan is free and includes
                     unlimited appointments, a booking page, and email reminders.</p>
             </details>
-            <details class="p-4">
+            <details class="p-4 border-b border-slate-200 dark:border-slate-700">
                 <summary class="font-medium">Can I export my data?</summary>
                 <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Export clients, appointments, and messages to
                     CSV anytime.</p>
+            </details>
+            <details class="p-4">
+                <summary class="font-medium">Can I accept payments for my services?</summary>
+                <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Yes. Bookable.live lets you collect payments
+                    directly through your booking page. Clients can pay upfront or leave a deposit using Apple Pay,
+                    Google Pay, Visa, Mastercard, and other popular methods — making checkout fast and frictionless.</p>
             </details>
         </div>
     </div>
@@ -731,7 +750,13 @@
                 </div>
             </div>
         </div>
-        <p class="pt-4 text-center pb-5">
+        <div class="flex items-center justify-center gap-3 pt-4">
+            <img src="./assets/visa.svg" alt="Visa" class="h-6 w-auto opacity-60">
+            <img src="./assets/mastercard.svg" alt="Mastercard" class="h-6 w-auto opacity-60">
+            <img src="./assets/apple-pay.svg" alt="Apple Pay" class="h-6 w-auto opacity-60">
+            <img src="./assets/google-pay.svg" alt="Google Pay" class="h-6 w-auto opacity-60">
+        </div>
+        <p class="pt-2 text-center pb-5">
             Copyright 2026 © <a href="https://bookable.live">Bookable.live</a>.&nbsp;&nbsp;All Rights
             Reserved.&nbsp;&nbsp;SIA ClearTech.&nbsp;&nbsp;Made in Latvia 🇱🇻
         </p>
@@ -747,7 +772,8 @@
         {"@type": "Question", "name": "Do you support multiple team members and locations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Create services per staff, assign availability by venue, and let customers choose who and where."}},
         {"@type": "Question", "name": "How do reminders work?", "acceptedAnswer": {"@type": "Answer", "text": "Set automated reminders via email or WhatsApp (coming soon) at the best time before an appointment to reduce no‑shows."}},
         {"@type": "Question", "name": "Is there a free plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Starter plan is free and includes unlimited appointments, a booking page, and email reminders."}},
-        {"@type": "Question", "name": "Can I export my data?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Export clients, appointments, and messages to CSV anytime."}}
+        {"@type": "Question", "name": "Can I export my data?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Export clients, appointments, and messages to CSV anytime."}},
+        {"@type": "Question", "name": "Can I accept payments for my services?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Bookable.live lets you collect payments directly through your booking page. Clients can pay upfront or leave a deposit using Apple Pay, Google Pay, Visa, Mastercard, and other popular methods."}}
       ]
     }
     </script>
