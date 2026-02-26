@@ -133,8 +133,8 @@ document.addEventListener("click", (e) => {
 // Fixed prices per currency (edit these exact numbers to match your billing)
 // Base (EUR) comes from pricingData below; overrides only apply when currency != EUR.
 const PRICE_OVERRIDES = {
-    USD: { pro: { monthly: 9, yearly: 90 } },
-    GBP: { pro: { monthly: 9, yearly: 90 } },
+    USD: { pro: { monthly: 19, yearly: 150 } },
+    GBP: { pro: { monthly: 19, yearly: 150 } },
 };
 
 const formatMoney = (amount) => {
@@ -506,8 +506,8 @@ const pricingDataEN = [
     {
         id: "pro",
         title: "Pro Plan",
-        priceMonthly: 9,
-        priceYearly: 90,
+        priceMonthly: 19,
+        priceYearly: 150,
         mostPopular: true,
         features: [
             "Everything in Regular",
@@ -542,8 +542,8 @@ const pricingDataLV = [
     {
         id: "pro",
         title: "Pro plāns",
-        priceMonthly: 9,
-        priceYearly: 90,
+        priceMonthly: 19,
+        priceYearly: 150,
         mostPopular: true,
         features: [
             "Viss, kas ietverts Regular plānā",
