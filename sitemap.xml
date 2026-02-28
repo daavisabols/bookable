@@ -5,7 +5,7 @@
   <!-- English Home Page -->
   <url>
     <loc>https://bookable.live/</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/lv/"/>
@@ -15,7 +15,7 @@
   <!-- Latvian Home Page -->
   <url>
     <loc>https://bookable.live/lv/</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/"/>
@@ -25,7 +25,7 @@
   <!-- English Privacy Policy -->
   <url>
     <loc>https://bookable.live/privacy.html</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/privacy-lv.html"/>
@@ -35,7 +35,7 @@
   <!-- Latvian Privacy Policy -->
   <url>
     <loc>https://bookable.live/privacy-lv.html</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/privacy.html"/>
@@ -45,97 +45,97 @@
   <!-- SEO Landing Pages -->
   <url>
     <loc>https://bookable.live/pricing/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bookable.live/features/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bookable.live/features/online-booking/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/features/automatic-reminders/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/features/calendar-sync/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/features/staff-management/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/features/payments/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/integrations/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bookable.live/integrations/google-calendar/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/integrations/microsoft-outlook/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/integrations/whatsapp/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/industries/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bookable.live/industries/beauty-salon-booking-software/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/industries/barber-booking-software/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/industries/physiotherapy-booking-software/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bookable.live/industries/massage-therapy-booking-software/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -143,7 +143,7 @@
   <!-- Blog -->
   <url>
     <loc>https://bookable.live/blog/</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/lv/blog/"/>
@@ -151,7 +151,7 @@
   </url>
   <url>
     <loc>https://bookable.live/blog/calendly-alternative-booking-software-comparison/</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/lv/blog/calendly-alternativa-rezervaciju-programmaturu-salidzinajums/"/>
@@ -159,7 +159,7 @@
   </url>
   <url>
     <loc>https://bookable.live/blog/reduce-no-shows-appointment-reminders/</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/lv/blog/reduce-no-shows-appointment-reminders/"/>
@@ -167,7 +167,7 @@
   </url>
   <url>
     <loc>https://bookable.live/blog/google-calendar-sync-double-bookings/</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/lv/blog/google-calendar-sync-double-bookings/"/>
@@ -175,7 +175,7 @@
   </url>
   <url>
     <loc>https://bookable.live/blog/online-booking-page-checklist/</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/lv/blog/online-booking-page-checklist/"/>
@@ -183,7 +183,7 @@
   </url>
   <url>
     <loc>https://bookable.live/blog/salon-scheduling-software-guide/</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/lv/blog/salon-scheduling-software-guide/"/>
@@ -193,7 +193,7 @@
   <!-- Latvian Blog -->
   <url>
     <loc>https://bookable.live/lv/blog/</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/blog/"/>
@@ -201,7 +201,7 @@
   </url>
   <url>
     <loc>https://bookable.live/lv/blog/calendly-alternativa-rezervaciju-programmaturu-salidzinajums/</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/blog/calendly-alternative-booking-software-comparison/"/>
@@ -209,7 +209,7 @@
   </url>
   <url>
     <loc>https://bookable.live/lv/blog/reduce-no-shows-appointment-reminders/</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/blog/reduce-no-shows-appointment-reminders/"/>
@@ -217,7 +217,7 @@
   </url>
   <url>
     <loc>https://bookable.live/lv/blog/google-calendar-sync-double-bookings/</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/blog/google-calendar-sync-double-bookings/"/>
@@ -225,7 +225,7 @@
   </url>
   <url>
     <loc>https://bookable.live/lv/blog/online-booking-page-checklist/</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/blog/online-booking-page-checklist/"/>
@@ -233,7 +233,7 @@
   </url>
   <url>
     <loc>https://bookable.live/lv/blog/salon-scheduling-software-guide/</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/blog/salon-scheduling-software-guide/"/>

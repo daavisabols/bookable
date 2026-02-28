@@ -217,7 +217,7 @@ if (themeToggle) {
     });
 }
 
-const logos = ["google", "microsoft", "whatsapp", "apple", "shopify"];
+const logos = ["google", "microsoft", "whatsapp", "apple", "shopify", "stripe", "zoom"];
 const track = document.getElementById("logo-track");
 
 if (track) {
