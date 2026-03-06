@@ -220,7 +220,7 @@ if (themeToggle) {
 const logos = ["google", "microsoft", "whatsapp", "apple", "shopify", "stripe", "zoom"];
 const track = document.getElementById("logo-track");
 
-if (track) {
+if (track && track.children.length === 0) {
     track.innerHTML = [...logos, ...logos]
         .map((name) => {
             const size = (name === 'whatsapp' || name === 'apple' || name === 'shopify') ? 50 : 100;
@@ -233,7 +233,7 @@ if (track) {
 
 const featuresDataEN = [
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M8 2h8l6 6v12a2 2 0 0 1-2 2H8a6 6 0 0 1-6-6V8a6 6 0 0 1 6-6Z'/><path d='M15 2v6h6'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01'/></svg></div>`,
         title: "Branded booking pages",
         description: "Share a beautiful booking link with your brand, services, prices, and live availability. Our booking pages are highly customizable to match your brand identity.",
         image: "assets/branded-booking-page.webp",
@@ -241,32 +241,32 @@ const featuresDataEN = [
         typingDemoSlugs: ["barber-john", "emilys-salon", "nails-by-emma", "designer-james", "coach-david"],
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M3 3h7v7H3z'/><path d='M14 3h7v7h-7z'/><path d='M14 14h7v7h-7z'/><path d='M3 14h7v7H3z'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/></svg></div>`,
         title: "Calendar sync",
         description: "Two‑way sync with Google Calendar and Microsoft Outlook prevents double‑bookings.",
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M12 12a5 5 0 1 0-5-5'/><path d='M12 12v9'/><path d='M7 21h10'/><path d='M5 8h6'/><path d='m17 16 3-3-3-3'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z'/></svg></div>`,
         title: "Staff & multi‑venue",
         description: "Assign services to specific team members and locations. Let clients choose or auto‑assign.",
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M2 12h4l3 9 6-18 3 9h4'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9'/></svg></div>`,
         title: "Automated reminders",
         description: "Reduce no‑shows with email, SMS, and WhatsApp (coming soon) reminders sent at smart intervals.",
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='m21 16-4 4-4-4'/><path d='M17 20V4'/><path d='M3 3v18h18'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4'/></svg></div>`,
         title: "Widget embed",
-        description: "Embed the booking experience directly into your website. Pre-select services or staff to simplify the flow.",
+        description: "Embed the booking experience directly into your website or add a popup button that opens it in an overlay. Pre-select services or staff to simplify the flow.",
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M3 3h18v4H3z'/><path d='M8 11h13v4H8z'/><path d='M13 19h8v4h-8z'/><path d='M3 7v14h5'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'/></svg></div>`,
         title: "Analytics & exports",
         description: "Track bookings, cancellations, revenue and export clients & appointments to CSV.",
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><rect x='2' y='5' width='20' height='14' rx='2'/><path d='M2 10h20'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z'/></svg></div>`,
         title: "Payment collection",
         description: "Accept payments for your services directly through your booking page. Clients can pay upfront or leave a deposit using Apple Pay, Google Pay, Visa, Mastercard, and more.",
     },
@@ -274,7 +274,7 @@ const featuresDataEN = [
 
 const featuresDataLV = [
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M8 2h8l6 6v12a2 2 0 0 1-2 2H8a6 6 0 0 1-6-6V8a6 6 0 0 1 6-6Z'/><path d='M15 2v6h6'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01'/></svg></div>`,
         title: "Zīmola rezervāciju lapas",
         description: "Kopīgo skaistu rezervācijas saiti ar zīmolu, pakalpojumiem, cenām un tiešsaistes pieejamību. Mūsu rezervāciju lapas ir ļoti pielāgojamas, lai atbilstu jūsu zīmola identitātei.",
         image: "assets/branded-booking-page.webp",
@@ -282,32 +282,32 @@ const featuresDataLV = [
         typingDemoSlugs: ["barber-john", "emilys-salon", "nails-by-emma", "designer-james", "coach-david"],
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M3 3h7v7H3z'/><path d='M14 3h7v7h-7z'/><path d='M14 14h7v7h-7z'/><path d='M3 14h7v7H3z'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/></svg></div>`,
         title: "Kalendāru sinhronizācija",
         description: "Divvirzienu sinhronizācija ar Google Calendar un Microsoft Outlook novērš dubultas rezervācijas.",
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M12 12a5 5 0 1 0-5-5'/><path d='M12 12v9'/><path d='M7 21h10'/><path d='M5 8h6'/><path d='m17 16 3-3-3-3'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z'/></svg></div>`,
         title: "Personāls un vairākas vietas",
         description: "Piesaisti pakalpojumus konkrētiem darbiniekiem un lokācijām. Ļauj klientiem izvēlēties vai auto‑piešķirt.",
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M2 12h4l3 9 6-18 3 9h4'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9'/></svg></div>`,
         title: "Automatizēti atgādinājumi",
         description: "Samazini neierašanos ar e‑pastu un WhatsApp (drīzumā) atgādinājumiem gudros intervālos.",
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='m21 16-4 4-4-4'/><path d='M17 20V4'/><path d='M3 3v18h18'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4'/></svg></div>`,
         title: "Logrīka integrācija",
         description: "Integrējiet rezervācijas pieredzi tieši savā mājaslapā. Iepriekš atlasiet pakalpojumus vai darbiniekus, lai vienkāršotu procesu.",
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><path d='M3 3h18v4H3z'/><path d='M8 11h13v4H8z'/><path d='M13 19h8v4h-8z'/><path d='M3 7v14h5'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'/></svg></div>`,
         title: "Analītika un eksporti",
         description: "Seko rezervācijām, atcelšanām, ieņēmumiem un eksportē klientus & pierakstus uz CSV.",
     },
     {
-        icon: `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='text-purple-600 size-8'><rect x='2' y='5' width='20' height='14' rx='2'/><path d='M2 10h20'/></svg>`,
+        icon: `<div class='w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center'><svg class='w-5 h-5 text-purple-600 dark:text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'><path stroke-linecap='round' stroke-linejoin='round' d='M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z'/></svg></div>`,
         title: "Maksājumu pieņemšana",
         description: "Pieņem maksājumus par saviem pakalpojumiem tieši caur rezervāciju lapu. Klienti var samaksāt uzreiz vai atstāt depozītu, izmantojot Apple Pay, Google Pay, Visa, Mastercard un citus.",
     },
@@ -316,7 +316,7 @@ const featuresDataLV = [
 const featuresData = isLV ? featuresDataLV : featuresDataEN;
 
 const features = document.getElementById("features");
-if (features) {
+if (features && features.children.length === 0) {
     const [primaryFeature, ...secondaryFeatures] = featuresData;
 
     const renderFeatureCard = (f, titleClass = "text-xl") => `
@@ -749,7 +749,7 @@ const faqsDataEN = [
     {
         question: "Can I pre-select services for the embed widget?",
         answer:
-            "Yes. In your settings, you can choose a specific service, staff, or venue to pre-select. The embed code will automatically update with the correct URL parameters, making it easier for your customers to find what they need.",
+            "Yes. In your settings, you can choose a specific service, staff, or venue to pre-select. You can also choose between an inline iframe or a popup button that opens the widget in an overlay. The embed code will automatically update with the correct URL parameters, making it easier for your customers to find what they need.",
     },
     {
         question: "What happens if I'm sick or have an emergency?",
@@ -810,7 +810,10 @@ const faqsData = isLV ? faqsDataLV : faqsDataEN;
 
 const faqContainer = document.getElementById("faq-container");
 
-if (faqContainer) {
+// Check if FAQ already has static HTML content (e.g. <details> elements for SEO)
+const faqHasStaticContent = faqContainer && faqContainer.children.length > 0;
+
+if (faqContainer && !faqHasStaticContent) {
     faqContainer.innerHTML = faqsData.map((faq, index) => `
     <div class="js-fade-in border-b border-slate-300 dark:border-purple-900 py-4 cursor-pointer w-full" data-index="${index}">
         <div class="flex items-center justify-between">
@@ -827,11 +830,11 @@ if (faqContainer) {
     initFadeInOnScroll(faqContainer);
 }
 
-// Accordion Logic
-const faqItems = document.querySelectorAll("#faq-container > div");
+// Accordion Logic for FAQ <div> items (static or JS-rendered)
+const faqDivItems = document.querySelectorAll("#faq-container > div");
 
-if (faqItems && faqItems.length) {
-    faqItems.forEach(item => {
+if (faqDivItems && faqDivItems.length) {
+    faqDivItems.forEach(item => {
         const chevron = item.querySelector("[data-chevron]");
         const answer = item.querySelector(".faq-answer");
 
@@ -839,7 +842,7 @@ if (faqItems && faqItems.length) {
             const isOpen = answer.classList.contains("opacity-100");
 
             // Close all
-            faqItems.forEach(i => {
+            faqDivItems.forEach(i => {
                 i.querySelector(".faq-answer").classList.remove("opacity-100", "max-h-[500px]", "translate-y-0", "pt-4");
                 i.querySelector(".faq-answer").classList.add("opacity-0", "max-h-0", "-translate-y-2");
                 i.querySelector("[data-chevron]").classList.remove("rotate-180");
