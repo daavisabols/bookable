@@ -220,13 +220,14 @@ if (themeToggle) {
 const logos = ["google", "microsoft", "whatsapp", "apple", "shopify", "stripe", "zoom"];
 const track = document.getElementById("logo-track");
 
-if (track && track.children.length === 0) {
-    track.innerHTML = [...logos, ...logos]
+if (track) {
+    const logoHTML = logos
         .map((name) => {
             const size = (name === 'whatsapp' || name === 'apple' || name === 'shopify') ? 50 : 100;
-            return `<img class="mx-11" src="${ASSET_ROOT}/assets/companies-logo/${name}.svg" onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/${name}/90A1B9';" alt="${name.charAt(0).toUpperCase() + name.slice(1)} logo" width="${size}" height="${size}" loading="lazy" decoding="async" draggable="false"/>`;
+            return `<img class="mx-11 shrink-0" src="${ASSET_ROOT}/assets/companies-logo/${name}.svg" onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/${name}/90A1B9';" alt="${name.charAt(0).toUpperCase() + name.slice(1)} logo" width="${size}" height="${size}" loading="lazy" decoding="async" draggable="false"/>`;
         })
         .join("");
+    track.innerHTML = logoHTML + logoHTML;
 }
 
 

@@ -117,6 +117,22 @@
     .cta-button:active {
       transform: translateY(0) scale(0.98);
     }
+
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-inner {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 25s linear infinite;
+    }
+
+    .marquee-fade {
+      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
   </style>
 
   <!-- Strukturētie dati (Schema.org JSON-LD) -->
@@ -293,17 +309,22 @@
       <span class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">Stripe</span>
       <span class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">Zoom</span>
     </div>
-    <div class="overflow-hidden w-full relative max-w-5xl mx-auto select-none">
-      <div class="marquee-inner will-change-transform max-w-5xl mx-auto">
-        <div id="logo-track" class="flex items-center">
-          <img class="mx-11" src="/assets/companies-logo/google.svg" alt="Google logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
-          <img class="mx-11" src="/assets/companies-logo/microsoft.svg" alt="Microsoft logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
-          <img class="mx-11" src="/assets/companies-logo/whatsapp.svg" alt="WhatsApp logo" width="50" height="50" loading="lazy" decoding="async" draggable="false"/>
-          <img class="mx-11" src="/assets/companies-logo/apple.svg" alt="Apple logo" width="50" height="50" loading="lazy" decoding="async" draggable="false"/>
-          <img class="mx-11" src="/assets/companies-logo/shopify.svg" alt="Shopify logo" width="50" height="50" loading="lazy" decoding="async" draggable="false"/>
-          <img class="mx-11" src="/assets/companies-logo/stripe.svg" alt="Stripe logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
-          <img class="mx-11" src="/assets/companies-logo/zoom.svg" alt="Zoom logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
-        </div>
+    <div class="overflow-hidden w-full relative max-w-5xl mx-auto select-none marquee-fade">
+      <div id="logo-track" class="marquee-inner will-change-transform flex items-center">
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/google.svg" alt="Google logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/microsoft.svg" alt="Microsoft logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/whatsapp.svg" alt="WhatsApp logo" width="50" height="50" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/apple.svg" alt="Apple logo" width="50" height="50" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/shopify.svg" alt="Shopify logo" width="50" height="50" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/stripe.svg" alt="Stripe logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/zoom.svg" alt="Zoom logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/google.svg" alt="Google logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/microsoft.svg" alt="Microsoft logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/whatsapp.svg" alt="WhatsApp logo" width="50" height="50" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/apple.svg" alt="Apple logo" width="50" height="50" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/shopify.svg" alt="Shopify logo" width="50" height="50" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/stripe.svg" alt="Stripe logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
+          <img class="mx-11 shrink-0" src="/assets/companies-logo/zoom.svg" alt="Zoom logo" width="100" height="100" loading="lazy" decoding="async" draggable="false"/>
       </div>
     </div>
   </div>
@@ -370,7 +391,7 @@
             <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
         </div>
         <h3 class="text-xl font-semibold">Logrīka integrācija</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-300">Integrējiet rezervācijas pieredzi tieši savā mājaslapā. Iepriekš atlasiet pakalpojumus vai darbiniekus, lai vienkāršotu procesu.</p>
+        <p class="text-sm text-slate-600 dark:text-slate-300">Integrējiet rezervācijas pieredzi savā mājaslapā kā iekļautu rāmi vai pievienojiet pilnībā pielāgojamu uznirstošo pogu — izvēlieties formu, krāsu un gradientu — kas atver logrīku pārklājuma logā.</p>
       </div>
       <div class="p-4 text-left bg-white/70 dark:bg-slate-900/30 space-y-3">
         <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center">
@@ -729,7 +750,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 transition-transform duration-500 ease-in-out" data-chevron><path d="m6 9 6 6 6-6"/></svg>
         </div>
         <p class="faq-answer text-sm text-slate-600 dark:text-slate-300 transition-all duration-500 ease-in-out max-w-xl opacity-0 max-h-0 overflow-hidden -translate-y-2">
-          Jā. Iestatījumos varat izvēlēties konkrētu pakalpojumu, darbinieku vai vietu, ko iepriekš atlasīt. Integrācijas kods automātiski atjaunināsies ar pareizajiem parametriem.
+          Jā. Iestatījumos varat izvēlēties konkrētu pakalpojumu, darbinieku vai vietu, ko iepriekš atlasīt. Varat arī izvēlēties starp iekļautu iframe vai pielāgojamu uznirstošo pogu (ar formas, krāsas un gradienta opcijām), kas atver logrīku pārklājuma logā. Tiešraides priekšskatījums parāda, kā poga izskatīsies, un integrācijas kods automātiski atjaunināsies.
         </p>
       </div>
       <div class="border-b border-slate-300 dark:border-purple-900 py-4 cursor-pointer w-full" data-index="6">
