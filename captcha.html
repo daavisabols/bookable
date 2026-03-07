@@ -18,6 +18,10 @@
     }
     #captcha-container { display: flex; justify-content: center; }
     .loading { color: #9ca3af; font-size: 13px; }
+    /* Hide any injected chat widgets (e.g. LiveChatAI from Netlify snippet injection) */
+    iframe[src*="livechatai"], div[id*="livechat"], div[class*="livechat"],
+    div[id*="aibot"], div[class*="aibot"], div[id*="chat-widget"],
+    div[class*="chat-widget"] { display: none !important; }
   </style>
 </head>
 <body>
