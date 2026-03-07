@@ -26,17 +26,32 @@
     // Read site key from URL params so the mobile app can pass it
     var params = new URLSearchParams(window.location.search);
     var siteKey = params.get('sitekey') || '';
+    var pendingMessages = [];
 
     function post(msg) {
-      // postMessage to React Native WebView
-      if (window.ReactNativeWebView) {
-        window.ReactNativeWebView.postMessage(JSON.stringify(msg));
-      }
-      // Also post to parent (for iframe embeds)
-      if (window.parent !== window) {
-        window.parent.postMessage(msg, '*');
+      var str = JSON.stringify(msg);
+      // postMessage to React Native WebView (may not be injected yet)
+      if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+        window.ReactNativeWebView.postMessage(str);
+      } else {
+        // Queue and retry — ReactNativeWebView is injected after page load
+        pendingMessages.push(str);
       }
     }
+
+    // Flush queued messages once ReactNativeWebView becomes available
+    var flushInterval = setInterval(function() {
+      if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage && pendingMessages.length > 0) {
+        pendingMessages.forEach(function(m) {
+          window.ReactNativeWebView.postMessage(m);
+        });
+        pendingMessages = [];
+        clearInterval(flushInterval);
+      }
+    }, 100);
+
+    // Stop trying after 10 seconds
+    setTimeout(function() { clearInterval(flushInterval); }, 10000);
 
     function onTurnstileLoad() {
       if (!siteKey) {
