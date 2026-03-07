@@ -19,14 +19,41 @@
     #captcha-container { display: flex; justify-content: center; }
     .loading { color: #9ca3af; font-size: 13px; }
     /* Hide any injected chat widgets (e.g. LiveChatAI from Netlify snippet injection) */
-    iframe[src*="livechatai"], div[id*="livechat"], div[class*="livechat"],
-    div[id*="aibot"], div[class*="aibot"], div[id*="chat-widget"],
-    div[class*="chat-widget"] { display: none !important; }
+    #live-chat-ai-host, iframe[src*="livechatai"], div[id*="livechat"],
+    div[class*="livechat"], div[id*="aibot"], div[class*="aibot"],
+    div[id*="chat-widget"], div[class*="chat-widget"] {
+      display: none !important; visibility: hidden !important;
+      width: 0 !important; height: 0 !important; pointer-events: none !important;
+    }
   </style>
 </head>
 <body>
   <div id="captcha-container"><span class="loading">Loading...</span></div>
   <script>
+    // Kill injected chat widgets (Netlify snippet injection adds LiveChatAI)
+    (function() {
+      var kill = function() {
+        var el = document.getElementById('live-chat-ai-host');
+        if (el) el.remove();
+        document.querySelectorAll('script[src*="livechatai"], script[src*="aibot"]').forEach(function(s) { s.remove(); });
+      };
+      kill();
+      // Keep killing in case it's injected after our script runs
+      var killInterval = setInterval(kill, 200);
+      setTimeout(function() { clearInterval(killInterval); }, 5000);
+      // Also observe DOM for injected nodes
+      if (window.MutationObserver) {
+        new MutationObserver(function(mutations) {
+          mutations.forEach(function(m) {
+            m.addedNodes.forEach(function(n) {
+              if (n.nodeType === 1 && (n.id === 'live-chat-ai-host' || (n.tagName === 'SCRIPT' && n.src && (n.src.includes('livechatai') || n.src.includes('aibot'))))) {
+                n.remove();
+              }
+            });
+          });
+        }).observe(document.documentElement, { childNodes: true, subtree: true });
+      }
+    })();
     // Read site key from URL params so the mobile app can pass it
     var params = new URLSearchParams(window.location.search);
     var siteKey = params.get('sitekey') || '';
