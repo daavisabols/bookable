@@ -54,6 +54,12 @@
         }).observe(document.documentElement, { childNodes: true, subtree: true });
       }
     })();
+
+    // Fallback: remove "Loading..." text after 5s if Turnstile never fires onload
+    setTimeout(function() {
+      var el = document.querySelector('.loading');
+      if (el) el.textContent = '';
+    }, 5000);
     // Read site key from URL params so the mobile app can pass it
     var params = new URLSearchParams(window.location.search);
     var siteKey = params.get('sitekey') || '';
