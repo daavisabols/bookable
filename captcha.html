@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Verify</title>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 70px;
+      background: transparent;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    #captcha-container { display: flex; justify-content: center; }
+    .loading { color: #9ca3af; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div id="captcha-container"><span class="loading">Loading...</span></div>
+  <script>
+    // Read site key from URL params so the mobile app can pass it
+    var params = new URLSearchParams(window.location.search);
+    var siteKey = params.get('sitekey') || '';
+
+    function post(msg) {
+      // postMessage to React Native WebView
+      if (window.ReactNativeWebView) {
+        window.ReactNativeWebView.postMessage(JSON.stringify(msg));
+      }
+      // Also post to parent (for iframe embeds)
+      if (window.parent !== window) {
+        window.parent.postMessage(msg, '*');
+      }
+    }
+
+    function onTurnstileLoad() {
+      if (!siteKey) {
+        post({ type: 'error', error: 'No sitekey provided' });
+        return;
+      }
+      try {
+        document.querySelector('.loading')?.remove();
+        turnstile.render('#captcha-container', {
+          sitekey: siteKey,
+          callback: function(token) { post({ type: 'token', token: token }); },
+          'error-callback': function(err) { post({ type: 'error', error: String(err) }); },
+          'expired-callback': function() { post({ type: 'expired' }); },
+          'timeout-callback': function() { post({ type: 'timeout' }); },
+          size: 'compact',
+          theme: params.get('theme') || 'light',
+        });
+        post({ type: 'ready' });
+      } catch(e) {
+        post({ type: 'error', error: e.message });
+      }
+    }
+  </script>
+</body>
+</html>
