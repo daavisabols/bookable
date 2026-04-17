@@ -5,7 +5,7 @@
   <!-- English Home Page -->
   <url>
     <loc>https://bookable.live/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="lv" href="https://bookable.live/lv/"/>
@@ -15,7 +15,7 @@
   <!-- Latvian Home Page -->
   <url>
     <loc>https://bookable.live/lv/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://bookable.live/"/>
