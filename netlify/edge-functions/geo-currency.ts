@@ -36,11 +36,21 @@ export default async (request: Request, context: GeoContext) => {
 
   const response = await context.next();
 
+  // Don't try to mutate redirects or error responses — headers are immutable on those
+  if (response.status >= 300 && response.status < 400) {
+    return response;
+  }
+
   // 1 year
-  response.headers.append(
-    "Set-Cookie",
-    `currency=${currency}; Path=/; Max-Age=31536000; SameSite=Lax`
-  );
+  try {
+    response.headers.append(
+      "Set-Cookie",
+      `currency=${currency}; Path=/; Max-Age=31536000; SameSite=Lax`
+    );
+  } catch {
+    // Headers immutable on this response type — return as-is
+    return response;
+  }
 
   return response;
 };
