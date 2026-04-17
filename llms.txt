@@ -79,7 +79,7 @@ Bookable.live targets small and medium service businesses — beauty salons, bar
 
 ## Founder / sales contact
 
-- [Book a 15‑minute call with Dāvis Ābols (founder)](https://bookable.live/book/davis-abols): Free 15‑minute intro call. Embedded widget also available on the English and Latvian home pages at `#book-a-call`.
+- [Book a 15‑minute call with Dāvis Ābols (founder)](https://app.bookable.live/book/davis-abols): Free 15‑minute intro call. Embedded widget also available on the English and Latvian home pages at `#book-a-call`.
 - [Founder section on the English home page](https://bookable.live/#book-a-call)
 - [Founder section on the Latvian home page](https://bookable.live/lv/#book-a-call)
 
@@ -87,4 +87,4 @@ Bookable.live targets small and medium service businesses — beauty salons, bar
 
 - Email: info@bookable.live
 - Product app / sign up: https://app.bookable.live/signup
-- Book a call with the founder: https://bookable.live/book/davis-abols
+- Book a call with the founder: https://app.bookable.live/book/davis-abols
