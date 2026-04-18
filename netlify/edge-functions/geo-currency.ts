@@ -23,7 +23,66 @@ const hasCookie = (cookieHeader: string | null, name: string) => {
   return cookieHeader.split(";").some((part) => part.trim().startsWith(`${name}=`));
 };
 
+const blockedPathPatterns: RegExp[] = [
+  /^\/xmlrpc\.php$/i,
+  /^\/wp(?:$|[\/\-])/i,
+  /^\/wp-admin(?:\/|$)/i,
+  /^\/wp-content(?:\/|$)/i,
+  /^\/wp-includes(?:\/|$)/i,
+  /^\/wp-json(?:\/|$)/i,
+  /^\/wordpress(?:\/|$)/i,
+  /^\/wordpress\//i,
+  /^\/\.git(?:\/|$)/i,
+  /^\/\.aws(?:\/|$)/i,
+  /^\/\.vscode(?:\/|$)/i,
+  /^\/\.svn(?:\/|$)/i,
+  /^\/\.DS_Store$/i,
+  /^\/cgi-bin(?:\/|$)/i,
+  /^\/_profiler(?:\/|$)/i,
+  /^\/actuator(?:\/|$)/i,
+  /^\/magento_version$/i,
+  /^\/sftp-config\.json$/i,
+  /^\/application\.yml$/i,
+  /^\/application\.properties$/i,
+  /^\/appsettings\.json$/i,
+  /^\/settings\.py$/i,
+  /^\/phpinfo(?:$|\.)/i,
+  /^\/install\.php$/i,
+  /^\/config\./i,
+  /(?:^|\/)\.env(?:$|\.|\/)/i,
+  /\.php$/i,
+];
+
+const blockedUserAgentPatterns: RegExp[] = [
+  /mozlila\/5\.0/i,
+  /zgrab/i,
+  /masscan/i,
+  /sqlmap/i,
+  /nikto/i,
+  /nmap/i,
+  /acunetix/i,
+  /dirbuster/i,
+  /gobuster/i,
+  /wpscan/i,
+  /whatweb/i,
+  /python-requests/i,
+  /curl\//i,
+  /wget\//i,
+];
+
 export default async (request: Request, context: GeoContext) => {
+  const url = new URL(request.url);
+  const pathname = url.pathname || "/";
+  const userAgent = request.headers.get("user-agent") || "";
+
+  if (!userAgent.trim() || blockedUserAgentPatterns.some((pattern) => pattern.test(userAgent))) {
+    return new Response(null, { status: 403 });
+  }
+
+  if (blockedPathPatterns.some((pattern) => pattern.test(pathname))) {
+    return new Response(null, { status: 410 });
+  }
+
   const cookieHeader = request.headers.get("cookie");
 
   // Don’t overwrite a user’s choice if you later add a selector.

@@ -1,6 +1,28 @@
-# Allow all search engines to crawl everything
 User-agent: *
 Allow: /
+Disallow: /wp-
+Disallow: /wp/
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-json/
+Disallow: /wordpress/
+Disallow: /xmlrpc.php
+Disallow: /.env
+Disallow: /.git/
+Disallow: /.aws/
+Disallow: /.vscode/
+Disallow: /.svn/
+Disallow: /cgi-bin/
+Disallow: /_profiler/
+Disallow: /actuator/
+Disallow: /magento_version
+Disallow: /sftp-config.json
+Disallow: /application.yml
+Disallow: /application.properties
+Disallow: /appsettings.json
+Disallow: /settings.py
+Disallow: /*.php$
 
 # Sitemap location
 Sitemap: https://bookable.live/sitemap.xml

@@ -6,6 +6,169 @@
   function = "geo-currency"
   path = "/*"
 
+# Block high-volume scanner paths with 410 Gone to reduce bot noise.
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-content/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-includes/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-json/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wordpress/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.env*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.git/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.aws/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.vscode/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.svn/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.DS_Store"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/*.php"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/_profiler/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/actuator/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/magento_version"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/cgi-bin/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/phpinfo*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/install.php"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/config.*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/sftp-config.json"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/application.yml"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/application.properties"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/appsettings.json"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/settings.py"
+  to = "/"
+  status = 410
+  force = true
+
 [[redirects]]
   from = "/signup"
   to = "https://app.bookable.live/signup"
