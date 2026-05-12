@@ -75,28 +75,54 @@
     </div>
   </nav>
 
-  <main class="pt-24">
+  <main class="pt-24 bg-[url('../../assets/light-hero-gradient.svg')] dark:bg-[url('../../assets/dark-hero-gradient.svg')] bg-no-repeat bg-[length:100%_100%] bg-center">
     <div class="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 xl:px-32">
       <p class="mt-10 text-sm text-slate-500 dark:text-slate-300"><a class="hover:text-purple-600 transition" href="/features/">Features</a> / Payments</p>
       <h1 class="text-3xl md:text-5xl font-semibold tracking-tight mt-4">Payments</h1>
       <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl">Enable payments or deposits during booking (where available) to reduce no-shows and make the booking experience smoother.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-        <div class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30">
-          <h2 class="text-xl font-semibold">Reduce no-shows</h2>
-          <p class="mt-2 text-slate-600 dark:text-slate-300">Deposits can increase commitment and reduce last-minute cancellations.</p>
+        <div class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 flex flex-col">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          </div>
+          <h2 class="text-xl font-semibold">Accept full or partial payments</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Charge full price upfront or collect deposits at booking. You decide the payment terms. Deposits increase commitment and reduce no-shows.</p>
         </div>
-        <div class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30">
-          <h2 class="text-xl font-semibold">Faster checkout</h2>
-          <p class="mt-2 text-slate-600 dark:text-slate-300">Collect payment details at booking time (when enabled).</p>
+        <div class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 flex flex-col">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+          </div>
+          <h2 class="text-xl font-semibold">Multiple payment methods</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Accept Apple Pay, Google Pay, Visa, Mastercard, and more. Clients get fast checkout—no friction, no delays.</p>
         </div>
-        <div class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30">
-          <h2 class="text-xl font-semibold">Clear booking terms</h2>
-          <p class="mt-2 text-slate-600 dark:text-slate-300">Set expectations with transparent pricing and policies.</p>
+        <div class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 flex flex-col">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h2 class="text-xl font-semibold">Powered by Stripe</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Payments are processed securely through Stripe. Funds go straight to your account. No hidden fees, no payment processor markups.</p>
         </div>
-        <div class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30">
-          <h2 class="text-xl font-semibold">Works with reminders</h2>
-          <p class="mt-2 text-slate-600 dark:text-slate-300">Combine payments with reminders for fewer gaps in the schedule.</p>
+        <div class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 flex flex-col">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h2 class="text-xl font-semibold">Instant confirmation</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Payment succeeds instantly. Clients see confirmation immediately. No waiting, no uncertainty.</p>
+        </div>
+        <div class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 flex flex-col">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h2 class="text-xl font-semibold">Build trust with clients</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Clear pricing and upfront payment show professionalism. Clients know exactly what to expect and what they're paying for.</p>
+        </div>
+        <div class="p-6 border border-slate-200 dark:border-slate-700 rounded-2xl bg-white/70 dark:bg-slate-900/30 flex flex-col">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h2 class="text-xl font-semibold">Track revenue easily</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">See all payments in your dashboard. Export data anytime. Clear picture of your earnings and booking trends.</p>
         </div>
       </div>
 
